@@ -4,12 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>itonuta.com</title>
+    <style>
+        /* Remove all margins and paddings */
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+        }
+
+        /* Ensure iframe takes up all available space */
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
 </head>
-<body style="margin: 0; padding: 0; display: flex; align-items: center; justify-content: center; height: 100vh; background-color: #f9f9f9;">
-    <iframe src="https://www.google.com/maps/d/embed?mid=1OMVy2zDtSFa1eChTug6W3M6NXFT1fAY&ehbc=2E312F&noprof=1" 
-        width="640" 
-        height="480" 
-        style="border: 0;">
+<body>
+    <iframe 
+        src="https://www.google.com/maps/d/embed?mid=1OMVy2zDtSFa1eChTug6W3M6NXFT1fAY&ehbc=2E312F&noprof=1">
     </iframe>
 </body>
 </html>
