@@ -1,17 +1,5 @@
 let installButton = document.getElementById('installButton');
 
-// Handle the beforeinstallprompt event
-window.addEventListener('beforeinstallprompt', (e) => {
-    // Prevent the browser from showing the default install prompt
-    e.preventDefault();
-
-    // Stash the event for later use
-    window.deferredPrompt = e;
-
-    // Make the install button visible
-    installButton.style.display = 'block';
-});
-
 // Handle the install button click
 installButton.addEventListener('click', () => {
     if (window.deferredPrompt) {
@@ -25,11 +13,20 @@ installButton.addEventListener('click', () => {
             } else {
                 console.log('User dismissed the install prompt');
             }
-            // Clear the deferredPrompt variable after use
+            // Clear the deferredPrompt variable
             window.deferredPrompt = null;
         });
     } else {
-        // Provide instructions for unsupported browsers
+        // Provide fallback for unsupported browsers
         alert('To install this app, use the browser’s "Add to Home Screen" option.');
     }
+});
+
+// Listen for the beforeinstallprompt event to cache it
+window.addEventListener('beforeinstallprompt', (e) => {
+    // Prevent the default install dialog
+    e.preventDefault();
+
+    // Save the event for use when the button is clicked
+    window.deferredPrompt = e;
 });
