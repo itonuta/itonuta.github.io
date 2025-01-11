@@ -11,23 +11,24 @@
             padding: 0;
             height: 100%;
             width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header area for the button */
+        .header {
             position: relative;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            background-color: #f9f9f9;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+            z-index: 1;
         }
 
-        iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
-        /* Style for the install button */
         #installButton {
-            position: fixed;
-            top: 10px;
-            right: 10px;
+            margin-right: 10px;
             padding: 10px 20px;
             background-color: #007BFF;
             color: white;
@@ -42,22 +43,39 @@
             background-color: #0056b3;
         }
 
-        /* Responsive design: adjust button size and spacing for smaller screens */
+        /* Main content for the iframe */
+        .main {
+            flex: 1;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Responsive design */
         @media (max-width: 600px) {
             #installButton {
                 font-size: 12px;
                 padding: 8px 16px;
-                top: 5px;
-                right: 5px;
             }
         }
     </style>
 </head>
 <body>
-    <button id="installButton">Install App</button>
-    <iframe 
-        src="https://www.google.com/maps/d/embed?mid=1OMVy2zDtSFa1eChTug6W3M6NXFT1fAY&ehbc=2E312F&noprof=1">
-    </iframe>
+    <!-- Header section with the install button -->
+    <div class="header">
+        <button id="installButton">Install App</button>
+    </div>
+
+    <!-- Main section with the iframe -->
+    <div class="main">
+        <iframe 
+            src="https://www.google.com/maps/d/embed?mid=1OMVy2zDtSFa1eChTug6W3M6NXFT1fAY&ehbc=2E312F&noprof=1">
+        </iframe>
+    </div>
+
     <script src="install.js"></script>
 </body>
 </html>
