@@ -33,12 +33,20 @@ html, body {
     font-size: 14px;
     font-family: 'Chubbo-Regular', sans-serif;
     font-feature-settings: "ss02" 1; /* Enable stylistic set 2 */
+    color: black; /* Ensure consistent text color */
+    text-decoration: none; /* Remove underline */
+    -webkit-appearance: none; /* Remove iOS-specific styles */
+    appearance: none;
 }
 
 #installButton:hover {
-    background-color: #9315bf; /* New hover background */
-    color: #e5a8db; /* New hover text color */
-    border: 1.5px solid #e5a8db; /* New hover border color */
+    background-color: #9315bf; /* Hover background color */
+    color: #e5a8db; /* Hover text color */
+    border: 1.5px solid #e5a8db; /* Hover border color */
+}
+
+#installButton:visited {
+    color: black; /* Prevent visited color from changing */
 }
 
 /* Main iframe container */
