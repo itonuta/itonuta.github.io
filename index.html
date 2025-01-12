@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>berlino tucano Map</title>
     <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="css/chubbo.css">
     <style>
         html, body {
             margin: 0;
@@ -13,16 +14,17 @@
             width: 100%;
             display: flex;
             flex-direction: column;
+            background-color: #fcbf12; /* Background color */
+            font-family: 'Chubbo-Regular', sans-serif;
         }
 
-        /* Header area for the button */
         .header {
             position: relative;
             height: 50px;
             display: flex;
             align-items: center;
             justify-content: flex-end;
-            background-color: #f9f9f9;
+            background-color: #fcbf12;
             box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
             z-index: 1;
         }
@@ -30,20 +32,20 @@
         #installButton {
             margin-right: 10px;
             padding: 10px 20px;
-            background-color: #007BFF;
-            color: white;
-            border: none;
+            background-color: transparent; /* Transparent button */
+            border: 2px solid black; /* Black outline */
             border-radius: 5px;
             cursor: pointer;
             font-size: 14px;
+            font-family: 'Chubbo-Regular', sans-serif;
+            font-feature-settings: "ss02" 1; /* Enable stylistic set 2 */
             box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
         }
 
         #installButton:hover {
-            background-color: #0056b3;
+            background-color: rgba(0, 0, 0, 0.1); /* Hover effect */
         }
 
-        /* Main content for the iframe */
         .main {
             flex: 1;
         }
@@ -54,7 +56,6 @@
             border: none;
         }
 
-        /* Responsive design */
         @media (max-width: 600px) {
             #installButton {
                 font-size: 12px;
@@ -64,16 +65,12 @@
     </style>
 </head>
 <body>
-    <!-- Header section with the install button -->
     <div class="header">
-        <button id="installButton">Install App</button>
+        <button id="installButton">install the app?</button>
     </div>
 
-    <!-- Main section with the iframe -->
     <div class="main">
-        <iframe 
-            src="https://www.google.com/maps/d/embed?mid=1OMVy2zDtSFa1eChTug6W3M6NXFT1fAY&ehbc=2E312F&noprof=1">
-        </iframe>
+        <iframe src="https://www.google.com/maps/d/embed?mid=1OMVy2zDtSFa1eChTug6W3M6NXFT1fAY&ehbc=2E312F&noprof=1"></iframe>
     </div>
 
     <script src="install.js"></script>
