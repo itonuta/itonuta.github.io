@@ -13,8 +13,13 @@ fetch('places.geojson')
         // Add GeoJSON data to the map
         L.geoJSON(data, {
             onEachFeature: function (feature, layer) {
-                if (feature.properties && feature.properties.name) {
-                    layer.bindPopup(feature.properties.name); // Show name on click
+                if (feature.properties) {
+                    // Combine name and description in the popup
+                    const popupContent = `
+                        <h3>${feature.properties.name || 'No Name'}</h3>
+                        <p>${feature.properties.description || 'No Description'}</p>
+                    `;
+                    layer.bindPopup(popupContent);
                 }
             }
         }).addTo(map);
