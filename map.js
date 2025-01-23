@@ -13,15 +13,17 @@ fetch('places.geojson')
         // Add GeoJSON data to the map
         L.geoJSON(data, {
             onEachFeature: function (feature, layer) {
-                if (feature.properties) {
-                    // Combine name and description in the popup
-                    const popupContent = `
-                        <h3>${feature.properties.name || 'No Name'}</h3>
-                        <p>${feature.properties.description || 'No Description'}</p>
-                    `;
-                    layer.bindPopup(popupContent);
-                }
-            }
-        }).addTo(map);
+                const { name, googleMaps, category } = feature.properties;
+
+                const popupContent = `
+                    <h3>${name}</h3>
+                    <p>Category: ${category}</p>
+                    <p>${googleMaps}</p>
+                `;
+
+        layer.bindPopup(popupContent);
+    }
+}).addTo(map);
+
     })
     .catch(error => console.error('Error loading GeoJSON:', error));
