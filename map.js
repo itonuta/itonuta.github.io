@@ -2,7 +2,7 @@
 const map = L.map('map').setView([52.5200, 13.4050], 12); // Centered on Berlin
 
 // Add Maptiler tiles
-L.tileLayer('https://api.maptiler.com/maps/64eb344a-450d-486c-a0be-412d89b8e70d/{z}/{x}/{y}.png?key=gOESQyM8FmTuc2szi7bs', {
+L.tileLayer('https://api.maptiler.com/maps/64eb344a-450d-486c-a0be-412d89b8e70d/style.json?key=gOESQyM8FmTuc2szi7bs', {
     attribution: '&copy; <a href="https://www.maptiler.com/">Maptiler</a>',
     tileSize: 512,
     zoomOffset: -1,
