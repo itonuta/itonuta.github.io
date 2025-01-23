@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>berlino tucano Map</title>
@@ -15,16 +14,68 @@
     <meta name="apple-mobile-web-app-title" content="berlino tucano">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- Leaflet.js Stylesheet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+        }
+
+        .header {
+            position: relative;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            background-color: #fcbf12;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+        }
+
+        #installButton {
+            margin-right: 10px;
+            padding: 5px 10px;
+            background-color: transparent;
+            border: 1.5px solid black;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            font-family: 'Chubbo-Regular', sans-serif;
+            color: black;
+        }
+
+        #installButton:hover {
+            background-color: #9315bf;
+            color: #e5a8db;
+            border: 1.5px solid #e5a8db;
+        }
+
+        .main {
+            flex: 1;
+        }
+
+        #map {
+            width: 100%;
+            height: calc(100% - 50px); /* Subtract header height */
+        }
+    </style>
 </head>
 <body>
     <div class="header">
         <button id="installButton">install the app?</button>
     </div>
 
-    <div class="main">
-        <iframe src="https://www.google.com/maps/d/embed?mid=1OMVy2zDtSFa1eChTug6W3M6NXFT1fAY&ehbc=2E312F&noprof=1"></iframe>
-    </div>
+    <div id="map" class="main"></div>
 
+    <!-- Leaflet.js Script -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <!-- Your Custom Map Script -->
+    <script src="map.js"></script>
     <script src="install.js"></script>
 </body>
 </html>
