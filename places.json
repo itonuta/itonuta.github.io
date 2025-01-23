@@ -9,8 +9,7 @@
       },
       "properties": {
         "name": "Alpha Nova Kulturwerkstatt & Galerie Futura",
-        "description": "Latitude: 13.45129<br>Longitude: 52.4972<br><a href='https://www.google.com/maps/search/?api=1&query=Alpha+Nova+Kulturwerkstatt+&+Galerie+Futura+Am+Flutgraben+3'>Google Maps Link</a>",
-        "icon": "images/icon-1.png"
+        "description": "Latitude: 13.45129<br>Longitude: 52.4972<br><a href='https://www.google.com/maps/search/?api=1&query=Alpha+Nova+Kulturwerkstatt+&+Galerie+Futura+Am+Flutgraben+3'>Google Maps Link</a>"
       }
     },
     {
@@ -21,8 +20,7 @@
       },
       "properties": {
         "name": "Haus der Wannsee-Konferenz",
-        "description": "Latitude: 13.16635<br>Longitude: 52.43233<br><a href='https://www.google.com/maps/search/?api=1&query=Haus+der+Wannsee-Konferenz+Am+Großen+Wannsee+56'>Google Maps Link</a>",
-        "icon": "images/icon-1.png"
+        "description": "Latitude: 13.16635<br>Longitude: 52.43233<br><a href='https://www.google.com/maps/search/?api=1&query=Haus+der+Wannsee-Konferenz+Am+Großen+Wannsee+56'>Google Maps Link</a>"
       }
     },
     {
@@ -33,8 +31,7 @@
       },
       "properties": {
         "name": "Galerie Weißer Elefant",
-        "description": "Latitude: 13.39622<br>Longitude: 52.5268<br><a href='https://www.google.com/maps/search/?api=1&query=Galerie+Weißer+Elefant+Auguststraße+21'>Google Maps Link</a>",
-        "icon": "images/icon-1.png"
+        "description": "Latitude: 13.39622<br>Longitude: 52.5268<br><a href='https://www.google.com/maps/search/?api=1&query=Galerie+Weißer+Elefant+Auguststraße+21'>Google Maps Link</a>"
       }
     },
     {
@@ -45,8 +42,7 @@
       },
       "properties": {
         "name": "Studio Baustelle",
-        "description": "Latitude: 13.44043<br>Longitude: 52.47846<br><a href='https://www.google.com/maps/search/?api=1&query=Studio+Baustelle+Berthelsdorfer+Straße+11'>Google Maps Link</a>",
-        "icon": "images/icon-1.png"
+        "description": "Latitude: 13.44043<br>Longitude: 52.47846<br><a href='https://www.google.com/maps/search/?api=1&query=Studio+Baustelle+Berthelsdorfer+Straße+11'>Google Maps Link</a>"
       }
     },
     {
@@ -57,8 +53,7 @@
       },
       "properties": {
         "name": "Haus der Kulturen der Welt",
-        "description": "Latitude: 13.36458<br>Longitude: 52.51853<br><a href='https://www.google.com/maps/search/?api=1&query=Haus+der+Kulturen+der+Welt+John-Foster-Dulles-Allee+10'>Google Maps Link</a>",
-        "icon": "images/icon-1.png"
+        "description": "Latitude: 13.36458<br>Longitude: 52.51853<br><a href='https://www.google.com/maps/search/?api=1&query=Haus+der+Kulturen+der+Welt+John-Foster-Dulles-Allee+10'>Google Maps Link</a>"
       }
     }
   ]
