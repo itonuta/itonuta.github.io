@@ -1,9 +1,10 @@
 // Initialize the map
 const map = L.map('map').setView([52.5200, 13.4050], 12); // Centered on Berlin
 
-// Add OpenStreetMap tiles
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+// Add custom watercolor tiles
+L.tileLayer('https://watercolormaps.collection.cooperhewitt.org/tile/watercolor/{z}/{x}/{y}.jpg', {
+    attribution: '&copy; <a href="https://collection.cooperhewitt.org/">Cooper Hewitt Collection</a>',
+    maxZoom: 18 // Ensure the max zoom aligns with the tile provider's limits
 }).addTo(map);
 
 // Define icons for each category using the icons in the 'icons' folder
