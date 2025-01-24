@@ -36,11 +36,11 @@ fetch('places.geojson')
             onEachFeature: function (feature, layer) {
                 // Create the popup content
                 const { name, googleMaps, category } = feature.properties;
-                const popupContent = 
+                const popupContent = `
                     <h3>${name}</h3>
                     <p>Category: ${category}</p>
                     <p>${googleMaps}</p>
-                ;
+                `;
                 layer.bindPopup(popupContent);
             }
         }).addTo(map);
