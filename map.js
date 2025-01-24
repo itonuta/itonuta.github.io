@@ -40,6 +40,20 @@ map.on('locationerror', function (e) {
     alert("Unable to access location: " + e.message);
 });
 
+// Add the Locate Me button
+L.control.locate({
+    position: 'topright', // Position of the button on the map
+    strings: {
+        title: "Locate me" // Tooltip text for the button
+    },
+    flyTo: true, // Automatically pan and zoom to the user's location
+    drawCircle: true, // Show an accuracy circle
+    showPopup: true, // Show a popup with location details
+    locateOptions: {
+        enableHighAccuracy: true // Request high accuracy for location
+    }
+}).addTo(map);
+
 // Load GeoJSON data
 fetch('places.geojson')
     .then(response => response.json())
