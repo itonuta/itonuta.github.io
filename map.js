@@ -1,12 +1,9 @@
 // Initialize the map
 const map = L.map('map').setView([52.5200, 13.4050], 12); // Centered on Berlin
 
-// Add Maptiler tiles
-L.tileLayer('https://api.maptiler.com/maps/64eb344a-450d-486c-a0be-412d89b8e70d/style.json?key=gOESQyM8FmTuc2szi7bs', {
-    attribution: '&copy; <a href="https://www.maptiler.com/">Maptiler</a>',
-    tileSize: 512,
-    zoomOffset: -1,
-    maxZoom: 20
+// Add OpenStreetMap tiles
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
 
 // Define icons for each category using the icons in the 'icons' folder
@@ -39,11 +36,11 @@ fetch('places.geojson')
             onEachFeature: function (feature, layer) {
                 // Create the popup content
                 const { name, googleMaps, category } = feature.properties;
-                const popupContent = `
+                const popupContent = 
                     <h3>${name}</h3>
                     <p>Category: ${category}</p>
                     <p>${googleMaps}</p>
-                `;
+                ;
                 layer.bindPopup(popupContent);
             }
         }).addTo(map);
