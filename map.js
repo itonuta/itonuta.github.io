@@ -1,5 +1,5 @@
 // Initialize the map
-const map = L.map('map').setView([52.5200, 13.4050], 12); // Initially centered on Berlin
+const map = L.map('map').setView([52.5200, 13.4050], 12); // Centered on Berlin
 
 // Add CartoDB Dark Matter tiles
 L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
@@ -22,61 +22,47 @@ const icons = {
     Default: L.icon({ iconUrl: 'icons/marker-icon-grey.png', iconSize: [25, 41], iconAnchor: [12, 41], popupAnchor: [1, -34] }) // Grey as the default marker
 };
 
-// Add the Locate Me button
-L.control.locate({
-    position: 'topright',
-    strings: {
-        title: "Locate me"
-    },
-    flyTo: true,
-    drawCircle: true,
-    showPopup: true,
-    locateOptions: {
-        enableHighAccuracy: true
-    }
-}).addTo(map);
+// Locate the user's position and add a marker
+map.locate({ setView: true, maxZoom: 16 });
 
-// Debugging: Log GeoJSON fetch progress
+map.on('locationfound', function (e) {
+    const radius = e.accuracy / 2; // Accuracy radius in meters
+
+    // Add a marker for the user's location
+    L.marker(e.latlng).addTo(map)
+        .bindPopup(You are within ${Math.round(radius)} meters from this point).openPopup();
+
+    // Add an accuracy circle around the user's location
+    L.circle(e.latlng, radius).addTo(map);
+});
+
+map.on('locationerror', function (e) {
+    alert("Unable to access location: " + e.message);
+});
+
+// Load GeoJSON data
 fetch('places.geojson')
-    .then(response => {
-        console.log('Fetching GeoJSON:', response);
-        return response.json();
-    })
+    .then(response => response.json())
     .then(data => {
-        console.log('Loaded GeoJSON data:', data);
-
         // Add GeoJSON data to the map
         L.geoJSON(data, {
             pointToLayer: function (feature, latlng) {
+                // Assign an icon based on the category
                 const category = feature.properties.category || 'Default';
                 const icon = icons[category] || icons.Default;
 
-                console.log(`Adding marker: ${feature.properties.name}, Category: ${category}`);
                 return L.marker(latlng, { icon: icon });
             },
             onEachFeature: function (feature, layer) {
+                // Create the popup content
                 const { name, googleMaps, category } = feature.properties;
-                const popupContent = `
+                const popupContent = 
                     <h3>${name}</h3>
                     <p>Category: ${category}</p>
                     <p>${googleMaps}</p>
-                `;
+                ;
                 layer.bindPopup(popupContent);
             }
         }).addTo(map);
     })
     .catch(error => console.error('Error loading GeoJSON:', error));
-
-// Handle location found
-map.on('locationfound', function (e) {
-    const radius = e.accuracy / 2;
-
-    L.marker(e.latlng).addTo(map)
-        .bindPopup(`You are within ${Math.round(radius)} meters from this point`).openPopup();
-    L.circle(e.latlng, radius).addTo(map);
-});
-
-// Handle location error
-map.on('locationerror', function (e) {
-    alert("Unable to access location: " + e.message);
-});
