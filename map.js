@@ -30,7 +30,7 @@ map.on('locationfound', function (e) {
 
     // Add a marker for the user's location
     L.marker(e.latlng).addTo(map)
-        .bindPopup(You are within ${Math.round(radius)} meters from this point).openPopup();
+        .bindPopup(`You are within ${Math.round(radius)} meters from this point`).openPopup();
 
     // Add an accuracy circle around the user's location
     L.circle(e.latlng, radius).addTo(map);
@@ -56,11 +56,11 @@ fetch('places.geojson')
             onEachFeature: function (feature, layer) {
                 // Create the popup content
                 const { name, googleMaps, category } = feature.properties;
-                const popupContent = 
+                const popupContent = `
                     <h3>${name}</h3>
                     <p>Category: ${category}</p>
                     <p>${googleMaps}</p>
-                ;
+                `;
                 layer.bindPopup(popupContent);
             }
         }).addTo(map);
