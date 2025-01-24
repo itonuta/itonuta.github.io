@@ -8,6 +8,19 @@ L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
     maxZoom: 19
 }).addTo(map);
 
+// Add LocateControl
+L.control.locate({
+    position: 'topright', // Position of the button
+    flyTo: true, // Animates the map to the user's location
+    setView: 'once', // Centers the map on the first location found
+    keepCurrentZoomLevel: false, // Adjusts zoom level to fit user location
+    showPopup: true, // Displays a popup with location info
+    strings: {
+        title: "Show me where I am", // Tooltip text for the button
+        popup: "You are within {distance} meters from this point." // Popup text
+    }
+}).addTo(map);
+
 // Define icons for each category using the icons in the 'icons' folder
 const icons = {
     Fastfood: L.icon({ iconUrl: 'icons/marker-icon-red.png', iconSize: [25, 41], iconAnchor: [12, 41], popupAnchor: [1, -34] }),
