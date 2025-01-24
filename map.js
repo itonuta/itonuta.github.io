@@ -1,5 +1,5 @@
 // Initialize the map
-const map = L.map('map').setView([52.5200, 13.4050], 12); // Centered on Berlin
+const map = L.map('map').setView([52.5200, 13.4050], 12); // Initially centered on Berlin
 
 // Add CartoDB Dark Matter tiles
 L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
@@ -22,9 +22,21 @@ const icons = {
     Default: L.icon({ iconUrl: 'icons/marker-icon-grey.png', iconSize: [25, 41], iconAnchor: [12, 41], popupAnchor: [1, -34] }) // Grey as the default marker
 };
 
-// Locate the user's position and add a marker
-map.locate({ setView: true, maxZoom: 16 });
+// Add the Locate Me button
+L.control.locate({
+    position: 'topright', // Position of the button on the map
+    strings: {
+        title: "Locate me" // Tooltip text for the button
+    },
+    flyTo: true, // Only pan to the user's location when the button is clicked
+    drawCircle: true, // Show an accuracy circle
+    showPopup: true, // Show a popup with location details
+    locateOptions: {
+        enableHighAccuracy: true // Request high accuracy for location
+    }
+}).addTo(map);
 
+// Handle user location when found
 map.on('locationfound', function (e) {
     const radius = e.accuracy / 2; // Accuracy radius in meters
 
@@ -36,23 +48,10 @@ map.on('locationfound', function (e) {
     L.circle(e.latlng, radius).addTo(map);
 });
 
+// Handle location errors
 map.on('locationerror', function (e) {
     alert("Unable to access location: " + e.message);
 });
-
-// Add the Locate Me button
-L.control.locate({
-    position: 'topright', // Position of the button on the map
-    strings: {
-        title: "Locate me" // Tooltip text for the button
-    },
-    flyTo: true, // Automatically pan and zoom to the user's location
-    drawCircle: true, // Show an accuracy circle
-    showPopup: true, // Show a popup with location details
-    locateOptions: {
-        enableHighAccuracy: true // Request high accuracy for location
-    }
-}).addTo(map);
 
 // Load GeoJSON data
 fetch('places.geojson')
