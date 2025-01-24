@@ -1,10 +1,11 @@
 // Initialize the map
 const map = L.map('map').setView([52.5200, 13.4050], 12); // Centered on Berlin
 
-// Add Stadia Maps Stamen Toner Lite tiles
-L.tileLayer('https://tiles-eu.stadiamaps.com/tiles/stamen_toner_lite/{z}/{x}/{y}{r}.png', {
-    attribution: '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a> &copy; <a href="http://stamen.com">Stamen Design</a>',
-    maxZoom: 20 // Ensure the max zoom level matches the tile provider's capabilities
+// Add CartoDB Dark Matter tiles
+L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/">CARTO</a>',
+    subdomains: 'abcd',
+    maxZoom: 19
 }).addTo(map);
 
 // Define icons for each category using the icons in the 'icons' folder
