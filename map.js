@@ -22,25 +22,6 @@ const icons = {
     Default: L.icon({ iconUrl: 'icons/marker-icon-grey.png', iconSize: [25, 41], iconAnchor: [12, 41], popupAnchor: [1, -34] }) // Grey as the default marker
 };
 
-// Locate the user's position and add a marker without centering the map
-map.on('locationfound', function (e) {
-    const radius = e.accuracy / 2; // Accuracy radius in meters
-
-    // Add a marker for the user's location
-    L.marker(e.latlng).addTo(map)
-        .bindPopup(`You are within ${Math.round(radius)} meters from this point`).openPopup();
-
-    // Add an accuracy circle around the user's location
-    L.circle(e.latlng, radius).addTo(map);
-});
-
-map.on('locationerror', function (e) {
-    alert("Unable to access location: " + e.message);
-});
-
-// Manually trigger location without recentering
-map.locate({ setView: false, maxZoom: 16 });
-
 // Load GeoJSON data
 fetch('places.geojson')
     .then(response => response.json())
