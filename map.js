@@ -1,10 +1,10 @@
 // Initialize the map
 const map = L.map('map').setView([52.5200, 13.4050], 12); // Centered on Berlin
 
-// Add custom watercolor tiles
-L.tileLayer('https://watercolormaps.collection.cooperhewitt.org/tile/watercolor/{z}/{x}/{y}.jpg', {
-    attribution: '&copy; <a href="https://collection.cooperhewitt.org/">Cooper Hewitt Collection</a>',
-    maxZoom: 18 // Ensure the max zoom aligns with the tile provider's limits
+// Add Stadia Maps Stamen Toner Lite tiles
+L.tileLayer('https://tiles-eu.stadiamaps.com/tiles/stamen_toner_lite/{z}/{x}/{y}{r}.png', {
+    attribution: '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a> &copy; <a href="http://stamen.com">Stamen Design</a>',
+    maxZoom: 20 // Ensure the max zoom level matches the tile provider's capabilities
 }).addTo(map);
 
 // Define icons for each category using the icons in the 'icons' folder
