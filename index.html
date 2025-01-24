@@ -3,85 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>berlino tucano Map</title>
-    <link rel="manifest" href="manifest.json">
-    <link rel="stylesheet" href="css/chubbo.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="icon" href="icons/favicon-16x16.png" sizes="16x16" type="image/png">
-    <link rel="icon" href="icons/favicon-32x32.png" sizes="32x32" type="image/png">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
-    <meta name="apple-mobile-web-app-title" content="berlino tucano">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-
-<!-- Leaflet.js Core -->
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-
-<!-- Locally Hosted Leaflet-LocateControl -->
-<link rel="stylesheet" href="locate/L.Control.Locate.min.css" />
-<script src="locate/L.Control.Locate.min.js"></script>
-
-
+    <title>LocateControl Test</title>
+    <!-- Leaflet.js Core -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <!-- Locally Hosted Leaflet-LocateControl -->
+    <link rel="stylesheet" href="locate/L.Control.Locate.min.css" />
+    <script src="locate/L.Control.Locate.min.js"></script>
     <style>
-        html, body {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            width: 100%;
-        }
-
-        .header {
-            position: relative;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            background-color: #fcbf12;
-            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-            z-index: 1;
-        }
-
-        #installButton {
-            margin-right: 10px;
-            padding: 5px 10px;
-            background-color: transparent;
-            border: 1.5px solid black;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 14px;
-            font-family: 'Chubbo-Regular', sans-serif;
-            color: black;
-        }
-
-        #installButton:hover {
-            background-color: #9315bf;
-            color: #e5a8db;
-            border: 1.5px solid #e5a8db;
-        }
-
-        .main {
-            flex: 1;
-        }
-
         #map {
-            width: 100%;
-            height: calc(100% - 50px); /* Subtract header height */
+            height: 100vh;
         }
     </style>
 </head>
 <body>
-    <div class="header">
-        <button id="installButton">install the app?</button>
-    </div>
+    <div id="map"></div>
+    <script>
+        // Initialize the map
+        const map = L.map('map').setView([52.5200, 13.4050], 12);
 
-    <div id="map" class="main"></div>
+        // Add a simple tile layer
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
 
-    <!-- Leaflet.js Script -->
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    <!-- Your Custom Map Script -->
-    <script src="map.js"></script>
-    <script src="install.js"></script>
+        // Add LocateControl
+        L.control.locate({
+            position: 'topright',
+            strings: {
+                title: "Show me where I am"
+            }
+        }).addTo(map);
+    </script>
 </body>
 </html>
