@@ -63,12 +63,12 @@ html, body {
 .leaflet-control-attribution div,
 .leaflet-control-attribution a {
     background-color: #4A1B64 !important;
-    color: #2F004D; /* Link color */
+    color: #9A00FF; /* Link color */
     text-decoration: none; /* Remove underline from links */
 }
 
 .leaflet-control-attribution a:hover {
-    color: #00CC66; /* Slightly darker green on hover */
+    color: #00FF82; /* Green on hover */
     text-decoration: none; /* Remove underline from links */
 }
 
