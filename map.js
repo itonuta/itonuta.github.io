@@ -89,3 +89,12 @@ fetch('places.geojson')
         });
     })
     .catch(error => console.error('Error loading GeoJSON:', error));
+
+// Remove the border of the LocateControl button via JavaScript
+document.addEventListener('DOMContentLoaded', () => {
+    const locateControlDiv = document.querySelector('.leaflet-control-locate.leaflet-bar.leaflet-control');
+    if (locateControlDiv) {
+        locateControlDiv.style.border = 'none';
+        locateControlDiv.style.boxShadow = 'none';
+    }
+});
