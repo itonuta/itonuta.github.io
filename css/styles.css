@@ -49,6 +49,23 @@ html, body {
     color: black; /* Prevent visited color from changing */
 }
 
+/* Style the LocateControl button */
+.leaflet-control-locate a {
+    background-color: #00FF82 !important; /* Green background */
+    color: black!important; /* Keep the icon white */
+    width: 50px; /* Make it a circle */
+    height: 50px; /* Make it a circle */
+    display: flex; /* Center the icon */
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%; /* Make it circular */
+    transition: transform 0.2s ease; /* Add hover effect */
+}
+
+/* Hover effect for the LocateControl button */
+.leaflet-control-locate a:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
+}
 /* Style the attribution control */
 .leaflet-control-attribution {
     background-color: #4A1B64 !important;
