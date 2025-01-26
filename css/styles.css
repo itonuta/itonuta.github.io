@@ -63,21 +63,18 @@ html, body {
     padding: 0 !important; /* Remove any internal padding */
     line-height: 1 !important; /* Ensure no extra height */
     overflow: hidden !important; /* Ensure child elements fit inside */
+    border: none !important; /* Remove border */
+    box-shadow: none !important; /* Remove shadow */
 }
 
-/* Style child elements inside the LocateControl button */
-.leaflet-control-locate a > * {
-    display: flex; /* Ensure children align properly */
-    justify-content: center;
-    align-items: center;
-    width: 100%; /* Make sure child spans fit the button */
-    height: 100%;
+/* Ensure focus/active states don’t add outlines */
+.leaflet-control-locate a:focus,
+.leaflet-control-locate a:active {
+    outline: none !important;
+    border: none !important;
+    box-shadow: none !important;
 }
 
-/* Hover effect for the LocateControl button */
-.leaflet-control-locate a:hover {
-    transform: scale(1.1) !important; /* Slight zoom on hover */
-}
 
 /* Style the attribution control */
 .leaflet-control-attribution {
