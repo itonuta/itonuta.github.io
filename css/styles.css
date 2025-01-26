@@ -53,13 +53,15 @@ html, body {
 .leaflet-control-locate a {
     background-color: #00FF82 !important; /* Green background */
     color: black!important; /* Keep the icon white */
-    width: 50px; /* Make it a circle */
-    height: 50px; /* Make it a circle */
+    width: 50px !important; /* Ensure the width is applied */
+    height: 50px !important; /* Ensure the height is applied */
     display: flex; /* Center the icon */
     justify-content: center;
     align-items: center;
     border-radius: 50%; /* Make it circular */
     transition: transform 0.2s ease; /* Add hover effect */
+    padding: 0 !important; /* Remove padding that may cause squareness */
+    line-height: 1 !important; /* Ensure no extra line height */
 }
 
 /* Hover effect for the LocateControl button */
