@@ -51,16 +51,15 @@ html, body {
 
 /* Style the attribution control */
 .leaflet-control-attribution {
-    background-color: rgba(0, 0, 0, 0.6); /* Dark semi-transparent background */
-    color: #ffffff; /* White text color */
+    background-color: rgba(0, 0, 0, 0); /* Dark semi-transparent background */
+    color: #4A1B64; /* White text color */
     border: none; /* Remove border */
-    font-size: 12px; /* Adjust font size */
-    padding: 5px 10px; /* Add some padding */
+    font-size: 8px; /* Adjust font size */
     border-radius: 5px; /* Round corners */
 }
 
 .leaflet-control-attribution a {
-    color: #00FF82; /* Green link color */
+    color: #2F004D; /* Green link color */
     text-decoration: none; /* Remove underline from links */
 }
 
