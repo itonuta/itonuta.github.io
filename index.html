@@ -23,59 +23,121 @@
     <link rel="stylesheet" href="locate/L.Control.Locate.min.css" />
     <script src="locate/L.Control.Locate.min.js"></script>
 
-    <style>
-        html, body {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            width: 100%;
-        }
+<style>
+    html, body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        width: 100%;
+    }
 
-        .header {
-            position: relative;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            background-color: #fcbf12;
-            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-            z-index: 1;
-        }
+    .header {
+        position: relative;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        background-color: #fcbf12;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+        z-index: 1;
+    }
 
-        #installButton {
-            margin-right: 10px;
-            padding: 5px 10px;
-            background-color: transparent;
-            border: 1.5px solid black;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 14px;
-            font-family: 'Chubbo-Regular', sans-serif;
-            color: black;
-        }
+    #installButton {
+        margin-right: 10px;
+        padding: 5px 10px;
+        background-color: transparent;
+        border: 1.5px solid black;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 14px;
+        font-family: 'Chubbo-Regular', sans-serif;
+        color: black;
+    }
 
-        #installButton:hover {
-            background-color: #9315bf;
-            color: #e5a8db;
-            border: 1.5px solid #e5a8db;
-        }
+    #installButton:hover {
+        background-color: #9315bf;
+        color: #e5a8db;
+        border: 1.5px solid #e5a8db;
+    }
 
-        .main {
-            flex: 1;
-        }
+    .main {
+        flex: 1;
+    }
 
-        #map {
-            width: 100%;
-            height: calc(100% - 50px); /* Subtract header height */
-        }
-    </style>
+    #map {
+        width: 100%;
+        height: calc(100% - 50px); /* Subtract header height */
+    }
+
+    /* Floating Filter Button */
+    #filter-button {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        background-color: #00FF82; /* Green */
+        color: white;
+        border: none;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+        font-weight: bold;
+        cursor: pointer;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+        z-index: 1000; /* Ensure it stays above the map */
+        transition: transform 0.2s ease;
+    }
+
+    #filter-button:hover {
+        transform: scale(1.1); /* Slight zoom effect on hover */
+    }
+
+    /* Hidden Dropdown Menu */
+    #filter-menu {
+        position: absolute;
+        bottom: 80px; /* Above the button */
+        right: 20px;
+        background: white;
+        padding: 10px;
+        border-radius: 8px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        display: none; /* Initially hidden */
+        z-index: 1000;
+    }
+
+    #filter-menu label {
+        display: block;
+        margin-bottom: 5px;
+        font-size: 14px;
+    }
+</style>
 </head>
 <body>
     <div class="header">
         <button id="installButton">install the app?</button>
     </div>
 
+    <!-- Map Container -->
     <div id="map" class="main"></div>
+
+    <!-- Floating Filter Button -->
+    <div id="filter-button" onclick="toggleFilterMenu()">&#9881;</div> <!-- ⚙ Unicode Gear Icon -->
+
+    <!-- Hidden Dropdown Menu -->
+    <div id="filter-menu">
+        <label><input type="checkbox" class="category-filter" value="Fastfood" checked> Fastfood</label>
+        <label><input type="checkbox" class="category-filter" value="Secondhand" checked> Secondhand</label>
+        <label><input type="checkbox" class="category-filter" value="Restaurant" checked> Restaurant</label>
+        <label><input type="checkbox" class="category-filter" value="Bar" checked> Bar</label>
+        <label><input type="checkbox" class="category-filter" value="Pub" checked> Pub</label>
+        <label><input type="checkbox" class="category-filter" value="Club" checked> Club</label>
+        <label><input type="checkbox" class="category-filter" value="Cafe" checked> Cafe</label>
+        <label><input type="checkbox" class="category-filter" value="Other" checked> Other</label>
+        <label><input type="checkbox" class="category-filter" value="Museum or gallery" checked> Museum or Gallery</label>
+    </div>
 
     <!-- Your Custom Map Script -->
     <script src="map.js"></script>
