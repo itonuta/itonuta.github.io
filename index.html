@@ -74,8 +74,8 @@
         position: absolute;
         bottom: 20px;
         right: 20px;
-        width: 50px;
-        height: 50px;
+        width: 70px;
+        height: 70px;
         background-color: #00FF82; /* Green */
         color: white;
         border: none;
@@ -86,13 +86,12 @@
         font-size: 24px;
         font-weight: bold;
         cursor: pointer;
-        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
         z-index: 1000; /* Ensure it stays above the map */
         transition: transform 0.2s ease;
     }
 
     #filter-button:hover {
-        transform: scale(1.1); /* Slight zoom effect on hover */
+        transform: scale(1.3); /* Slight zoom effect on hover */
     }
 
     /* Hidden Dropdown Menu */
@@ -124,19 +123,22 @@
     <div id="map" class="main"></div>
 
     <!-- Floating Filter Button -->
-    <div id="filter-button" onclick="toggleFilterMenu()">&#9881;</div> <!-- ⚙ Unicode Gear Icon -->
+    <div id="filter-button" onclick="toggleFilterMenu()">
+    <img src="icons/filter.svg" alt="Filter" style="width: 50%; height: 50%;" />
+</div>
+
 
     <!-- Hidden Dropdown Menu -->
     <div id="filter-menu">
-        <label><input type="checkbox" class="category-filter" value="Fastfood" checked> Fastfood</label>
-        <label><input type="checkbox" class="category-filter" value="Secondhand" checked> Secondhand</label>
-        <label><input type="checkbox" class="category-filter" value="Restaurant" checked> Restaurant</label>
-        <label><input type="checkbox" class="category-filter" value="Bar" checked> Bar</label>
-        <label><input type="checkbox" class="category-filter" value="Pub" checked> Pub</label>
-        <label><input type="checkbox" class="category-filter" value="Club" checked> Club</label>
-        <label><input type="checkbox" class="category-filter" value="Cafe" checked> Cafe</label>
-        <label><input type="checkbox" class="category-filter" value="Other" checked> Other</label>
-        <label><input type="checkbox" class="category-filter" value="Museum or gallery" checked> Museum or Gallery</label>
+        <label><input type="checkbox" class="category-filter" value="Fastfood" checked> fastfood</label>
+        <label><input type="checkbox" class="category-filter" value="Secondhand" checked> secondhand</label>
+        <label><input type="checkbox" class="category-filter" value="Restaurant" checked> restaurant</label>
+        <label><input type="checkbox" class="category-filter" value="Bar" checked> bar</label>
+        <label><input type="checkbox" class="category-filter" value="Pub" checked> pub</label>
+        <label><input type="checkbox" class="category-filter" value="Club" checked> club</label>
+        <label><input type="checkbox" class="category-filter" value="Cafe" checked> cafe</label>
+        <label><input type="checkbox" class="category-filter" value="Other" checked> other</label>
+        <label><input type="checkbox" class="category-filter" value="Museum or gallery" checked> museum or gallery</label>
     </div>
 
     <!-- Your Custom Map Script -->
