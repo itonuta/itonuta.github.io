@@ -51,8 +51,8 @@ html, body {
 
 /* Style the attribution control */
 .leaflet-control-attribution {
-    background-color: transparent !important; /* Ensure full transparency */
-    color: #4A1B64; /* Text color */
+    background-color: #4A1B64 !important;
+    color: #9A00FF; /* Text color */
     border: none !important; /* Remove border */
     font-size: 10px; /* Adjust font size */
     box-shadow: none !important; /* Ensure no shadow */
@@ -62,7 +62,7 @@ html, body {
 .leaflet-control-attribution span,
 .leaflet-control-attribution div,
 .leaflet-control-attribution a {
-    background-color: transparent !important; /* Ensure no background color */
+    background-color: #4A1B64 !important;
     color: #2F004D; /* Link color */
     text-decoration: none; /* Remove underline from links */
 }
