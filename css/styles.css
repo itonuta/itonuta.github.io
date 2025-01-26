@@ -52,22 +52,33 @@ html, body {
 /* Style the LocateControl button */
 .leaflet-control-locate a {
     background-color: #00FF82 !important; /* Green background */
-    color: black!important; /* Keep the icon white */
-    width: 50px !important; /* Ensure the width is applied */
-    height: 50px !important; /* Ensure the height is applied */
-    display: flex; /* Center the icon */
+    color: black !important; /* Icon color */
+    width: 50px !important; /* Circular size */
+    height: 50px !important; /* Circular size */
+    display: flex !important; /* Center the content */
+    justify-content: center !important;
+    align-items: center !important;
+    border-radius: 50% !important; /* Make it circular */
+    transition: transform 0.2s ease; /* Add hover effect */
+    padding: 0 !important; /* Remove any internal padding */
+    line-height: 1 !important; /* Ensure no extra height */
+    overflow: hidden !important; /* Ensure child elements fit inside */
+}
+
+/* Style child elements inside the LocateControl button */
+.leaflet-control-locate a > * {
+    display: flex; /* Ensure children align properly */
     justify-content: center;
     align-items: center;
-    border-radius: 50%; /* Make it circular */
-    transition: transform 0.2s ease; /* Add hover effect */
-    padding: 0 !important; /* Remove padding that may cause squareness */
-    line-height: 1 !important; /* Ensure no extra line height */
+    width: 100%; /* Make sure child spans fit the button */
+    height: 100%;
 }
 
 /* Hover effect for the LocateControl button */
 .leaflet-control-locate a:hover {
-    transform: scale(1.1); /* Slight zoom on hover */
+    transform: scale(1.1) !important; /* Slight zoom on hover */
 }
+
 /* Style the attribution control */
 .leaflet-control-attribution {
     background-color: #4A1B64 !important;
