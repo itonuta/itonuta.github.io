@@ -51,14 +51,19 @@ html, body {
 
 /* Style the attribution control */
 .leaflet-control-attribution {
-    background-color: rgba(0, 0, 0, 0); /* Dark semi-transparent background */
+    background-color: transparent !important; /* Ensure full transparency */
     color: #4A1B64; /* Text color */
-    border: none; /* Remove border */
+    border: none !important; /* Remove border */
     font-size: 10px; /* Adjust font size */
+    box-shadow: none !important; /* Ensure no shadow */
 }
 
+/* Ensure internal elements also have transparent background */
+.leaflet-control-attribution span,
+.leaflet-control-attribution div,
 .leaflet-control-attribution a {
-    color: #2F004D; /* Green link color */
+    background-color: transparent !important; /* Ensure no background color */
+    color: #2F004D; /* Link color */
     text-decoration: none; /* Remove underline from links */
 }
 
@@ -66,6 +71,7 @@ html, body {
     color: #00CC66; /* Slightly darker green on hover */
     text-decoration: none; /* Remove underline from links */
 }
+
 
 /* Main iframe container */
 .main {
