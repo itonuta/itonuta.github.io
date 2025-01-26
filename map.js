@@ -1,11 +1,10 @@
 // Initialize the map
 const map = L.map('map').setView([52.5200, 13.4050], 12); // Centered on Berlin
 
-// Add CartoDB Dark Matter tiles
-L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/">CARTO</a>',
-    subdomains: 'abcd',
-    maxZoom: 19
+// Add Jawg.io tiles
+L.tileLayer('https://tile.jawg.io/7874eeee-4a83-4ea5-be85-22d11c74e92f/{z}/{x}/{y}{r}.png?access-token=pvUBUhZkXVnDBUQF9HFKGHvhdn3YrgDr4bIeyxrESzyfGpyRCsL0LFgmD7RO43LQ', {
+    attribution: '<a href="https://www.jawg.io?utm_medium=map&utm_source=attribution" target="_blank">&copy; Jawg</a> - <a href="https://www.openstreetmap.org?utm_medium=map-attribution&utm_source=jawg" target="_blank">&copy; OpenStreetMap</a> contributors',
+    maxZoom: 19 // Ensure max zoom matches the provider's capabilities
 }).addTo(map);
 
 // Add LocateControl
