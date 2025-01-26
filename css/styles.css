@@ -67,8 +67,8 @@ html, body {
     box-shadow: none !important; /* Remove shadow */
 }
 
-/* Remove border from the LocateControl button */
-.leaflet-touch .leaflet-bar a {
+/* Ensure the border is removed with higher specificity */
+.leaflet-touch .leaflet-bar.leaflet-control-locate a {
     border: none !important; /* Remove the border */
     background-clip: padding-box !important; /* Retain proper background clipping */
 }
