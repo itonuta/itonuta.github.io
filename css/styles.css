@@ -49,6 +49,25 @@ html, body {
     color: black; /* Prevent visited color from changing */
 }
 
+/* Style the attribution control */
+.leaflet-control-attribution {
+    background-color: rgba(0, 0, 0, 0.6); /* Dark semi-transparent background */
+    color: #ffffff; /* White text color */
+    border: none; /* Remove border */
+    font-size: 12px; /* Adjust font size */
+    padding: 5px 10px; /* Add some padding */
+    border-radius: 5px; /* Round corners */
+}
+
+.leaflet-control-attribution a {
+    color: #00FF82; /* Green link color */
+    text-decoration: none; /* Remove underline from links */
+}
+
+.leaflet-control-attribution a:hover {
+    color: #00CC66; /* Slightly darker green on hover */
+}
+
 /* Main iframe container */
 .main {
     flex: 1;
