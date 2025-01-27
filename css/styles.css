@@ -62,7 +62,6 @@ html, body {
     border: 2px solid #9B00FF; /* Add a 2px purple border */
     border-radius: 0; /* Remove rounding for inner buttons */
     box-sizing: border-box; /* Ensure padding and border are included in the width/height */
-    box-shadow: none; /* Remove shadows from individual buttons */
 }
 
 /* Remove the border between buttons */
@@ -80,29 +79,13 @@ html, body {
 .leaflet-touch .leaflet-bar a:last-child {
     border-bottom-left-radius: 19px; /* Bottom-left corner */
     border-bottom-right-radius: 19px; /* Bottom-right corner */
-    margin-bottom: -2px; /* Adjust the extra space at the bottom caused by border */
 }
 
 /* Remove grey border around the zoom bar */
 .leaflet-touch .leaflet-bar {
     border: none !important; /* Remove grey outer border */
     box-shadow: none !important; /* Remove any shadow */
-    padding: 0 !important; /* Remove any padding that could cause issues */
-    margin: 0 !important; /* Remove outer margins */
 }
-
-/* Fix for any rendering inconsistencies at the bottom */
-.leaflet-touch .leaflet-bar a:last-child::after {
-    content: '';
-    display: block;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 2px; /* Match the border width */
-    background-color: #2F004D; /* Match background color */
-}
-
 
 
 /* Style the LocateControl button */
