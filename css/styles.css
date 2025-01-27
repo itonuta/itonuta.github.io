@@ -62,6 +62,8 @@ html, body {
     border: 2px solid #9B00FF; /* Add a 2px purple border */
     border-radius: 0; /* Remove rounding for inner buttons */
     box-sizing: border-box; /* Ensure padding and border are included in the width/height */
+    margin: 0; /* Remove margins */
+    padding: 0; /* Remove padding */
     box-shadow: none; /* Remove shadows from individual buttons */
 }
 
@@ -80,12 +82,18 @@ html, body {
 .leaflet-touch .leaflet-bar a:last-child {
     border-bottom-left-radius: 19px; /* Bottom-left corner */
     border-bottom-right-radius: 19px; /* Bottom-right corner */
+    margin-bottom: -2px; /* Adjust for border width */
+    position: relative;
+    z-index: 1; /* Ensure it's above any parent effects */
 }
 
 /* Remove grey border around the zoom bar */
 .leaflet-touch .leaflet-bar {
     border: none !important; /* Remove grey outer border */
     box-shadow: none !important; /* Remove any shadow */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+    background: transparent; /* Ensure no background from parent */
 }
 
 
