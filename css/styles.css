@@ -65,7 +65,7 @@ html, body {
     height: 100vh; /* Fullscreen height */
     background-color: #00FF82; /* Keep the green color */
     border: none; /* Remove borders during expansion */
-    border-radius: 0%; /* Optional: Make it square if desired */
+    border-radius: 50%; /* Optional: Make it square if desired */
     z-index: 2000; /* Ensure it covers all elements */
     transition: width 1s ease-in-out, height 1s ease-in-out; /* Smooth expansion animation */
 }
