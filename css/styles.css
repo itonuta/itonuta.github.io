@@ -10,52 +10,12 @@ html, body {
     font-family: 'Chubbo-Regular', sans-serif;
 }
 
-/* Header styles */
-.header {
-    position: relative;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    background-color: #fcbf12;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-    z-index: 1;
-}
-
-/* Button styles */
-#installButton {
-    margin-right: 10px;
-    padding: 5px 10px;
-    background-color: transparent; /* Transparent button */
-    border: 1.5px solid black; /* Black outline */
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 14px;
-    font-family: 'Chubbo-Regular', sans-serif;
-    font-feature-settings: "ss02" 1; /* Enable stylistic set 2 */
-    color: black; /* Ensure consistent text color */
-    text-decoration: none; /* Remove underline */
-    -webkit-appearance: none; /* Remove iOS-specific styles */
-    appearance: none;
-}
-
-#installButton:hover {
-    background-color: #9315bf; /* Hover background color */
-    color: #e5a8db; /* Hover text color */
-    border: 1.5px solid #e5a8db; /* Hover border color */
-}
-
-#installButton:visited {
-    color: black; /* Prevent visited color from changing */
-}
-
 /* Remove grey border around the zoom bar */
 .leaflet-touch .leaflet-bar {
     border: none !important; /* Remove grey outer border */
     box-shadow: none !important; /* Remove any shadow */
     gap: 8px !important; /* Ensure spacing between buttons */
 }
-
 
 /* Style the LocateControl button */
 .leaflet-control-locate a {
@@ -89,7 +49,6 @@ html, body {
     box-shadow: none !important;
 }
 
-
 /* Style the attribution control */
 .leaflet-control-attribution {
     background-color: #4A1B64 !important;
@@ -111,18 +70,6 @@ html, body {
 .leaflet-control-attribution a:hover {
     color: #00FF82; /* Green on hover */
     text-decoration: none; /* Remove underline from links */
-}
-
-
-/* Main iframe container */
-.main {
-    flex: 1;
-}
-
-iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
 }
 
 /* Responsive styles for smaller screens */
