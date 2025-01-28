@@ -73,6 +73,7 @@ html, body {
 /* Active state for the filter button (when the menu is open) */
 #filter-button.active {
     outline: 10px solid #00FF82; /* Green border outside the button */
+    outline-offset: -3px; /* Pull the outline closer, overlapping the button */
 }
 
 /* Hidden Dropdown Menu */
