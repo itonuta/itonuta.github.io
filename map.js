@@ -39,13 +39,18 @@ const icons = {
 
 // Toggle filter menu visibility
 function toggleFilterMenu() {
-    const menu = document.getElementById('filter-menu');
-    if (menu.style.display === 'block') {
-        menu.style.display = 'none';
+    const filterButton = document.getElementById('filter-button');
+    const filterMenu = document.getElementById('filter-menu');
+
+    if (filterMenu.style.display === 'block') {
+        filterMenu.style.display = 'none'; // Hide the menu
+        filterButton.classList.remove('active'); // Remove active class
     } else {
-        menu.style.display = 'block';
+        filterMenu.style.display = 'block'; // Show the menu
+        filterButton.classList.add('active'); // Add active class
     }
 }
+
 
 // Create a layer group to manage markers
 const markerLayer = L.layerGroup().addTo(map);
