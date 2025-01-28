@@ -49,35 +49,12 @@ html, body {
     color: black; /* Prevent visited color from changing */
 }
 
-/* General styling for leaflet zoom control buttons */
-.leaflet-bar a {
-    background-color: #2F004D !important; /* Dark purple background */
-    width: 35px !important; /* Button width */
-    height: 35px !important; /* Button height */
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    text-align: center !important;
-    text-decoration: none !important; /* Remove underline */
-    border: 2px solid #9B00FF !important; /* Purple border */
-    border-radius: 50% !important; /* Make it circular */
-    margin-bottom: 8px !important; /* Ensure spacing between buttons */
-}
-
-/* Ensure SVG icons scale properly inside buttons */
-.leaflet-bar a svg {
-    width: 18px !important;  /* Adjust size as needed */
-    height: 18px !important;
-    fill: #9B00FF !important; /* Set SVG color */
-}
-
 /* Remove grey border around the zoom bar */
 .leaflet-touch .leaflet-bar {
     border: none !important; /* Remove grey outer border */
     box-shadow: none !important; /* Remove any shadow */
     gap: 8px !important; /* Ensure spacing between buttons */
 }
-
 
 
 /* Style the LocateControl button */

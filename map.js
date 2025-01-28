@@ -1,5 +1,8 @@
 // Initialize the map
-const map = L.map('map').setView([52.5200, 13.4050], 12); // Centered on Berlin
+const map = L.map('map', {
+    zoomControl: false // Disables zoom buttons
+}).setView([52.5200, 13.4050], 12);
+ // Centered on Berlin
 
 // Add Jawg.io tiles
 L.tileLayer('https://tile.jawg.io/fd663c4b-f13d-4782-b03f-98a43b3dec72/{z}/{x}/{y}{r}.png?access-token=pvUBUhZkXVnDBUQF9HFKGHvhdn3YrgDr4bIeyxrESzyfGpyRCsL0LFgmD7RO43LQ', {
@@ -19,22 +22,6 @@ L.control.locate({
         popup: "You are within {distance} meters from this point." // Popup text
     }
 }).addTo(map);
-
-// Add Zoom Control
-L.control.zoom({
-    position: "topleft"
-}).addTo(map);
-
-// Replace the default zoom button icons with inline SVG
-document.querySelector(".leaflet-control-zoom-in").innerHTML =
-    `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18">
-        <path d="M12 5v14m-7-7h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>`;
-
-document.querySelector(".leaflet-control-zoom-out").innerHTML =
-    `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18">
-        <path d="M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>`;
 
 // Define icons for each category using the icons in the 'icons' folder
 const icons = {
