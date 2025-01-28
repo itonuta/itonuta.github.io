@@ -61,6 +61,8 @@ html, body {
     text-decoration: none !important; /* Remove underline */
     border: 2px solid #9B00FF !important; /* Purple border */
     border-radius: 50% !important; /* Make it circular */
+    margin-bottom: 8px !important; /* Ensure spacing between buttons */
+
 }
 
 /* Remove grey border around the zoom bar */
