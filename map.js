@@ -39,15 +39,21 @@ const icons = {
 
 // Toggle filter menu visibility
 function toggleFilterMenu() {
-    const filterButton = document.getElementById('filter-button');
     const filterMenu = document.getElementById('filter-menu');
+    const filterButton = document.getElementById('filter-button');
 
-    if (filterMenu.style.display === 'block') {
-        filterMenu.style.display = 'none'; // Hide the menu
-        filterButton.classList.remove('active'); // Remove active class
+    if (filterMenu.classList.contains('show')) {
+        filterMenu.classList.remove('show'); // Hide the menu
+        setTimeout(() => {
+            filterMenu.style.display = 'none'; // Ensure it's fully hidden after fading out
+        }, 800); // Match the fade-out duration (0.8s)
+        filterButton.classList.remove('active'); // Remove button active state
     } else {
-        filterMenu.style.display = 'block'; // Show the menu
-        filterButton.classList.add('active'); // Add active class
+        filterMenu.style.display = 'block'; // Ensure it's displayed for the animation
+        setTimeout(() => {
+            filterMenu.classList.add('show'); // Fade in the menu
+        }, 10); // Slight delay to trigger the transition
+        filterButton.classList.add('active'); // Add button active state
     }
 }
 
