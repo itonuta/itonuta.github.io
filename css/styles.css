@@ -58,7 +58,7 @@ html, body {
     font-weight: bold;
     cursor: pointer;
     z-index: 1000; /* Ensure it stays above the map */
-    transition: transform 0.2s ease, outline-width 1s ease;
+    transition: transform 0.2s ease-in-out, outline-width 1s ease-in-out;
 }
 
 /* SVG Icon inside the Button */
