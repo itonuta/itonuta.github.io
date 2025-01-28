@@ -32,9 +32,9 @@ html, body {
 
 /* Logo Image */
 #logo-container img {
-    width: 300px; /* Adjust the size of the logo */
+    width: 250px; /* Adjust the size of the logo */
     height: auto; /* Maintain aspect ratio */
-    max-width: 80%; /* Responsive scaling for smaller screens */
+    max-width: 100%; /* Responsive scaling for smaller screens */
     pointer-events: none; /* Prevent the logo from interfering with map interactions */
 }
 
