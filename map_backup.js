@@ -1,11 +1,13 @@
 // Initialize the map
-const map = L.map('map').setView([52.5200, 13.4050], 12); // Centered on Berlin
+const map = L.map('map', {
+    zoomControl: false // Disables zoom buttons
+}).setView([52.5200, 13.4050], 12);
+ // Centered on Berlin
 
-// Add CartoDB Dark Matter tiles
-L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/">CARTO</a>',
-    subdomains: 'abcd',
-    maxZoom: 19
+// Add Jawg.io tiles
+L.tileLayer('https://tile.jawg.io/fd663c4b-f13d-4782-b03f-98a43b3dec72/{z}/{x}/{y}{r}.png?access-token=pvUBUhZkXVnDBUQF9HFKGHvhdn3YrgDr4bIeyxrESzyfGpyRCsL0LFgmD7RO43LQ', {
+    attribution: '<a href="https://www.jawg.io?utm_medium=map&utm_source=attribution" target="_blank">&copy; Jawg</a> - <a href="https://www.openstreetmap.org?utm_medium=map-attribution&utm_source=jawg" target="_blank">&copy; OpenStreetMap</a> contributors',
+    maxZoom: 19 // Ensure max zoom matches the provider's capabilities
 }).addTo(map);
 
 // Add LocateControl
@@ -35,29 +37,67 @@ const icons = {
     Default: L.icon({ iconUrl: 'icons/marker-icon-grey.png', iconSize: [25, 41], iconAnchor: [12, 41], popupAnchor: [1, -34] }) // Grey as the default marker
 };
 
+// Toggle filter menu visibility
+function toggleFilterMenu() {
+    const menu = document.getElementById('filter-menu');
+    if (menu.style.display === 'block') {
+        menu.style.display = 'none';
+    } else {
+        menu.style.display = 'block';
+    }
+}
+
+// Create a layer group to manage markers
+const markerLayer = L.layerGroup().addTo(map);
+
 // Load GeoJSON data
 fetch('places.geojson')
     .then(response => response.json())
     .then(data => {
-        // Add GeoJSON data to the map
-        L.geoJSON(data, {
-            pointToLayer: function (feature, latlng) {
-                // Assign an icon based on the category
-                const category = feature.properties.category || 'Default';
-                const icon = icons[category] || icons.Default;
+        // Function to update markers based on selected categories
+        function updateMarkers() {
+            // Clear all markers
+            markerLayer.clearLayers();
 
-                return L.marker(latlng, { icon: icon });
-            },
-            onEachFeature: function (feature, layer) {
-                // Create the popup content
-                const { name, googleMaps, category } = feature.properties;
-                const popupContent = `
-                    <h3>${name}</h3>
-                    <p>Category: ${category}</p>
-                    <p>${googleMaps}</p>
-                `;
-                layer.bindPopup(popupContent);
-            }
-        }).addTo(map);
+            // Get selected categories
+            const selectedCategories = Array.from(document.querySelectorAll('.category-filter:checked')).map(checkbox => checkbox.value);
+
+            // Add markers for selected categories
+            L.geoJSON(data, {
+                pointToLayer: function (feature, latlng) {
+                    const category = feature.properties.category || 'Default';
+                    if (selectedCategories.includes(category)) {
+                        const icon = icons[category] || icons.Default;
+                        return L.marker(latlng, { icon: icon });
+                    }
+                },
+                onEachFeature: function (feature, layer) {
+                    const { name, googleMaps, category } = feature.properties;
+                    const popupContent = `
+                        <h3>${name}</h3>
+                        <p>Category: ${category}</p>
+                        <p>${googleMaps}</p>
+                    `;
+                    layer.bindPopup(popupContent);
+                }
+            }).addTo(markerLayer);
+        }
+
+        // Initial load of markers
+        updateMarkers();
+
+        // Add event listeners to checkboxes
+        document.querySelectorAll('.category-filter').forEach(checkbox => {
+            checkbox.addEventListener('change', updateMarkers);
+        });
     })
     .catch(error => console.error('Error loading GeoJSON:', error));
+
+// Remove the border of the LocateControl button via JavaScript
+document.addEventListener('DOMContentLoaded', () => {
+    const locateControlDiv = document.querySelector('.leaflet-control-locate.leaflet-bar.leaflet-control');
+    if (locateControlDiv) {
+        locateControlDiv.style.border = 'none';
+        locateControlDiv.style.boxShadow = 'none';
+    }
+});

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <!-- Leaflet.js Core -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+        <!-- Locally Hosted Leaflet-LocateControl -->
+    <link rel="stylesheet" href="locate/L.Control.Locate.min.css" />
+    <script src="locate/L.Control.Locate.min.js"></script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>berlino tucano Map</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="css/chubbo.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="icons/favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="icon" href="icons/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-title" content="berlino tucano">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+</head>
+<body>
+
+<!-- Logo Container -->
+<div id="logo-container">
+    <img src="icons/berlino-tucano-map.svg" alt="Berlino Tucano Map Logo" />
+</div>
+
+    <!-- Map Container -->
+    <div id="map" class="main"></div>
+
+    <!-- Floating Filter Button -->
+    <div id="filter-button" onclick="toggleFilterMenu()">
+    <img src="icons/filter.svg" alt="Filter Icon" />
+</div>
+
+
+    <!-- Hidden Dropdown Menu -->
+    <div id="filter-menu">
+        <label><input type="checkbox" class="category-filter" value="Fastfood" checked> fastfood</label>
+        <label><input type="checkbox" class="category-filter" value="Secondhand" checked> secondhand</label>
+        <label><input type="checkbox" class="category-filter" value="Restaurant" checked> restaurant</label>
+        <label><input type="checkbox" class="category-filter" value="Bar" checked> bar</label>
+        <label><input type="checkbox" class="category-filter" value="Pub" checked> pub</label>
+        <label><input type="checkbox" class="category-filter" value="Club" checked> club</label>
+        <label><input type="checkbox" class="category-filter" value="Cafe" checked> cafe</label>
+        <label><input type="checkbox" class="category-filter" value="Other" checked> other</label>
+        <label><input type="checkbox" class="category-filter" value="Museum or gallery" checked> museum or gallery</label>
+    </div>
+
+    <!-- Your Custom Map Script -->
+    <script src="map.js"></script>
+    <script src="install.js"></script>
+</body>
+</html>
