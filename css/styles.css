@@ -22,19 +22,20 @@ html, body {
 
 /* Logo Container */
 #logo-container {
-    position: absolute;
-    top: 10px; /* Adjust top spacing */
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1000; /* Ensure it stays above the map */
-    text-align: center;
+    position: absolute; /* Keeps the logo fixed in place */
+    top: 10px; /* Distance from the top of the page */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust for perfect horizontal centering */
+    z-index: 1000; /* Ensure it stays above the map and other elements */
+    text-align: center; /* Align contents to the center */
 }
 
 /* Logo Image */
 #logo-container img {
-    width: 120px; /* Adjust as needed */
-    height: auto;
-    max-width: 80%;
+    width: 120px; /* Adjust the size of the logo */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 80%; /* Responsive scaling for smaller screens */
+    pointer-events: none; /* Prevent the logo from interfering with map interactions */
 }
 
 /* Floating Filter Button */
