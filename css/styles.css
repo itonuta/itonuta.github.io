@@ -67,7 +67,7 @@ html, body {
     margin-bottom: 0px !important; /* Ensure spacing between buttons */
     box-shadow: none !important; /* Remove any default shadows */
     padding: 0 !important; /* Remove any default padding */
-    line-height: 1.7 !important; /* Reset line height */
+    line-height: 32px !important; /* Reset line height */
 }
 
 /* Ensure first button (zoom in) does not have extra top border */
