@@ -49,6 +49,41 @@ html, body {
     color: black; /* Prevent visited color from changing */
 }
 
+/* General styling for leaflet zoom control buttons */
+.leaflet-bar a {
+    background-color: #2F004D !important; /* Dark purple background */
+    color: #9B00FF !important; /* Purple text color */
+    width: 35px !important; /* Button width */
+    height: 35px !important; /* Button height */
+    line-height: 35px !important; /* Ensure text is centered */
+    text-align: center !important; /* Center text horizontally */
+    text-decoration: none !important; /* Remove underline */
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    border: 2px solid #9B00FF !important; /* Purple border */
+    border-radius: 50% !important; /* Make it circular */
+    margin-bottom: 8px !important; /* Ensure spacing between buttons */
+    box-shadow: none !important; /* Remove any default shadows */
+}
+
+/* Ensure first button (zoom in) does not have extra top border */
+.leaflet-touch .leaflet-bar a:first-child {
+    margin-top: 0 !important;
+}
+
+/* Remove default leaflet bar styling to prevent unwanted gaps */
+.leaflet-touch .leaflet-bar {
+    border: none !important; /* Remove outer leaflet bar border */
+    box-shadow: none !important; /* Remove any shadow */
+    background: transparent !important; /* Remove background */
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important; /* Ensure spacing between the buttons */
+    align-items: center !important;
+    padding: 0 !important;
+}
+
 /* Remove grey border around the zoom bar */
 .leaflet-touch .leaflet-bar {
     border: none !important; /* Remove grey outer border */
