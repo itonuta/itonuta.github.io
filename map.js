@@ -38,69 +38,17 @@ const icons = {
 };
 
 // Toggle filter menu visibility
-let isMenuOpen = false;
-
 function toggleFilterMenu() {
-    const filterButton = document.getElementById('filter-button');
-    const filterMenu = document.getElementById('filter-menu');
-
-    if (!isMenuOpen) {
-        // Expand the filter button to full screen
-        filterButton.classList.add('expand');
-
-        // Show the menu after the button expands
-        setTimeout(() => {
-            filterMenu.style.display = 'flex';
-            filterMenu.style.flexDirection = 'column'; // Center items
-            isMenuOpen = true;
-        }, 500); // Matches the CSS transition duration
+    const menu = document.getElementById('filter-menu');
+    if (menu.style.display === 'block') {
+        menu.style.display = 'none';
     } else {
-        // Hide the menu and shrink the button
-        filterMenu.style.display = 'none';
-        filterButton.classList.remove('expand');
-        isMenuOpen = false;
+        menu.style.display = 'block';
     }
-}
-
-function selectCategory(category) {
-    console.log('Selected category:', category);
-
-    // Show only markers for the selected category
-    fetch('places.geojson')
-        .then(response => response.json())
-        .then(data => {
-            // Clear all markers
-            markerLayer.clearLayers();
-
-            // Filter markers by the selected category
-            L.geoJSON(data, {
-                pointToLayer: function (feature, latlng) {
-                    const featureCategory = feature.properties.category || 'Default';
-                    if (featureCategory === category) {
-                        const icon = icons[featureCategory] || icons.Default;
-                        return L.marker(latlng, { icon: icon });
-                    }
-                },
-                onEachFeature: function (feature, layer) {
-                    const { name, googleMaps, category } = feature.properties;
-                    const popupContent = `
-                        <h3>${name}</h3>
-                        <p>Category: ${category}</p>
-                        <p>${googleMaps}</p>
-                    `;
-                    layer.bindPopup(popupContent);
-                }
-            }).addTo(markerLayer);
-        })
-        .catch(error => console.error('Error filtering markers:', error));
-
-    // Close the menu after a category is selected
-    toggleFilterMenu();
 }
 
 // Create a layer group to manage markers
 const markerLayer = L.layerGroup().addTo(map);
-
 
 // Load GeoJSON data
 fetch('places.geojson')
