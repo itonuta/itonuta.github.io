@@ -48,6 +48,8 @@ html, body {
     background-color: #00FF82; /* Green */
     color: white;
     border: none;
+    outline: 0 solid #00FF82;
+    outline-offset: 0px;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -56,7 +58,7 @@ html, body {
     font-weight: bold;
     cursor: pointer;
     z-index: 1000; /* Ensure it stays above the map */
-    transition: transform 0.2s ease, outline-width 0.8s ease;
+    transition: transform 0.2s ease, outline-width 1s ease;
 }
 
 /* SVG Icon inside the Button */
@@ -72,7 +74,7 @@ html, body {
 
 /* Active state for the filter button (when the menu is open) */
 #filter-button.active {
-    outline: 2000px solid #00FF82; /* Green border outside the button */
+    outline: 1500px solid #00FF82; /* Green border outside the button */
     outline-offset: -3px; /* Pull the outline closer, overlapping the button */
 }
 
