@@ -38,7 +38,7 @@ html, body {
     pointer-events: none; /* Prevent the logo from interfering with map interactions */
 }
 
-/* Floating Filter Button (Regular State) */
+/* Floating Filter Button */
 #filter-button {
     position: absolute;
     bottom: 20px;
@@ -56,20 +56,8 @@ html, body {
     font-weight: bold;
     cursor: pointer;
     z-index: 1000; /* Ensure it stays above the map */
-    transition: border-width 1s ease-in-out, width 1s ease-in-out, height 1s ease-in-out; /* Smooth expansion animation */
+    transition: transform 0.2s ease;
 }
-
-/* Expanded state */
-#filter-button.expanded {
-    width: 100vw; /* Fullscreen width */
-    height: 100vh; /* Fullscreen height */
-    background-color: #00FF82; /* Keep the green color */
-    border: none; /* Remove borders during expansion */
-    border-radius: 50%; /* Optional: Make it square if desired */
-    z-index: 2000; /* Ensure it covers all elements */
-    transition: width 1s ease-in-out, height 1s ease-in-out; /* Smooth expansion animation */
-}
-
 
 /* SVG Icon inside the Button */
 #filter-button img {
