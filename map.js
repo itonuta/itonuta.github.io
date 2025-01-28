@@ -37,6 +37,23 @@ const icons = {
     Default: L.icon({ iconUrl: 'icons/marker-icon-grey.png', iconSize: [25, 41], iconAnchor: [12, 41], popupAnchor: [1, -34] }) // Grey as the default marker
 };
 
+function toggleFilterMenu() {
+    const filterButton = document.getElementById('filter-button');
+    const filterMenu = document.getElementById('filter-menu');
+    
+    // Toggle the expanded state
+    filterButton.classList.toggle('expanded');
+
+    // If expanded, show the menu after the animation
+    if (filterButton.classList.contains('expanded')) {
+        setTimeout(() => {
+            filterMenu.style.display = 'block'; // Show menu
+        }, 1000); // Matches the animation duration
+    } else {
+        filterMenu.style.display = 'none'; // Hide menu
+    }
+}
+
 // Toggle filter menu visibility
 function toggleFilterMenu() {
     const menu = document.getElementById('filter-menu');
