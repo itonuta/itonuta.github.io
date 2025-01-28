@@ -49,38 +49,6 @@ html, body {
     color: black; /* Prevent visited color from changing */
 }
 
-/* General styling for leaflet bar buttons */
-.leaflet-bar a {
-    background-color: #2F004D; /* Purple background */
-    width: 26px; /* Button width */
-    height: 26px; /* Button height */
-    line-height: 26px; /* Center text vertically */
-    display: block; /* Make it block-level */
-    text-align: center; /* Center text horizontally */
-    text-decoration: none; /* Remove underline for links */
-    color: #9B00FF; /* Purple text color */
-    border: 2px solid #9B00FF; /* Add a 2px purple border */
-    border-radius: 0; /* Remove rounding for inner buttons */
-    box-sizing: border-box; /* Ensure padding and border are included in the width/height */
-}
-
-/* Remove the border between buttons */
-.leaflet-bar a:not(:first-child) {
-    border-top: none; /* Remove top border for inner buttons */
-}
-
-/* Add rounded corners for the first (top) button in the bar */
-.leaflet-touch .leaflet-bar a:first-child {
-    border-top-left-radius: 19px; /* Top-left corner */
-    border-top-right-radius: 19px; /* Top-right corner */
-}
-
-/* Add rounded corners for the last (bottom) button in the bar */
-.leaflet-touch .leaflet-bar a:last-child {
-    border-bottom-left-radius: 19px; /* Bottom-left corner */
-    border-bottom-right-radius: 19px; /* Bottom-right corner */
-}
-
 /* Remove grey border around the zoom bar */
 .leaflet-touch .leaflet-bar {
     border: none !important; /* Remove grey outer border */
