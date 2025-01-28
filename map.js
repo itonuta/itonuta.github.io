@@ -52,7 +52,7 @@ function toggleFilterMenu() {
         filterMenu.style.display = 'block'; // Ensure it's displayed for the animation
         setTimeout(() => {
             filterMenu.classList.add('show'); // Fade in the menu
-        }, 10); // Slight delay to trigger the transition
+        }, 400); // Slight delay to trigger the transition
         filterButton.classList.add('active'); // Add button active state
     }
 }

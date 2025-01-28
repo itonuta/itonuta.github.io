@@ -26,7 +26,7 @@ html, body {
     top: 10px; /* Distance from the top of the page */
     left: 50%; /* Center horizontally */
     transform: translateX(-50%); /* Adjust for perfect horizontal centering */
-    z-index: 1000; /* Ensure it stays above the map and other elements */
+    z-index: 1001; /* Ensure it stays above the map and other elements */
     text-align: center; /* Align contents to the center */
 }
 
@@ -57,7 +57,7 @@ html, body {
     font-size: 24px;
     font-weight: bold;
     cursor: pointer;
-    z-index: 999; /* Ensure it stays above the map */
+    z-index: 1000; /* Ensure it stays above the map */
     transition: transform 0.2s ease-in-out, outline-width 1s ease-in-out;
 }
 
@@ -85,7 +85,7 @@ html, body {
     right: 20px;
     padding: 10px; /* Padding for spacing */
     display: none; /* Initially hidden */
-    z-index: 1000; /* Ensure it's above the map */
+    z-index: 1001; /* Ensure it's above the map */
     opacity: 0; /* Start as fully transparent */
     transition: opacity 0.8s ease; /* Smooth fade-in effect */
 }
@@ -148,7 +148,6 @@ html, body {
     border: none !important; /* Remove border */
     font-size: 10px; /* Adjust font size */
     box-shadow: none !important; /* Ensure no shadow */
-    z-index: 998 !important;
 }
 
 /* Ensure internal elements also have transparent background */
@@ -158,13 +157,11 @@ html, body {
     background-color: #4A1B64 !important;
     color: #9A00FF; /* Link color */
     text-decoration: none; /* Remove underline from links */
-    z-index: 998 !important;
 }
 
 .leaflet-control-attribution a:hover {
     color: #00FF82; /* Green on hover */
     text-decoration: none; /* Remove underline from links */
-    z-index: 998 !important;
 }
 
 /* Responsive styles for smaller screens */
