@@ -56,7 +56,7 @@ html, body {
     font-weight: bold;
     cursor: pointer;
     z-index: 1000; /* Ensure it stays above the map */
-    transition: transform 0.2s ease, outline-offset 0.8s ease, outline-width 0.8s ease; /* Smooth animations */
+    transition: transform 0.2s ease, outline-width 0.8s ease;
 }
 
 /* SVG Icon inside the Button */
@@ -72,16 +72,9 @@ html, body {
 
 /* Active state for the filter button (when the menu is open) */
 #filter-button.active {
-    outline: 2000px solid #00FF82; /* Large green border outside the button */
+    outline: 2000px solid #00FF82; /* Green border outside the button */
     outline-offset: -3px; /* Pull the outline closer, overlapping the button */
 }
-
-/* Inactive state for smooth reverse animation */
-#filter-button:not(.active) {
-    outline: 0px solid transparent; /* No outline when inactive */
-    outline-offset: 0; /* Reset offset */
-}
-
 
 /* Hidden Dropdown Menu */
 #filter-menu {
