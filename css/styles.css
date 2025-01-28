@@ -80,9 +80,10 @@ html, body {
 
 /* Hidden Dropdown Menu */
 #filter-menu {
-    position: absolute;
-    bottom: 80px; /* Above the button */
-    right: 20px;
+    position: fixed; /* Position relative to the entire screen */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust position to align center */
     padding: 10px; /* Padding for spacing */
     display: none; /* Initially hidden */
     z-index: 1001; /* Ensure it's above the map */
