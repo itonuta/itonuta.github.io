@@ -60,17 +60,28 @@ html, body {
     align-items: center !important;
     text-align: center !important;
     text-decoration: none !important; /* Remove underline */
-    font-size: 20px !important; /* Increase text size */
+    font-size: 18px !important; /* Adjust size for better centering */
     font-weight: bold !important; /* Make symbols more visible */
     border: 2px solid #9B00FF !important; /* Purple border */
     border-radius: 50% !important; /* Make it circular */
-    margin-bottom: 0px !important; /* Ensure spacing between buttons */
     box-shadow: none !important; /* Remove any default shadows */
     padding: 0 !important; /* Remove any default padding */
-    line-height: normal !important; /* Reset line height */
+    line-height: 1 !important; /* Prevent text from shifting */
+    position: relative !important; /* Ensure absolute centering */
 }
 
-/* Remove default leaflet bar styling */
+/* Force absolute centering for the "+" and "-" symbols */
+.leaflet-bar a::before {
+    content: attr(title); /* Display + or - */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18px !important; /* Ensure consistent sizing */
+    font-weight: bold;
+}
+
+/* Ensure no extra margin on buttons */
 .leaflet-touch .leaflet-bar {
     border: none !important; /* Remove outer leaflet bar border */
     box-shadow: none !important; /* Remove any shadow */
@@ -82,12 +93,6 @@ html, body {
     padding: 0 !important;
 }
 
-
-/* Remove grey border around the zoom bar */
-.leaflet-touch .leaflet-bar {
-    border: none !important; /* Remove grey outer border */
-    box-shadow: none !important; /* Remove any shadow */
-}
 
 
 /* Style the LocateControl button */
