@@ -72,8 +72,7 @@ html, body {
 
 /* Active state for the filter button (when the menu is open) */
 #filter-button.active {
-    border: 10px solid #00FF82; /* Green border */
-    box-sizing: border-box; /* Ensure border doesn't affect size */
+    outline: 10px solid #00FF82; /* Green border outside the button */
 }
 
 /* Hidden Dropdown Menu */
