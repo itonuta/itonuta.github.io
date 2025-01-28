@@ -57,7 +57,7 @@ html, body {
     height: 35px !important; /* Button height */
     display: flex !important;
     justify-content: center !important;
-    align-items: center !important;
+    align-items: baseline !important;
     text-align: center !important;
     text-decoration: none !important; /* Remove underline */
     font-size: 20px !important; /* Increase text size */
@@ -67,7 +67,7 @@ html, body {
     margin-bottom: 0px !important; /* Ensure spacing between buttons */
     box-shadow: none !important; /* Remove any default shadows */
     padding: 0 !important; /* Remove any default padding */
-    line-height: normal !important; /* Reset line height */
+    line-height: 1.6 !important; /* Reset line height */
 }
 
 /* Ensure first button (zoom in) does not have extra top border */
