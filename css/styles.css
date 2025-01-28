@@ -57,18 +57,36 @@ html, body {
     height: 35px !important; /* Button height */
     display: flex !important;
     justify-content: center !important;
-    align-items: baseline !important;
+    align-items: center !important;
     text-align: center !important;
     text-decoration: none !important; /* Remove underline */
     font-size: 20px !important; /* Increase text size */
     font-weight: bold !important; /* Make symbols more visible */
     border: 2px solid #9B00FF !important; /* Purple border */
     border-radius: 50% !important; /* Make it circular */
-    margin-bottom: 0px !important; /* Ensure spacing between buttons */
+    margin-bottom: 8px !important; /* Ensure spacing between buttons */
     box-shadow: none !important; /* Remove any default shadows */
     padding: 0 !important; /* Remove any default padding */
-    line-height: 32px !important; /* Reset line height */
+    line-height: normal !important; /* Reset line height */
 }
+
+/* Ensure first button (zoom in) does not have extra top border */
+.leaflet-touch .leaflet-bar a:first-child {
+    margin-top: 0 !important;
+}
+
+/* Remove default leaflet bar styling to prevent unwanted gaps */
+.leaflet-touch .leaflet-bar {
+    border: none !important; /* Remove outer leaflet bar border */
+    box-shadow: none !important; /* Remove any shadow */
+    background: transparent !important; /* Remove background */
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important; /* Ensure spacing between the buttons */
+    align-items: center !important;
+    padding: 0 !important;
+}
+
 
 /* Ensure first button (zoom in) does not have extra top border */
 .leaflet-touch .leaflet-bar a:first-child {
