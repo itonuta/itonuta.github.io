@@ -65,6 +65,14 @@ html, body {
 
 }
 
+/* Force fix for Safari & Mobile rendering quirks */
+.leaflet-bar a::before {
+    content: "\200B"; /* Zero-width space to prevent text shift */
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
 /* Remove grey border around the zoom bar */
 .leaflet-touch .leaflet-bar {
     border: none !important; /* Remove grey outer border */
