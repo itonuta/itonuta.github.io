@@ -20,6 +20,23 @@ html, body {
     height: 100%;
 }
 
+/* Logo Container */
+#logo-container {
+    position: absolute;
+    top: 10px; /* Adjust top spacing */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000; /* Ensure it stays above the map */
+    text-align: center;
+}
+
+/* Logo Image */
+#logo-container img {
+    width: 120px; /* Adjust as needed */
+    height: auto;
+    max-width: 80%;
+}
+
 /* Floating Filter Button */
 #filter-button {
     position: absolute;
