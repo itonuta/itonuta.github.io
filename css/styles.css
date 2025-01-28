@@ -141,7 +141,7 @@ html, body {
     border: none !important; /* Remove border */
     font-size: 10px; /* Adjust font size */
     box-shadow: none !important; /* Ensure no shadow */
-    z-index: 998;
+    z-index: 998 !important;
 }
 
 /* Ensure internal elements also have transparent background */
@@ -151,13 +151,13 @@ html, body {
     background-color: #4A1B64 !important;
     color: #9A00FF; /* Link color */
     text-decoration: none; /* Remove underline from links */
-    z-index: 998;
+    z-index: 998 !important;
 }
 
 .leaflet-control-attribution a:hover {
     color: #00FF82; /* Green on hover */
     text-decoration: none; /* Remove underline from links */
-    z-index: 998;
+    z-index: 998 !important;
 }
 
 /* Responsive styles for smaller screens */
