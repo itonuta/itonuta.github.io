@@ -56,7 +56,7 @@ html, body {
     font-weight: bold;
     cursor: pointer;
     z-index: 1000; /* Ensure it stays above the map */
-    transition: outline-width 0.3s ease; /* Animation for outline changes */
+    transition: transform 0.2s ease; outline-width 0.3s ease;
 }
 
 /* SVG Icon inside the Button */
@@ -72,7 +72,7 @@ html, body {
 
 /* Active state for the filter button (when the menu is open) */
 #filter-button.active {
-    outline: 10px solid #00FF82; /* Green border outside the button */
+    outline: 1000px solid #00FF82; /* Green border outside the button */
     outline-offset: -3px; /* Pull the outline closer, overlapping the button */
 }
 
