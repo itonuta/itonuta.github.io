@@ -1,7 +1,8 @@
 // Initialize the map
 const map = L.map('map', {
     zoomControl: false // Disables zoom buttons
-}).setView([52.5200, 13.4050], 12); // Centered on Berlin
+}).setView([52.5200, 13.4050], 12);
+ // Centered on Berlin
 
 // Add Jawg.io tiles
 L.tileLayer('https://tile.jawg.io/fd663c4b-f13d-4782-b03f-98a43b3dec72/{z}/{x}/{y}{r}.png?access-token=pvUBUhZkXVnDBUQF9HFKGHvhdn3YrgDr4bIeyxrESzyfGpyRCsL0LFgmD7RO43LQ', {
@@ -37,36 +38,13 @@ const icons = {
 };
 
 // Toggle filter menu visibility
-let isMenuOpen = false;
-
 function toggleFilterMenu() {
-    const filterButton = document.getElementById('filter-button');
-    const filterMenu = document.getElementById('filter-menu');
-
-    if (!isMenuOpen) {
-        // Expand the filter button to full screen
-        filterButton.classList.add('expand');
-
-        // Show the menu after the button expands
-        setTimeout(() => {
-            filterMenu.style.display = 'flex';
-            filterMenu.style.flexDirection = 'column'; // Center items
-            isMenuOpen = true;
-        }, 500); // Matches the CSS transition duration
+    const menu = document.getElementById('filter-menu');
+    if (menu.style.display === 'block') {
+        menu.style.display = 'none';
     } else {
-        // Hide the menu and shrink the button
-        filterMenu.style.display = 'none';
-        filterButton.classList.remove('expand');
-        isMenuOpen = false;
+        menu.style.display = 'block';
     }
-}
-
-function selectCategory(category) {
-    console.log('Selected category:', category);
-    // Perform actions for the selected category here (e.g., filtering markers)
-
-    // Close the menu after a category is selected
-    toggleFilterMenu();
 }
 
 // Create a layer group to manage markers
