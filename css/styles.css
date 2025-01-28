@@ -48,7 +48,7 @@ html, body {
     background-color: #00FF82; /* Green */
     color: white;
     border: none;
-    border-radius: 50%; /* Initially circular */
+    border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -56,28 +56,15 @@ html, body {
     font-weight: bold;
     cursor: pointer;
     z-index: 1000; /* Ensure it stays above the map */
-    transition: all 1s ease; /* Smooth transition for the animation */
+    transition: transform 0.2s ease;
 }
 
 /* SVG Icon inside the Button */
 #filter-button img {
-    width: 50%; /* Keep the icon size fixed */
+    width: 50%; /* Adjust icon size (relative to the button) */
     height: 50%;
-    position: relative;
-    z-index: 1001; /* Ensure icon remains above the expanding circle */
+    margin-top: 5px; /* Move the icon lower */
 }
-
-/* Expanded state for the filter button */
-#filter-button.expanded {
-    width: 5000px; /* Large enough to fill the entire screen */
-    height: 5000px; /* Large enough to fill the entire screen */
-    border-radius: 50%; /* Ensure it stays circular during expansion */
-    bottom: -2465px; /* Offset to center the circle during expansion */
-    right: -2465px; /* Offset to center the circle during expansion */
-    background-color: #00FF82; /* Keep the green color */
-    z-index: 999; /* Stay above all other elements */
-}
-
 
 #filter-button:hover {
     transform: scale(1.3); /* Slight zoom effect on hover */
