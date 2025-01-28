@@ -63,22 +63,11 @@ html, body {
     border-radius: 50% !important; /* Make it circular */
 }
 
-/* Remove default leaflet bar styling */
-.leaflet-touch .leaflet-bar {
-    border: none !important; /* Remove outer leaflet bar border */
-    box-shadow: none !important; /* Remove any shadow */
-    background: transparent !important; /* Remove background */
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 8px !important; /* Ensure spacing between buttons */
-    align-items: center !important;
-    padding: 0 !important;
-}
-
 /* Remove grey border around the zoom bar */
 .leaflet-touch .leaflet-bar {
     border: none !important; /* Remove grey outer border */
     box-shadow: none !important; /* Remove any shadow */
+    gap: 8px !important; /* Ensure spacing between buttons */
 }
 
 
