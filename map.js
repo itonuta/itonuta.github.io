@@ -20,6 +20,22 @@ L.control.locate({
     }
 }).addTo(map);
 
+// Add Zoom Control
+L.control.zoom({
+    position: "topleft"
+}).addTo(map);
+
+// Replace the default zoom button icons with inline SVG
+document.querySelector(".leaflet-control-zoom-in").innerHTML =
+    `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18">
+        <path d="M12 5v14m-7-7h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>`;
+
+document.querySelector(".leaflet-control-zoom-out").innerHTML =
+    `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18">
+        <path d="M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>`;
+
 // Define icons for each category using the icons in the 'icons' folder
 const icons = {
     Fastfood: L.icon({ iconUrl: 'icons/marker-icon-red.png', iconSize: [25, 41], iconAnchor: [12, 41], popupAnchor: [1, -34] }),

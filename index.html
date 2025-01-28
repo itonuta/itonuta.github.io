@@ -70,6 +70,20 @@
         height: calc(100% - 50px); /* Subtract header height */
     }
 
+    // Modify the zoom control buttons to use SVG icons instead of text
+L.Control.Zoom.prototype._updateDisabled = function () {};
+
+L.control.zoom({
+    position: "topright"
+}).addTo(map);
+
+// Replace the default zoom button icons with SVG
+document.querySelector(".leaflet-control-zoom-in").innerHTML =
+    `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 5v14m-7-7h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+
+document.querySelector(".leaflet-control-zoom-out").innerHTML =
+    `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+
     /* Floating Filter Button */
     #filter-button {
         position: absolute;
