@@ -60,35 +60,32 @@ html, body {
     align-items: center !important;
     text-align: center !important;
     text-decoration: none !important; /* Remove underline */
-    font-size: 20px !important; /* Adjust font size */
+    font-size: 20px !important; /* Increase text size */
     font-weight: bold !important; /* Make symbols more visible */
     border: 2px solid #9B00FF !important; /* Purple border */
     border-radius: 50% !important; /* Make it circular */
-    position: relative !important; /* Enable pseudo-element positioning */
+    margin-bottom: 0px !important; /* Ensure spacing between buttons */
+    box-shadow: none !important; /* Remove any default shadows */
+    padding: 0 !important; /* Remove any default padding */
+    line-height: normal !important; /* Reset line height */
 }
 
-/* Ensure absolute centering for + and - signs */
-.leaflet-bar a::before {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 20px !important;
-    font-weight: bold;
+/* Remove default leaflet bar styling */
+.leaflet-touch .leaflet-bar {
+    border: none !important; /* Remove outer leaflet bar border */
+    box-shadow: none !important; /* Remove any shadow */
+    background: transparent !important; /* Remove background */
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important; /* Ensure spacing between buttons */
+    align-items: center !important;
+    padding: 0 !important;
 }
 
-/* Manually define + and - for zoom buttons */
-.leaflet-control-zoom-in::before {
-    content: "+" !important;
-}
-
-.leaflet-control-zoom-out::before {
-    content: "-" !important;
-}
-
-/* Remove any inherited unwanted text */
-.leaflet-bar a span {
-    display: none !important;
+/* Remove grey border around the zoom bar */
+.leaflet-touch .leaflet-bar {
+    border: none !important; /* Remove grey outer border */
+    box-shadow: none !important; /* Remove any shadow */
 }
 
 
