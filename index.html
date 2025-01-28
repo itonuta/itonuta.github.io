@@ -35,23 +35,24 @@
     <div id="map" class="main"></div>
 
     <!-- Floating Filter Button -->
-    <div id="filter-button" onclick="toggleFilterMenu()">
+<div id="filter-button" onclick="toggleFilterMenu()">
     <img src="icons/filter.svg" alt="Filter Icon" />
 </div>
 
-
-    <!-- Hidden Dropdown Menu -->
-    <div id="filter-menu">
-        <label><input type="checkbox" class="category-filter" value="Fastfood" checked> fastfood</label>
-        <label><input type="checkbox" class="category-filter" value="Secondhand" checked> secondhand</label>
-        <label><input type="checkbox" class="category-filter" value="Restaurant" checked> restaurant</label>
-        <label><input type="checkbox" class="category-filter" value="Bar" checked> bar</label>
-        <label><input type="checkbox" class="category-filter" value="Pub" checked> pub</label>
-        <label><input type="checkbox" class="category-filter" value="Club" checked> club</label>
-        <label><input type="checkbox" class="category-filter" value="Cafe" checked> cafe</label>
-        <label><input type="checkbox" class="category-filter" value="Other" checked> other</label>
-        <label><input type="checkbox" class="category-filter" value="Museum or gallery" checked> museum or gallery</label>
-    </div>
+<!-- Dropdown Menu -->
+<div id="filter-menu">
+    <ul>
+        <li onclick="selectCategory('Fastfood')">Fastfood</li>
+        <li onclick="selectCategory('Secondhand')">Secondhand</li>
+        <li onclick="selectCategory('Restaurant')">Restaurant</li>
+        <li onclick="selectCategory('Bar')">Bar</li>
+        <li onclick="selectCategory('Pub')">Pub</li>
+        <li onclick="selectCategory('Club')">Club</li>
+        <li onclick="selectCategory('Cafe')">Cafe</li>
+        <li onclick="selectCategory('Other')">Other</li>
+        <li onclick="selectCategory('Museum or gallery')">Museum or Gallery</li>
+    </ul>
+</div>
 
     <!-- Your Custom Map Script -->
     <script src="map.js"></script>
