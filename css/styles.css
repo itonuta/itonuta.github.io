@@ -150,6 +150,7 @@ html, body {
     z-index: 1001; /* Ensure it's above the map */
     opacity: 0; /* Start as fully transparent */
     transition: opacity 0.8s ease; /* Smooth fade-in effect */
+    text-align: center; /* Ensure text is centered */
 }
 
 /* When menu is active */
@@ -160,10 +161,11 @@ html, body {
 
 /* Menu title styling */
 .menu-title {
-    font-size: 20px;
-    color: #3A045B;
+    font-size: 22px; /* Slightly larger */
+    color: #00FF82; /* Green */
     font-weight: 400;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    white-space: nowrap; /* Prevent text from breaking onto a new line */
 }
 
 /* Style the checkboxes */
@@ -171,7 +173,7 @@ html, body {
     display: block;
     font-size: 20px;
     font-weight: 300;
-    color: #3A045B; /* Ensure text is readable against the transparent menu */
+    color: #00FF82; /* Make text green */
     margin-bottom: 8px;
 }
 
@@ -180,28 +182,43 @@ html, body {
     margin-top: 15px;
     display: flex;
     flex-direction: column; /* Stack buttons vertically */
-    justify-content: center;
+    align-items: center; /* Center buttons horizontally */
     gap: 10px;
 }
 
 /* Styling for both buttons */
 .menu-buttons button {
     background: transparent;
-    border: 2px solid #3A045B;
-    color: #3A045B;
+    border: 2px solid #00FF82; /* Green border */
+    color: #00FF82; /* Green text */
     padding: 8px 16px !important;
     font-size: 18px !important;
     font-family: 'Lineal', sans-serif !important; /* Apply Lineal font */
     border-radius: 8px;
     cursor: pointer;
     transition: all 0.3s ease;
+    width: 150px; /* Keep buttons uniform in size */
 }
 
 /* Button hover effect */
 .menu-buttons button:hover {
-    background: #3A045B;
-    color: white;
+    background: #00FF82; /* Green background */
+    color: #3A045B; /* Dark purple text */
 }
+
+/* Styling for "let's go!" button */
+#closeFilter {
+    background: #00FF82; /* Green fill */
+    color: #9B00FF; /* Purple text */
+    border: 2px solid #00FF82; /* Green border */
+}
+
+/* Hover effect for "let's go!" button */
+#closeFilter:hover {
+    background: #9B00FF; /* Purple background */
+    color: #00FF82; /* Green text */
+}
+
 
 
 /* Remove grey border around the zoom bar */
