@@ -152,18 +152,55 @@ html, body {
     transition: opacity 0.8s ease; /* Smooth fade-in effect */
 }
 
+/* When menu is active */
 #filter-menu.show {
     display: block; /* Make the menu visible */
     opacity: 1; /* Fully visible */
 }
 
+/* Menu title styling */
+.menu-title {
+    font-size: 16px;
+    color: #3A045B;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Style the checkboxes */
 #filter-menu label {
     display: block;
-    margin-bottom: 5px;
     font-size: 22px;
     font-weight: 300;
     color: #3A045B; /* Ensure text is readable against the transparent menu */
+    margin-bottom: 8px;
 }
+
+/* Menu buttons */
+.menu-buttons {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* Styling for both buttons */
+.menu-buttons button {
+    background: transparent;
+    border: 2px solid #3A045B;
+    color: #3A045B;
+    padding: 8px 16px;
+    font-size: 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Button hover effect */
+.menu-buttons button:hover {
+    background: #3A045B;
+    color: white;
+}
+
 
 /* Remove grey border around the zoom bar */
 .leaflet-touch .leaflet-bar {
