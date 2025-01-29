@@ -23,19 +23,20 @@ L.control.locate({
     }
 }).addTo(map);
 
-// Define icons for each category using the icons in the 'icons' folder
+// Define icons for each category using the new SVG icons in the 'icons' folder
 const icons = {
-    Fastfood: L.icon({ iconUrl: 'icons/marker-icon-red.png', iconSize: [25, 41], iconAnchor: [12, 41], popupAnchor: [1, -34] }),
-    Secondhand: L.icon({ iconUrl: 'icons/marker-icon-green.png', iconSize: [25, 41], iconAnchor: [12, 41], popupAnchor: [1, -34] }),
-    Restaurant: L.icon({ iconUrl: 'icons/marker-icon-blue.png', iconSize: [25, 41], iconAnchor: [12, 41], popupAnchor: [1, -34] }),
-    Bar: L.icon({ iconUrl: 'icons/marker-icon-orange.png', iconSize: [25, 41], iconAnchor: [12, 41], popupAnchor: [1, -34] }),
-    Pub: L.icon({ iconUrl: 'icons/marker-icon-yellow.png', iconSize: [25, 41], iconAnchor: [12, 41], popupAnchor: [1, -34] }),
-    Club: L.icon({ iconUrl: 'icons/marker-icon-violet.png', iconSize: [25, 41], iconAnchor: [12, 41], popupAnchor: [1, -34] }),
-    Cafe: L.icon({ iconUrl: 'icons/marker-icon-gold.png', iconSize: [25, 41], iconAnchor: [12, 41], popupAnchor: [1, -34] }),
-    Other: L.icon({ iconUrl: 'icons/marker-icon-black.png', iconSize: [25, 41], iconAnchor: [12, 41], popupAnchor: [1, -34] }),
-    "Museum or gallery": L.icon({ iconUrl: 'icons/marker-icon-grey.png', iconSize: [25, 41], iconAnchor: [12, 41], popupAnchor: [1, -34] }),
-    Default: L.icon({ iconUrl: 'icons/marker-icon-grey.png', iconSize: [25, 41], iconAnchor: [12, 41], popupAnchor: [1, -34] }) // Grey as the default marker
+    Fastfood: L.icon({ iconUrl: 'icons/fastfood.svg', iconSize: [20, 20], iconAnchor: [10, 10], popupAnchor: [0, -10] }),
+    Secondhand: L.icon({ iconUrl: 'icons/secondhand.svg', iconSize: [20, 20], iconAnchor: [10, 10], popupAnchor: [0, -10] }),
+    Restaurant: L.icon({ iconUrl: 'icons/restaurant.svg', iconSize: [20, 20], iconAnchor: [10, 10], popupAnchor: [0, -10] }),
+    Bar: L.icon({ iconUrl: 'icons/bar.svg', iconSize: [20, 20], iconAnchor: [10, 10], popupAnchor: [0, -10] }),
+    Pub: L.icon({ iconUrl: 'icons/pub.svg', iconSize: [20, 20], iconAnchor: [10, 10], popupAnchor: [0, -10] }),
+    Club: L.icon({ iconUrl: 'icons/club.svg', iconSize: [20, 20], iconAnchor: [10, 10], popupAnchor: [0, -10] }),
+    Cafe: L.icon({ iconUrl: 'icons/cafe.svg', iconSize: [20, 20], iconAnchor: [10, 10], popupAnchor: [0, -10] }),
+    Other: L.icon({ iconUrl: 'icons/other.svg', iconSize: [20, 20], iconAnchor: [10, 10], popupAnchor: [0, -10] }),
+    "Museum or gallery": L.icon({ iconUrl: 'icons/art.svg', iconSize: [20, 20], iconAnchor: [10, 10], popupAnchor: [0, -10] }),
+    Default: L.icon({ iconUrl: 'icons/other.svg', iconSize: [20, 20], iconAnchor: [10, 10], popupAnchor: [0, -10] }) // Using 'other.svg' as a fallback
 };
+
 
 // Toggle filter menu visibility
 function toggleFilterMenu() {
