@@ -7,8 +7,65 @@ html, body {
     display: flex;
     flex-direction: column;
     background-color: #fcbf12; /* Background color */
-    font-family: 'Chubbo-Regular', sans-serif;
 }
+
+/* Lineal Regular */
+@font-face {
+    font-family: 'Lineal';
+    src: url('../fonts/Lineal-Regular.woff2') format('woff2'),
+         url('../fonts/Lineal-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Lineal Bold */
+@font-face {
+    font-family: 'Lineal';
+    src: url('../fonts/Lineal-Bold.woff2') format('woff2'),
+         url('../fonts/Lineal-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+/* Lineal Light */
+@font-face {
+    font-family: 'Lineal';
+    src: url('../fonts/Lineal-Light.woff2') format('woff2'),
+         url('../fonts/Lineal-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+/* Lineal Medium */
+@font-face {
+    font-family: 'Lineal';
+    src: url('../fonts/Lineal-Medium.woff2') format('woff2'),
+         url('../fonts/Lineal-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+/* Lineal Black */
+@font-face {
+    font-family: 'Lineal';
+    src: url('../fonts/Lineal-Black.woff2') format('woff2'),
+         url('../fonts/Lineal-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+}
+
+/* General styles */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #fcbf12; /* Background color */
+    font-family: 'Lineal', sans-serif; /* Use Lineal */
+}
+
 
 /* Map container */
 .main {
