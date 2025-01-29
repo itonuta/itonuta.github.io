@@ -5,7 +5,7 @@
   <title>Blauwdruk - Portfolio</title>
   <style>
       
-          /* Load Lineal font in different weights */
+    /* Load Lineal font in different weights */
     @font-face {
       font-family: 'Lineal';
       src: url('fonts/Lineal-Regular.woff2') format('woff2'),
@@ -48,7 +48,7 @@
 
     /* Apply the font globally */
     body {
-      font-family: 'Lineal', sans-serif;
+      font-family: 'Lineal', sans-serif !important; /* Ensures correct font */
       margin: 0;
       padding: 0;
       background-color: #E9D9EB; /* Light purple background */
@@ -65,6 +65,17 @@
       font-weight: 300; /* Use Light weight */
     }
 
+    /* Ensure headings use the correct font weight */
+    h1 {
+      font-family: 'Lineal', sans-serif;
+      font-weight: bold; /* Ensures correct weight */
+    }
+
+    p {
+      font-family: 'Lineal', sans-serif;
+      font-weight: normal; /* Ensures correct weight */
+    }
+
     /* Captions use a different weight */
     figcaption {
       margin-top: 8px;
@@ -72,29 +83,12 @@
       color: #333;
       text-align: center;
       font-weight: 500; /* Medium weight */
+      font-family: 'Lineal', sans-serif;
     }
 
     /* Add hover effect to images */
     figure a img:hover {
       transform: scale(1.02);
-    }
-      
-    /* Reset some default margins/padding */
-    body {
-      margin: 0;
-      padding: 0;
-      background-color: #eee; /* Light grey background */
-      font-family: sans-serif;
-    }
-
-    /* Centered text container for the intro */
-    .text-container {
-      text-align: center;
-      padding: 30px 20px;
-      max-width: 700px;
-      margin: 0 auto;
-      font-size: 1.2rem;
-      color: #333;
     }
 
     /* Container that centers the images and adds top/bottom padding */
@@ -104,33 +98,16 @@
       margin: 0 auto; /* Center horizontally */
     }
 
-    /* Use <figure> to group each image with its caption */
-    figure {
-      margin: 20px 0;             /* Spacing between figure blocks */
-    }
-
     /* Style the images within each figure */
     figure img {
       display: block;
-      margin: 0 auto;             /* Center the image */
-      max-width: 100%;           /* Responsive width */
-      height: auto;              /* Maintain aspect ratio */
-      border: 1px solid #ccc;    /* Optional subtle border */
+      margin: 0 auto; /* Center the image */
+      max-width: 100%; /* Responsive width */
+      height: auto; /* Maintain aspect ratio */
+      border: 1px solid #ccc; /* Optional subtle border */
       transition: transform 0.2s ease-in-out;
     }
 
-    /* Add a hover effect to make images slightly zoom when hovered */
-    figure a img:hover {
-      transform: scale(1.02);
-    }
-
-    /* Style the caption text */
-    figcaption {
-      margin-top: 8px;
-      font-size: 0.9rem;
-      color: #333;
-      text-align: center;
-    }
   </style>
 </head>
 <body>
@@ -138,7 +115,9 @@
   <!-- Placeholder text section -->
   <div class="text-container">
     <h1>hoi</h1>
-    <p>ik ben timo uit nijmegen en hoorde via julius dat jullie een designer zoeken. ik werk als wetenschappelijk vormgever maar heb een hart voor het nijmeegse nachtleven. ik zou graag mijn talent inzetten en wat speelsere ontwerpen de wereld in willen brengen. hier wat werk van mij! groetjes</p>
+    <p>ik ben timo uit nijmegen en hoorde via julius dat jullie een designer zoeken. ik werk als wetenschappelijk vormgever maar heb een hart voor het nijmeegse nachtleven. ik zou graag mijn talent inzetten voor jullie en  speelsere ontwerpen de wereld in brengen. hier wat werk van mij! groetjes
+      <br><br>
+      klik op de afbeeldingen om ze te vergroten</p>
   </div>
 
   <div class="image-container">
@@ -169,48 +148,6 @@
         <img src="images/flyer-ardennen-voorkant-paars.png" alt="flyer-ardennen-voorkant-paars">
       </a>
       <figcaption>"Timetable" van ons mini-festivalletje</figcaption>
-    </figure>
-    
-    <figure>
-      <a href="images/flyer-ardennen-achterkant-paars.png" target="_blank">
-        <img src="images/flyer-ardennen-achterkant-paars.png" alt="flyer-ardennen-achterkant-paars">
-      </a>
-      <figcaption>Flyer van ons mini-festivalletje</figcaption>
-    </figure>
-    
-    <figure>
-      <a href="images/flyer_ardennen-foto1.jpeg" target="_blank">
-        <img src="images/flyer_ardennen-foto1.jpeg" alt="flyer_ardennen-foto1">
-      </a>
-      <figcaption>Flyer, gedrukt in zwart wit op gekleurd papier</figcaption>
-    </figure>
-    
-    <figure>
-      <a href="images/flyer-ardennen-foto2.jpeg" target="_blank">
-        <img src="images/flyer-ardennen-foto2.jpeg" alt="flyer-ardennen-foto2">
-      </a>
-      <figcaption>"Timetable", gedrukt in zwart wit op gekleurd papier</figcaption>
-    </figure>
-    
-    <figure>
-      <a href="images/geboortekaartje-ruben-leo-preview.png" target="_blank">
-        <img src="images/geboortekaartje-ruben-leo-preview.png" alt="geboortekaartje-ruben-leo-preview">
-      </a>
-      <figcaption>Geboortekaartje voor mijn neefje</figcaption>
-    </figure>
-    
-    <figure>
-      <a href="images/boek-ria-hoekstra.png" target="_blank">
-        <img src="images/boek-ria-hoekstra.png" alt="boek-ria-hoekstra">
-      </a>
-      <figcaption>Voorkant van boek</figcaption>
-    </figure>
-      
-    <figure>
-      <a href="images/boek-pia-deboer.png" target="_blank">
-        <img src="images/boek-pia-deboer.png" alt="boek-pia-deboer">
-      </a>
-      <figcaption>Voorkant en achterkant van boek</figcaption>
     </figure>
 
   </div>
