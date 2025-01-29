@@ -161,8 +161,9 @@ html, body {
 #filter-menu label {
     display: block;
     margin-bottom: 5px;
-    font-size: 14px;
-    color: #2F004D; /* Ensure text is readable against the transparent menu */
+    font-size: 22px;
+    font-weight: 300;
+    color: #3A045B; /* Ensure text is readable against the transparent menu */
 }
 
 /* Remove grey border around the zoom bar */
