@@ -1,68 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
-    <!-- Leaflet.js Core -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    
-        <!-- Locally Hosted Leaflet-LocateControl -->
-    <link rel="stylesheet" href="locate/L.Control.Locate.min.css" />
-    <script src="locate/L.Control.Locate.min.js"></script>
-    
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>berlino tucano Map</title>
-    <link rel="manifest" href="manifest.json">
-    <link rel="stylesheet" href="css/chubbo.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="icon" href="icons/favicon-16x16.png" sizes="16x16" type="image/png">
-    <link rel="icon" href="icons/favicon-32x32.png" sizes="32x32" type="image/png">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
-    <meta name="apple-mobile-web-app-title" content="berlino tucano">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta charset="UTF-8">
+  <title>Blauwdruk - Portfolio</title>
+  <style>
+    /* Reset some default margins/padding */
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #eee; /* Light grey background */
+      font-family: sans-serif;
+    }
+
+    /* Container that centers the images and adds top/bottom padding */
+    .image-container {
+      padding: 20px;
+      max-width: 700px;
+      margin: 0 auto; /* Center horizontally */
+    }
+
+    /* Each image is displayed block (no extra space around),
+       with bottom margin for spacing */
+    .image-container img {
+      display: block;
+      margin: 20px 0;     /* Vertical spacing */
+      max-width: 100%;    /* Responsive width */
+      height: auto;       /* Maintain aspect ratio */
+      border: 1px solid #ccc; /* Optional subtle border */
+      background-color: #fff;  /* White background behind each image */
+      padding: 10px;
+    }
+  </style>
 </head>
 <body>
+  <div class="image-container">
+    <!-- Place each image in the order you want them to appear -->
+    <img src="images/flyer_ardennen-foto1.jpeg" 
+         alt="flyer_ardennen-foto1">
 
-<!-- Logo Container -->
-<div id="logo-container">
-    <img src="icons/berlino-tucano-map.svg" alt="Berlino Tucano Map Logo" />
-</div>
+    <img src="images/flyer-ardennen-foto2.jpeg" 
+         alt="flyer-ardennen-foto2">
 
-    <!-- Map Container -->
-    <div id="map" class="main"></div>
+    <img src="images/boek-charlotte-althoff.png" 
+         alt="boek-charlotte-althoff">
 
-    <!-- Floating Filter Button -->
-    <div id="filter-button" onclick="toggleFilterMenu()">
-    <img src="icons/filter.svg" alt="Filter Icon" />
-</div>
+    <img src="images/boek-floor-loonstra.png" 
+         alt="boek-floor-loonstra">
 
+    <img src="images/boek-pia-deboer.png" 
+         alt="boek-pia-deboer">
 
-    <!-- Hidden Dropdown Menu -->
-<div id="filter-menu">
-    <p class="menu-title">what are you looking for?</p>
+    <img src="images/flyer-ardennen-achterkant-paars.png" 
+         alt="flyer-ardennen-achterkant-paars">
 
-    <label><input type="checkbox" class="category-filter" value="Fastfood" checked> fastfood</label>
-    <label><input type="checkbox" class="category-filter" value="Secondhand" checked> secondhand</label>
-    <label><input type="checkbox" class="category-filter" value="Restaurant" checked> restaurant</label>
-    <label><input type="checkbox" class="category-filter" value="Bar" checked> bar</label>
-    <label><input type="checkbox" class="category-filter" value="Pub" checked> pub</label>
-    <label><input type="checkbox" class="category-filter" value="Club" checked> club</label>
-    <label><input type="checkbox" class="category-filter" value="Cafe" checked> cafe</label>
-    <label><input type="checkbox" class="category-filter" value="Other" checked> other</label>
-    <label><input type="checkbox" class="category-filter" value="Museum or gallery" checked> museum or gallery</label>
+    <img src="images/flyer-ardennen-voorkant-paars.png" 
+         alt="flyer-ardennen-voorkant-paars">
 
-    <!-- Buttons -->
-    <div class="menu-buttons">
-        <button id="closeFilter">let's go!</button>
-        <button id="installButton">install the app</button>
-    </div>
-</div>
-
-    <!-- Your Custom Map Script -->
-    <script src="map.js"></script>
-    <script src="install.js"></script>
+    <img src="images/geboortekaartje-ruben-leo-preview.png" 
+         alt="geboortekaartje-ruben-leo-preview">
+  </div>
 </body>
 </html>
