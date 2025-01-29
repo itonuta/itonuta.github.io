@@ -152,6 +152,7 @@ html, body {
     text-align: center;
     display: none;
     z-index: 1000;
+    transition: opacity 0.8s ease; /* Smooth fade-in effect */
 }
 
 /* Menu title styling */
