@@ -59,8 +59,19 @@ function toggleFilterMenu() {
 
 // Button to close the filter menu
 document.getElementById("closeFilter").addEventListener("click", function() {
-    document.getElementById("filter-menu").style.display = "none";
-    document.getElementById("filter-button").classList.remove("active");
+    const filterMenu = document.getElementById("filter-menu");
+    const filterButton = document.getElementById("filter-button");
+
+    // Remove the "show" class so the transition effect works
+    filterMenu.classList.remove("show");
+
+    // Wait for the fade-out animation to complete before hiding the menu
+    setTimeout(() => {
+        filterMenu.style.display = "none";
+    }, 800); // Match the CSS transition time (0.8s)
+
+    // Remove the "active" state from the button
+    filterButton.classList.remove("active");
 });
 
 // Create a layer group to manage markers
