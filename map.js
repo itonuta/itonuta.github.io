@@ -1,8 +1,7 @@
 // Initialize the map
 const map = L.map('map', {
     zoomControl: false // Disables zoom buttons
-}).setView([52.5200, 13.4050], 12);
- // Centered on Berlin
+}).setView([52.5200, 13.4050], 12); // Centered on Berlin
 
 // Add Jawg.io tiles
 L.tileLayer('https://tile.jawg.io/fd663c4b-f13d-4782-b03f-98a43b3dec72/{z}/{x}/{y}{r}.png?access-token=pvUBUhZkXVnDBUQF9HFKGHvhdn3YrgDr4bIeyxrESzyfGpyRCsL0LFgmD7RO43LQ', {
@@ -37,6 +36,15 @@ const icons = {
     Default: L.icon({ iconUrl: 'icons/other.svg', iconSize: [25, 25], iconAnchor: [10, 10], popupAnchor: [0, -10] }) // Using 'other.svg' as a fallback
 };
 
+// Show the filter menu and make the filter button active on page load
+document.addEventListener("DOMContentLoaded", function () {
+    const filterMenu = document.getElementById("filter-menu");
+    const filterButton = document.getElementById("filter-button");
+
+    filterMenu.style.display = "block"; // Show the menu
+    filterMenu.classList.add("show"); // Apply fade-in effect
+    filterButton.classList.add("active"); // Set filter button as active
+});
 
 // Toggle filter menu visibility
 function toggleFilterMenu() {
@@ -57,7 +65,6 @@ function toggleFilterMenu() {
         filterButton.classList.add('active'); // Add button active state
     }
 }
-
 // Button to close the filter menu
 document.getElementById("closeFilter").addEventListener("click", function() {
     const filterMenu = document.getElementById("filter-menu");
@@ -74,6 +81,7 @@ document.getElementById("closeFilter").addEventListener("click", function() {
     // Remove the "active" state from the button
     filterButton.classList.remove("active");
 });
+
 
 // Create a layer group to manage markers
 const markerLayer = L.layerGroup().addTo(map);
@@ -137,6 +145,7 @@ fetch('places.geojson')
         });
     })
     .catch(error => console.error('Error loading GeoJSON:', error));
+
 
 // Remove the border of the LocateControl button via JavaScript
 document.addEventListener('DOMContentLoaded', () => {
