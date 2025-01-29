@@ -33,16 +33,8 @@ self.addEventListener('activate', (event) => {
     );
 });
 
-// Fetch event: handle requests, but ignore `/blauwdruk/`
+// Fetch event: serve cached resources or fetch from network
 self.addEventListener('fetch', (event) => {
-    const url = new URL(event.request.url);
-
-    // Prevent caching or handling requests to /blauwdruk/
-    if (url.pathname.startsWith('/blauwdruk/')) {
-        return; // Do nothing, let the browser handle it normally
-    }
-
-    // Serve cached resources or fetch from network
     event.respondWith(
         caches.match(event.request).then((response) => {
             return response || fetch(event.request);
