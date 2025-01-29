@@ -82,19 +82,21 @@ const markerLayer = L.layerGroup().addTo(map);
 fetch('places.geojson')
     .then(response => response.json())
     .then(data => {
-        // Function to update markers based on selected categories
+        // Function to update markers based on selected category
         function updateMarkers() {
             // Clear all markers
             markerLayer.clearLayers();
 
-            // Get selected categories
-            const selectedCategories = Array.from(document.querySelectorAll('.category-filter:checked')).map(checkbox => checkbox.value);
+            // Get selected category
+            const selectedCategory = document.querySelector('.category-filter:checked').value;
 
-            // Add markers for selected categories
+            // Add markers based on selected category
             L.geoJSON(data, {
                 pointToLayer: function (feature, latlng) {
                     const category = feature.properties.category || 'Default';
-                    if (selectedCategories.includes(category)) {
+
+                    // If "everything!" is selected, show all markers
+                    if (selectedCategory === "everything!" || selectedCategory === category) {
                         const icon = icons[category] || icons.Default;
                         return L.marker(latlng, { icon: icon });
                     }
@@ -114,9 +116,9 @@ fetch('places.geojson')
         // Initial load of markers
         updateMarkers();
 
-        // Add event listeners to checkboxes
-        document.querySelectorAll('.category-filter').forEach(checkbox => {
-            checkbox.addEventListener('change', updateMarkers);
+        // Add event listener to radio buttons
+        document.querySelectorAll('.category-filter').forEach(radio => {
+            radio.addEventListener('change', updateMarkers);
         });
     })
     .catch(error => console.error('Error loading GeoJSON:', error));
