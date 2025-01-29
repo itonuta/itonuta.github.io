@@ -150,12 +150,7 @@ html, body {
     z-index: 1001; /* Ensure it's above the map */
     opacity: 0; /* Start as fully transparent */
     transition: opacity 0.8s ease; /* Smooth fade-in effect */
-}
-
-/* When menu is active */
-#filter-menu.show {
-    display: block; /* Make the menu visible */
-    opacity: 1; /* Fully visible */
+    text-align: center; /* Center text inside the menu */
 }
 
 /* Menu title styling */
@@ -163,7 +158,8 @@ html, body {
     font-size: 16px;
     color: #3A045B;
     font-weight: bold;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    font-family: 'Lineal-Regular', sans-serif; /* Ensure it matches the rest of the design */
 }
 
 /* Style the checkboxes */
@@ -173,14 +169,16 @@ html, body {
     font-weight: 300;
     color: #3A045B; /* Ensure text is readable against the transparent menu */
     margin-bottom: 8px;
+    text-align: left; /* Keep category list left-aligned */
 }
 
 /* Menu buttons */
 .menu-buttons {
     margin-top: 15px;
     display: flex;
-    justify-content: center;
-    gap: 10px;
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: center; /* Center horizontally */
+    gap: 10px; /* Add spacing between buttons */
 }
 
 /* Styling for both buttons */
@@ -188,11 +186,14 @@ html, body {
     background: transparent;
     border: 2px solid #3A045B;
     color: #3A045B;
-    padding: 8px 16px;
+    padding: 10px 20px;
     font-size: 14px;
+    font-family: 'Lineal-Regular', sans-serif; /* Apply Lineal font */
     border-radius: 8px;
     cursor: pointer;
     transition: all 0.3s ease;
+    width: 100%; /* Ensure buttons take full width */
+    max-width: 200px; /* Prevent buttons from stretching too much */
 }
 
 /* Button hover effect */
