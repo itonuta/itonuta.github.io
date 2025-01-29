@@ -3,27 +3,27 @@
   <defs>
     <style>
       .cls-1 {
-        fill: #ffb6c1;
-      }
-
-      .cls-2 {
         fill: none;
         stroke: #9b00ff;
         stroke-linecap: round;
         stroke-linejoin: round;
       }
 
-      .cls-3 {
+      .cls-2 {
         fill: #9b00ff;
+      }
+
+      .cls-3 {
+        fill: violet;
       }
     </style>
   </defs>
   <g id="Bar">
-    <circle class="cls-1" cx="10" cy="10" r="10"/>
-    <path class="cls-2" d="M10,11.45l-4.27-5.13h8.53l-4.27,5.13ZM10,11.45v3.27M7.56,14.71h4.88M7.28,8.18h5.43"/>
-    <polygon class="cls-3" points="7.28 8.18 10 11.45 12.72 8.18 7.28 8.18"/>
+    <circle class="cls-3" cx="10" cy="10" r="10"/>
+    <path class="cls-1" d="M10,11.45l-4.27-5.13h8.53l-4.27,5.13ZM10,11.45v3.27M7.56,14.71h4.88M7.28,8.18h5.43"/>
+    <polygon class="cls-2" points="7.28 8.18 10 11.45 12.72 8.18 7.28 8.18"/>
   </g>
   <g id="Outline">
-    <path class="cls-3" d="M10,2c4.41,0,8,3.59,8,8s-3.59,8-8,8S2,14.41,2,10,5.59,2,10,2M10,0C4.48,0,0,4.48,0,10s4.48,10,10,10,10-4.48,10-10S15.52,0,10,0h0Z"/>
+    <path class="cls-2" d="M10,2c4.41,0,8,3.59,8,8s-3.59,8-8,8S2,14.41,2,10,5.59,2,10,2M10,0C4.48,0,0,4.48,0,10s4.48,10,10,10,10-4.48,10-10S15.52,0,10,0h0Z"/>
   </g>
 </svg>
