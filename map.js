@@ -25,16 +25,16 @@ L.control.locate({
 
 // Define icons for each category using the new SVG icons in the 'icons' folder
 const icons = {
-    Fastfood: L.icon({ iconUrl: 'icons/fastfood.svg', iconSize: [20, 20], iconAnchor: [10, 10], popupAnchor: [0, -10] }),
-    Secondhand: L.icon({ iconUrl: 'icons/secondhand.svg', iconSize: [20, 20], iconAnchor: [10, 10], popupAnchor: [0, -10] }),
-    Restaurant: L.icon({ iconUrl: 'icons/restaurant.svg', iconSize: [20, 20], iconAnchor: [10, 10], popupAnchor: [0, -10] }),
-    Bar: L.icon({ iconUrl: 'icons/bar.svg', iconSize: [20, 20], iconAnchor: [10, 10], popupAnchor: [0, -10] }),
-    Pub: L.icon({ iconUrl: 'icons/pub.svg', iconSize: [20, 20], iconAnchor: [10, 10], popupAnchor: [0, -10] }),
-    Club: L.icon({ iconUrl: 'icons/club.svg', iconSize: [20, 20], iconAnchor: [10, 10], popupAnchor: [0, -10] }),
-    Cafe: L.icon({ iconUrl: 'icons/cafe.svg', iconSize: [20, 20], iconAnchor: [10, 10], popupAnchor: [0, -10] }),
-    Other: L.icon({ iconUrl: 'icons/other.svg', iconSize: [20, 20], iconAnchor: [10, 10], popupAnchor: [0, -10] }),
-    "Museum or gallery": L.icon({ iconUrl: 'icons/art.svg', iconSize: [20, 20], iconAnchor: [10, 10], popupAnchor: [0, -10] }),
-    Default: L.icon({ iconUrl: 'icons/other.svg', iconSize: [20, 20], iconAnchor: [10, 10], popupAnchor: [0, -10] }) // Using 'other.svg' as a fallback
+    Fastfood: L.icon({ iconUrl: 'icons/fastfood.svg', iconSize: [25, 25], iconAnchor: [10, 10], popupAnchor: [0, -10] }),
+    Secondhand: L.icon({ iconUrl: 'icons/secondhand.svg', iconSize: [25, 25], iconAnchor: [10, 10], popupAnchor: [0, -10] }),
+    Restaurant: L.icon({ iconUrl: 'icons/restaurant.svg', iconSize: [25, 25], iconAnchor: [10, 10], popupAnchor: [0, -10] }),
+    Bar: L.icon({ iconUrl: 'icons/bar.svg', iconSize: [25, 25], iconAnchor: [10, 10], popupAnchor: [0, -10] }),
+    Pub: L.icon({ iconUrl: 'icons/pub.svg', iconSize: [25, 25], iconAnchor: [10, 10], popupAnchor: [0, -10] }),
+    Club: L.icon({ iconUrl: 'icons/club.svg', iconSize: [25, 25], iconAnchor: [10, 10], popupAnchor: [0, -10] }),
+    Cafe: L.icon({ iconUrl: 'icons/cafe.svg', iconSize: [25, 25], iconAnchor: [10, 10], popupAnchor: [0, -10] }),
+    Other: L.icon({ iconUrl: 'icons/other.svg', iconSize: [25, 25], iconAnchor: [10, 10], popupAnchor: [0, -10] }),
+    "Museum or gallery": L.icon({ iconUrl: 'icons/art.svg', iconSize: [25, 25], iconAnchor: [10, 10], popupAnchor: [0, -10] }),
+    Default: L.icon({ iconUrl: 'icons/other.svg', iconSize: [25, 25], iconAnchor: [10, 10], popupAnchor: [0, -10] }) // Using 'other.svg' as a fallback
 };
 
 
