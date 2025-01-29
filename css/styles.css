@@ -191,7 +191,7 @@ html, body {
     color: #3A045B;
     padding: 8px 16px !important;
     font-size: 18px !important;
-    font-family: 'Lineal-Regular', sans-serif; /* Apply Lineal font */
+    font-family: 'Lineal', sans-serif !important; /* Apply Lineal font */
     border-radius: 8px;
     cursor: pointer;
     transition: all 0.3s ease;
