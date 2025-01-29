@@ -160,16 +160,16 @@ html, body {
 
 /* Menu title styling */
 .menu-title {
-    font-size: 16px;
+    font-size: 20px;
     color: #3A045B;
-    font-weight: bold;
+    font-weight: 400;
     margin-bottom: 10px;
 }
 
 /* Style the checkboxes */
 #filter-menu label {
     display: block;
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 300;
     color: #3A045B; /* Ensure text is readable against the transparent menu */
     margin-bottom: 8px;
@@ -189,8 +189,8 @@ html, body {
     background: transparent;
     border: 2px solid #3A045B;
     color: #3A045B;
-    padding: 8px 16px;
-    font-size: 14px;
+    padding: 8px 16px !important;
+    font-size: 18px !important;
     font-family: 'Lineal-Regular', sans-serif; /* Apply Lineal font */
     border-radius: 8px;
     cursor: pointer;
