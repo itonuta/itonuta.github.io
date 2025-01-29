@@ -57,6 +57,11 @@ function toggleFilterMenu() {
     }
 }
 
+// Button to close the filter menu
+document.getElementById("closeFilter").addEventListener("click", function() {
+    document.getElementById("filter-menu").style.display = "none";
+    document.getElementById("filter-button").classList.remove("active");
+});
 
 // Create a layer group to manage markers
 const markerLayer = L.layerGroup().addTo(map);
