@@ -49,7 +49,7 @@ html, body {
     color: white;
     border: none;
     outline: 0 solid #00FF82; /* Start with no visible outline */
-    outline-offset: 0px;
+    outline-offset: -3px;
     border-radius: 50%;
     display: flex;
     justify-content: center;
