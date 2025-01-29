@@ -191,13 +191,15 @@ html, body {
     background: transparent;
     border: 2px solid #00FF82; /* Green border */
     color: #00FF82; /* Green text */
-    padding: 8px 16px !important;
+    padding: 10px 20px !important; /* Increased padding for better fit */
     font-size: 18px !important;
     font-family: 'Lineal', sans-serif !important; /* Apply Lineal font */
     border-radius: 8px;
     cursor: pointer;
     transition: all 0.3s ease;
-    width: 150px; /* Keep buttons uniform in size */
+    width: 180px; /* Increase width to fit text */
+    white-space: nowrap; /* Prevent text from wrapping */
+    text-align: center; /* Ensure text stays centered */
 }
 
 /* Button hover effect */
@@ -217,15 +219,6 @@ html, body {
 #closeFilter:hover {
     background: #9B00FF; /* Purple background */
     color: #00FF82; /* Green text */
-}
-
-
-
-/* Remove grey border around the zoom bar */
-.leaflet-touch .leaflet-bar {
-    border: none !important; /* Remove grey outer border */
-    box-shadow: none !important; /* Remove any shadow */
-    gap: 8px !important; /* Ensure spacing between buttons */
 }
 
 /* Style the LocateControl button */
