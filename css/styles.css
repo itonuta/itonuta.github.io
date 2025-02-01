@@ -215,18 +215,14 @@ html, body {
     font-weight: 300;
     color: #00FF82; /* Keep your original green text */
     margin-bottom: 8px;
-    padding: 8px 12px;
     cursor: pointer;
-    border-radius: 8px;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: font-weight 0.2s ease-in-out; /* Smooth transition */
 }
 
-/* Highlight the selected label */
-.category-filter:checked + label {
-    background-color: #9B00FF; /* Purple background for selected option */
-    color: white; /* White text for contrast */
+/* Increase font weight on hover */
+#filter-menu label:hover {
+    font-weight: 600; /* Bolden the label when hovered */
 }
-
 /* Menu buttons */
 .menu-buttons {
     margin-top: 15px;
