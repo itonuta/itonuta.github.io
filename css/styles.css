@@ -236,7 +236,7 @@ html, body {
 /* Styling for both buttons */
 .menu-buttons button {
     background: transparent;
-    border: 2px solid #00FF82; /* Green border */
+    border: 1.5px solid #00FF82; /* Green border */
     color: #00FF82; /* Green text */
     padding: 10px 20px !important; /* Increased padding for better fit */
     font-size: 18px !important;
@@ -251,21 +251,8 @@ html, body {
 
 /* Button hover effect */
 .menu-buttons button:hover {
-    background: #00FF82; /* Green background */
-    color: #3A045B; /* Dark purple text */
-}
-
-/* Styling for "let's go!" button */
-#closeFilter {
-    background: #00FF82; /* Green fill */
-    color: #9B00FF; /* Purple text */
-    border: 2px solid #00FF82; /* Green border */
-}
-
-/* Hover effect for "let's go!" button */
-#closeFilter:hover {
-    background: #9B00FF; /* Purple background */
-    color: #00FF82; /* Green text */
+    background: #EE82EE; /* Green background */
+    color: #9B00FF; /* Dark purple text */
 }
 
 /* Style the LocateControl button */
