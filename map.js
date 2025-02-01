@@ -152,11 +152,15 @@ function closeFilterMenu() {
     }, 800); // Match the CSS transition time (0.8s)
 
     filterButton.classList.remove("active");
-    });
-});
+}
+
+// Handle errors in GeoJSON loading
+fetch('places.geojson')
+    .then(response => response.json())
+    .then(data => {
+        console.log("GeoJSON loaded successfully");
     })
     .catch(error => console.error('Error loading GeoJSON:', error));
-
 
 // Remove the border of the LocateControl button via JavaScript
 document.addEventListener('DOMContentLoaded', () => {
