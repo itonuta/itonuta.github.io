@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Remove the "no-transition" class after 800ms to allow future animations
     setTimeout(() => {
         filterButton.classList.remove("no-transition");
-    }, 800); // Matches transition duration
+    }, 1000); // Matches transition duration
 });
 
 // Toggle filter menu visibility
