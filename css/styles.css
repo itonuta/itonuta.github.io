@@ -141,7 +141,7 @@ html, body {
         outline-color 0.8s ease-in-out, /* Outline color fades */
         outline-width 1s ease-in-out, /* Outline growth animation */
         transform 0.2s ease-in-out; /* Hover effect */
-        filter 0.8s ease-in-out; /* Smooth transparency animation */
+        filter 0.8s ease-in-out; !important; /* Smooth transparency animation */
 }
 
 /* SVG Icon inside the Button */
@@ -160,7 +160,7 @@ html, body {
 #filter-button.active {
     background-color: #9B00FF; /* Purple */
     outline: 1800px solid #9B00FF; /* Large purple border */
-    filter: opacity(0.85); /* 10% transparent */
+    filter: opacity(0.85); /* 15% transparent */
 }
 
 /* Hidden Dropdown Menu */
