@@ -137,7 +137,7 @@ html, body {
 /* Active state for the filter button (when the menu is open) */
 #filter-button.active {
     background-color: #9B00FF; /* Purple */
-    outline: 1500px solid #9B00FF; /* Large purple border */
+    outline: 1800px solid #9B00FF; /* Large purple border */
 }
 
 /* Hidden Dropdown Menu */
