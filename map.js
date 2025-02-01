@@ -57,19 +57,22 @@ document.addEventListener("DOMContentLoaded", function () {
 function toggleFilterMenu() {
     const filterMenu = document.getElementById('filter-menu');
     const filterButton = document.getElementById('filter-button');
+    const mapContainer = document.getElementById('map'); // Reference the map container
 
     if (filterMenu.classList.contains('show')) {
         filterMenu.classList.remove('show'); // Hide the menu
         setTimeout(() => {
             filterMenu.style.display = 'none'; 
-        }, 800); // Match fade-out duration
+        }, 800);
         filterButton.classList.remove('active');
+        mapContainer.classList.remove('icons-hidden'); // Remove fade effect from icons
     } else {
         filterMenu.style.display = 'block';
         setTimeout(() => {
             filterMenu.classList.add('show');
-        }, 400); 
+        }, 400);
         filterButton.classList.add('active');
+        mapContainer.classList.add('icons-hidden'); // Apply fade effect to icons
     }
 }
 
