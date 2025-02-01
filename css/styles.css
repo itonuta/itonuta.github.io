@@ -163,16 +163,6 @@ html, body {
     filter: opacity(0.85); /* 10% transparent */
 }
 
-/* Transition Effect (Added Dynamically After Page Load) */
-#filter-button:not(.no-transition) {
-    transition: 
-        background-color 0.8s ease-in-out, 
-        outline-color 0.8s ease-in-out, 
-        outline-width 1s ease-in-out, 
-        transform 0.2s ease-in-out, 
-        filter 0.8s ease-in-out;
-}
-
 /* Hidden Dropdown Menu */
 #filter-menu {
     position: fixed; /* Position relative to the entire screen */
@@ -216,12 +206,12 @@ html, body {
     color: #00FF82; /* Keep your original green text */
     margin-bottom: 8px;
     cursor: pointer;
-    transition: font-weight 0.2s ease-in-out; /* Smooth transition */
+    transition: color 0.2s ease-in-out; /* Smooth transition */
 }
 
 /* Increase font weight on hover */
 #filter-menu label:hover {
-    font-weight: 600; /* Bolden the label when hovered */
+    color: #EE82EE; /* Bolden the label when hovered */
 }
 /* Menu buttons */
 .menu-buttons {
