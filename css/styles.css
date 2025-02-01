@@ -138,7 +138,7 @@ html, body {
 #filter-button.active {
     background-color: #9B00FF; /* Purple */
     outline: 1800px solid #9B00FF; /* Large purple border */
-    filter: opacity(0.9); /* 10% transparent */
+    filter: opacity(0.85); /* 10% transparent */
 }
 
 /* Hidden Dropdown Menu */
