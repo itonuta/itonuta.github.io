@@ -143,6 +143,16 @@ html, body {
     filter: opacity(0.85); /* 10% transparent */
 }
 
+/* Transition Effect (Added Dynamically After Page Load) */
+#filter-button:not(.no-transition) {
+    transition: 
+        background-color 0.8s ease-in-out, 
+        outline-color 0.8s ease-in-out, 
+        outline-width 1s ease-in-out, 
+        transform 0.2s ease-in-out, 
+        filter 0.8s ease-in-out;
+}
+
 /* Hidden Dropdown Menu */
 #filter-menu {
     position: fixed; /* Position relative to the entire screen */

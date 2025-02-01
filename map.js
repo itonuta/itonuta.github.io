@@ -43,7 +43,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     filterMenu.style.display = "block"; // Show the menu
     filterMenu.classList.add("show"); // Apply fade-in effect
-    filterButton.classList.add("active"); // Set filter button as active
+    filterButton.classList.add("active", "no-transition"); // Set filter button as active, but disable transition
+
+    // Remove the "no-transition" class after 800ms to allow future animations
+    setTimeout(() => {
+        filterButton.classList.remove("no-transition");
+    }, 800); // Matches transition duration
 });
 
 // Toggle filter menu visibility
