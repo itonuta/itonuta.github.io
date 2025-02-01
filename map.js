@@ -152,8 +152,7 @@ function closeFilterMenu() {
     }, 800); // Match the CSS transition time (0.8s)
 
     filterButton.classList.remove("active");
-}
-
+    });
 });
     })
     .catch(error => console.error('Error loading GeoJSON:', error));
