@@ -115,11 +115,13 @@ html, body {
     font-weight: bold;
     cursor: pointer;
     z-index: 1000; /* Ensure it stays above the map */
+    filter: opacity(1); /* Fully opaque initially */
     transition: 
         background-color 0.8s ease-in-out, /* Background color fades */
         outline-color 0.8s ease-in-out, /* Outline color fades */
         outline-width 1s ease-in-out, /* Outline growth animation */
         transform 0.2s ease-in-out; /* Hover effect */
+        filter 0.8s ease-in-out; /* Smooth transparency animation */
 }
 
 /* SVG Icon inside the Button */
