@@ -12,28 +12,28 @@ L.tileLayer('https://tile.jawg.io/fd663c4b-f13d-4782-b03f-98a43b3dec72/{z}/{x}/{
 // Add LocateControl
 L.control.locate({
     position: 'topright', // Position of the button
-    flyTo: true, // Animates the map to the user's location
-    setView: 'once', // Centers the map on the first location found
-    keepCurrentZoomLevel: false, // Adjusts zoom level to fit user location
-    showPopup: true, // Displays a popup with location info
+    flyTo: true,
+    setView: 'once',
+    keepCurrentZoomLevel: false,
+    showPopup: true,
     strings: {
-        title: "Show me where I am", // Tooltip text for the button
-        popup: "You are within {distance} meters from this point." // Popup text
+        title: "Show me where I am",
+        popup: "You are within {distance} meters from this point."
     }
 }).addTo(map);
 
 // Define icons for each category using the new SVG icons in the 'icons' folder
 const icons = {
-    Fastfood: L.icon({ iconUrl: 'icons/fastfood.svg', iconSize: [25, 25], iconAnchor: [10, 10], popupAnchor: [0, -10] }),
-    Secondhand: L.icon({ iconUrl: 'icons/secondhand.svg', iconSize: [25, 25], iconAnchor: [10, 10], popupAnchor: [0, -10] }),
-    Restaurant: L.icon({ iconUrl: 'icons/restaurant.svg', iconSize: [25, 25], iconAnchor: [10, 10], popupAnchor: [0, -10] }),
-    Bar: L.icon({ iconUrl: 'icons/bar.svg', iconSize: [25, 25], iconAnchor: [10, 10], popupAnchor: [0, -10] }),
-    Pub: L.icon({ iconUrl: 'icons/pub.svg', iconSize: [25, 25], iconAnchor: [10, 10], popupAnchor: [0, -10] }),
-    Club: L.icon({ iconUrl: 'icons/club.svg', iconSize: [25, 25], iconAnchor: [10, 10], popupAnchor: [0, -10] }),
-    Cafe: L.icon({ iconUrl: 'icons/cafe.svg', iconSize: [25, 25], iconAnchor: [10, 10], popupAnchor: [0, -10] }),
-    Other: L.icon({ iconUrl: 'icons/other.svg', iconSize: [25, 25], iconAnchor: [10, 10], popupAnchor: [0, -10] }),
-    "Museum or gallery": L.icon({ iconUrl: 'icons/art.svg', iconSize: [25, 25], iconAnchor: [10, 10], popupAnchor: [0, -10] }),
-    Default: L.icon({ iconUrl: 'icons/other.svg', iconSize: [25, 25], iconAnchor: [10, 10], popupAnchor: [0, -10] }) // Using 'other.svg' as a fallback
+    Fastfood: L.icon({ iconUrl: 'icons/fastfood.svg', iconSize: [25, 25] }),
+    Secondhand: L.icon({ iconUrl: 'icons/secondhand.svg', iconSize: [25, 25] }),
+    Restaurant: L.icon({ iconUrl: 'icons/restaurant.svg', iconSize: [25, 25] }),
+    Bar: L.icon({ iconUrl: 'icons/bar.svg', iconSize: [25, 25] }),
+    Pub: L.icon({ iconUrl: 'icons/pub.svg', iconSize: [25, 25] }),
+    Club: L.icon({ iconUrl: 'icons/club.svg', iconSize: [25, 25] }),
+    Cafe: L.icon({ iconUrl: 'icons/cafe.svg', iconSize: [25, 25] }),
+    Other: L.icon({ iconUrl: 'icons/other.svg', iconSize: [25, 25] }),
+    "Museum or gallery": L.icon({ iconUrl: 'icons/art.svg', iconSize: [25, 25] }),
+    Default: L.icon({ iconUrl: 'icons/other.svg', iconSize: [25, 25] })
 };
 
 // Show the filter menu and make the filter button active on page load
@@ -54,34 +54,31 @@ function toggleFilterMenu() {
     if (filterMenu.classList.contains('show')) {
         filterMenu.classList.remove('show'); // Hide the menu
         setTimeout(() => {
-            filterMenu.style.display = 'none'; // Ensure it's fully hidden after fading out
-        }, 800); // Match the fade-out duration (0.8s)
-        filterButton.classList.remove('active'); // Remove button active state
+            filterMenu.style.display = 'none'; 
+        }, 800); // Match fade-out duration
+        filterButton.classList.remove('active');
     } else {
-        filterMenu.style.display = 'block'; // Ensure it's displayed for the animation
+        filterMenu.style.display = 'block';
         setTimeout(() => {
-            filterMenu.classList.add('show'); // Fade in the menu
-        }, 400); // Slight delay to trigger the transition
-        filterButton.classList.add('active'); // Add button active state
+            filterMenu.classList.add('show');
+        }, 400); 
+        filterButton.classList.add('active');
     }
 }
-// Button to close the filter menu
-document.getElementById("closeFilter").addEventListener("click", function() {
+
+// Function to close the filter menu and reset the filter button
+function closeFilterMenu() {
     const filterMenu = document.getElementById("filter-menu");
     const filterButton = document.getElementById("filter-button");
 
-    // Remove the "show" class so the transition effect works
     filterMenu.classList.remove("show");
 
-    // Wait for the fade-out animation to complete before hiding the menu
     setTimeout(() => {
         filterMenu.style.display = "none";
-    }, 800); // Match the CSS transition time (0.8s)
+    }, 800); // Match fade-out duration
 
-    // Remove the "active" state from the button
     filterButton.classList.remove("active");
-});
-
+}
 
 // Create a layer group to manage markers
 const markerLayer = L.layerGroup().addTo(map);
@@ -90,20 +87,16 @@ const markerLayer = L.layerGroup().addTo(map);
 fetch('places.geojson')
     .then(response => response.json())
     .then(data => {
+        console.log("GeoJSON loaded successfully");
+
         // Function to update markers based on selected category
         function updateMarkers() {
-            // Clear all markers
             markerLayer.clearLayers();
-
-            // Get selected category
             const selectedCategory = document.querySelector('.category-filter:checked').value;
 
-            // Add markers based on selected category
             L.geoJSON(data, {
                 pointToLayer: function (feature, latlng) {
                     const category = feature.properties.category || 'Default';
-
-                    // If "everything!" is selected, show all markers
                     if (selectedCategory === "everything!" || selectedCategory === category) {
                         const icon = icons[category] || icons.Default;
                         return L.marker(latlng, { icon: icon });
@@ -121,44 +114,22 @@ fetch('places.geojson')
             }).addTo(markerLayer);
         }
 
-        // Initial load of markers
         updateMarkers();
 
-// Add event listener to radio buttons
-document.querySelectorAll('.category-filter').forEach(radio => {
-    radio.addEventListener('change', function () {
-        updateMarkers(); // Update markers when a new category is selected
-        closeFilterMenu();
-    });
+        // Add event listener to radio buttons
+        document.querySelectorAll('.category-filter').forEach(radio => {
+            radio.addEventListener('change', function () {
+                updateMarkers();
+                closeFilterMenu();
+            });
 
-    // Special case: Detect clicks on "everything!" even if it's already selected
-    radio.addEventListener('click', function () {
-        if (this.value === "everything!") {
-            closeFilterMenu(); // Close the menu when clicking "everything!"
-        }
-    });
-});
-
-// Function to close the filter menu and reset the filter button
-function closeFilterMenu() {
-    const filterMenu = document.getElementById("filter-menu");
-    const filterButton = document.getElementById("filter-button");
-
-    filterMenu.classList.remove("show");
-
-    // Wait for the fade-out animation to complete before hiding the menu
-    setTimeout(() => {
-        filterMenu.style.display = "none";
-    }, 800); // Match the CSS transition time (0.8s)
-
-    filterButton.classList.remove("active");
-}
-
-// Handle errors in GeoJSON loading
-fetch('places.geojson')
-    .then(response => response.json())
-    .then(data => {
-        console.log("GeoJSON loaded successfully");
+            // Special case: Detect clicks on "everything!" even if it's already selected
+            radio.addEventListener('click', function () {
+                if (this.value === "everything!") {
+                    closeFilterMenu();
+                }
+            });
+        });
     })
     .catch(error => console.error('Error loading GeoJSON:', error));
 
