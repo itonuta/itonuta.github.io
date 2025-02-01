@@ -140,7 +140,7 @@ html, body {
         background-color 0.8s ease-in-out, /* Background color fades */
         outline-color 0.8s ease-in-out, /* Outline color fades */
         outline-width 1s ease-in-out, /* Outline growth animation */
-        transform 0.2s ease-in-out; /* Hover effect */
+        transform 0.2s ease-in-out, /* Hover effect */
         filter 0.8s ease-in-out; !important; /* Smooth transparency animation */
 }
 
