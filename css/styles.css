@@ -251,7 +251,8 @@ html, body {
 
 /* Button hover effect */
 .menu-buttons button:hover {
-    background: #EE82EE; /* Green background */
+    background: #EE82EE; /* Pink background */
+    border: 1.5px solid #EE82EE; /* Pink border */
     color: #9B00FF; /* Dark purple text */
 }
 
