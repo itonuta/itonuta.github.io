@@ -209,9 +209,9 @@ html, body {
     transition: color 0.2s ease-in-out; /* Smooth transition */
 }
 
-/* Increase font weight on hover */
+/* Change font color on hover */
 #filter-menu label:hover {
-    color: #EE82EE; /* Bolden the label when hovered */
+    color: #EE82EE; /* Color the label when hovered */
 }
 /* Menu buttons */
 .menu-buttons {
@@ -312,10 +312,4 @@ html, body {
     text-decoration: none; /* Remove underline from links */
 }
 
-/* Responsive styles for smaller screens */
-@media (max-width: 600px) {
-    #installButton {
-        font-size: 16px; /* Adjust font size */
-        padding: 5px 10px; /* Adjust padding */
-    }
 }
