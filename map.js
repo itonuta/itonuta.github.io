@@ -124,26 +124,26 @@ fetch('places.geojson')
         // Initial load of markers
         updateMarkers();
 
-        // Add event listener to radio buttons
-        document.querySelectorAll('.category-filter').forEach(radio => {
-            radio.addEventListener('change', function () {
-                updateMarkers(); // Update markers when a new category is selected
-                
-                // Close the menu and remove active state from the filter button
-                const filterMenu = document.getElementById("filter-menu");
-                const filterButton = document.getElementById("filter-button");
+// Add event listener to radio buttons
+document.querySelectorAll('.category-filter').forEach(radio => {
+    radio.addEventListener('change', function () {
+        updateMarkers(); // Update markers when a new category is selected
+        
+        const filterMenu = document.getElementById("filter-menu");
+        const filterButton = document.getElementById("filter-button");
 
-                filterMenu.classList.remove("show");
+        // Always close the menu, even if "everything!" is reselected
+        filterMenu.classList.remove("show");
 
-                // Wait for the fade-out animation to complete before hiding the menu
-                setTimeout(() => {
-                    filterMenu.style.display = "none";
-                }, 800); // Match the CSS transition time (0.8s)
+        // Wait for the fade-out animation to complete before hiding the menu
+        setTimeout(() => {
+            filterMenu.style.display = "none";
+        }, 800); // Match the CSS transition time (0.8s)
 
-                filterButton.classList.remove("active");
-            });
-        });
-    })
+        filterButton.classList.remove("active");
+    });
+});
+
     .catch(error => console.error('Error loading GeoJSON:', error));
 
 
