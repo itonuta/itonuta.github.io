@@ -66,6 +66,26 @@ html, body {
     font-family: 'Lineal', sans-serif; /* Use Lineal */
 }
 
+/* Full-Screen Loading Overlay */
+#loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #9B00FF; /* Pink background */
+    z-index: 9999; /* Ensure it stays on top */
+    opacity: 1;
+    transition: opacity 1s ease-out; /* Smooth fade-out */
+    pointer-events: none; /* Prevent blocking user interaction */
+}
+
+/* Hidden state (after fading out) */
+#loading-overlay.hidden {
+    opacity: 0;
+    visibility: hidden; /* Ensures it's removed from interaction */
+}
+
 
 /* Map container */
 .main {
@@ -144,7 +164,6 @@ html, body {
 }
 
 /* Transition Effect (Added Dynamically After Page Load) */
-#filter-button:not(.no-transition) {
     transition: 
         background-color 0.8s ease-in-out, 
         outline-color 0.8s ease-in-out, 

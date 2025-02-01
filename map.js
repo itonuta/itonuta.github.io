@@ -40,14 +40,16 @@ const icons = {
 document.addEventListener("DOMContentLoaded", function () {
     const filterMenu = document.getElementById("filter-menu");
     const filterButton = document.getElementById("filter-button");
+    const loadingOverlay = document.getElementById("loading-overlay");
 
-    filterMenu.style.display = "block"; // Show the menu
-    filterMenu.classList.add("show"); // Apply fade-in effect
-    filterButton.classList.add("active", "no-transition"); // Set filter button as active, but disable transition
+    // Show the menu & set the filter button active immediately
+    filterMenu.style.display = "block";
+    filterMenu.classList.add("show");
+    filterButton.classList.add("active");
 
-    // Remove the "no-transition" class after 800ms to allow future animations
+    // Fade out and remove the overlay after 1 second
     setTimeout(() => {
-        filterButton.classList.remove("no-transition");
+        loadingOverlay.classList.add("hidden");
     }, 1000); // Matches transition duration
 });
 
