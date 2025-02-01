@@ -143,7 +143,7 @@ document.querySelectorAll('.category-filter').forEach(radio => {
         filterButton.classList.remove("active");
     });
 });
-
+    })
     .catch(error => console.error('Error loading GeoJSON:', error));
 
 
