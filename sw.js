@@ -4,7 +4,6 @@ const urlsToCache = [
     '/index.html', // Main HTML file
     '/manifest.json', // Manifest file
     '/css/styles.css', // Stylesheet
-    '/css/chubbo.css', // Font CSS
     '/icons/icon-192.png', // Icon for PWA
     '/icons/icon-512.png' // Icon for PWA
 ];
