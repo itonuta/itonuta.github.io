@@ -47,9 +47,9 @@ document.addEventListener("DOMContentLoaded", function () {
     filterMenu.classList.add("show");
     filterButton.classList.add("active");
 
-    // Ensure map container is fully loaded before removing the overlay
+    // ✅ Ensure the loading overlay is fully removed after fade-out
     setTimeout(() => {
-        loadingOverlay.classList.add("hidden"); // Trigger fade-out of the overlay
+        loadingOverlay.classList.add("hidden"); // ✅ This will now work again!
     }, 1000); // Matches CSS transition duration
 });
 
@@ -71,6 +71,7 @@ function toggleFilterMenu() {
         filterButton.classList.add('active'); // Add active state
     }
 }
+
 
 
 // Toggle filter menu visibility
