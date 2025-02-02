@@ -317,6 +317,7 @@ html, body {
     #filter-menu label {
         font-size: 18px; /* Smaller text */
         padding: 6px 10px; /* Slightly reduced padding */
+        margin-bottom: 3px;
     }
 
     /* Adjust menu buttons */
