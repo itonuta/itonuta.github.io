@@ -153,7 +153,7 @@ function updateMarkers() {
 }
 
 
-updateMarkers();
+// updateMarkers();
 
         // Add event listener to radio buttons
         document.querySelectorAll('.category-filter').forEach(radio => {
