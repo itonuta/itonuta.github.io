@@ -96,72 +96,76 @@ fetch('places.geojson')
     .then(data => {
         console.log("GeoJSON loaded successfully");
 
-// Function to update markers based on selected category
-function updateMarkers() {
-    const selectedCategory = document.querySelector('.category-filter:checked').value;
-
-    // Step 1: Fade out existing markers before removing them
+// Function to fade out existing markers before removing them
+function fadeOutMarkers(callback) {
     markerLayer.eachLayer(layer => {
         if (layer._icon) {
-            layer._icon.style.transition = "opacity 2s ease-out";
+            layer._icon.style.transition = "opacity 0.3s ease-out";
             layer._icon.style.opacity = "0";
         }
     });
 
-    // Step 2: Wait for fade-out to complete before clearing markers
+    // Wait for fade-out to complete before calling the callback (updateMarkers)
     setTimeout(() => {
-        markerLayer.clearLayers();
+        if (callback) callback();
+    }, 300); // Matches the transition duration
+}
 
-        L.geoJSON(data, {
-            pointToLayer: function (feature, latlng) {
-                const category = feature.properties.category || 'Default';
-                if (selectedCategory === "everything!" || selectedCategory === category) {
-                    const icon = icons[category] || icons.Default;
-                    const marker = L.marker(latlng, { icon: icon });
+// Function to update markers based on selected category
+function updateMarkers() {
+    const selectedCategory = document.querySelector('.category-filter:checked').value;
 
-                    // Step 3: Apply fade-in effect after marker is added
-                    marker.on('add', function () {
-                        if (marker._icon) {
-                            marker._icon.style.opacity = "0"; // Start invisible
-                            marker._icon.style.transition = "opacity 2s ease-in";
-                            setTimeout(() => {
-                                marker._icon.style.opacity = "1"; // Fade in
-                            }, 50);
-                        }
-                    });
+    // Clear markers after fade-out completes
+    markerLayer.clearLayers();
 
-                    return marker;
-                }
-            },
-            onEachFeature: function (feature, layer) {
-                const { name, googleMaps, category } = feature.properties;
-                const popupContent = `
-                    <h3>${name}</h3>
-                    <p>${category}</p>
-                    <p>
-                        <img src="icons/google-maps.svg" alt="Google Maps Icon"
-                             style="width: 16px; height: 16px; vertical-align: middle; margin-right: 2px;">
-                        <a href="${googleMaps}" target="_blank" rel="noopener noreferrer">
-                            <span style="font-weight: bold;">Google</span> Maps
-                        </a>
-                    </p>
-                `;
-                layer.bindPopup(popupContent);
+    L.geoJSON(data, {
+        pointToLayer: function (feature, latlng) {
+            const category = feature.properties.category || 'Default';
+            if (selectedCategory === "everything!" || selectedCategory === category) {
+                const icon = icons[category] || icons.Default;
+                const marker = L.marker(latlng, { icon: icon });
+
+                // Apply fade-in effect after marker is added
+                marker.on('add', function () {
+                    if (marker._icon) {
+                        marker._icon.style.opacity = "0"; // Start invisible
+                        marker._icon.style.transition = "opacity 0.3s ease-in";
+                        setTimeout(() => {
+                            marker._icon.style.opacity = "1"; // Fade in
+                        }, 50);
+                    }
+                });
+
+                return marker;
             }
-        }).addTo(markerLayer);
-    }, 2000); // Ensure old markers fully disappear before replacing them
+        },
+        onEachFeature: function (feature, layer) {
+            const { name, googleMaps, category } = feature.properties;
+            const popupContent = `
+                <h3>${name}</h3>
+                <p>${category}</p>
+                <p>
+                    <img src="icons/google-maps.svg" alt="Google Maps Icon"
+                         style="width: 16px; height: 16px; vertical-align: middle; margin-right: 5px;">
+                    <a href="${googleMaps}" target="_blank" rel="noopener noreferrer">
+                        <span style="font-weight: bold;">Google</span> Maps
+                    </a>
+                </p>
+            `;
+            layer.bindPopup(popupContent);
+        }
+    }).addTo(markerLayer);
 }
 
 
-// updateMarkers();
+updateMarkers();
 
-        // Add event listener to radio buttons
-        document.querySelectorAll('.category-filter').forEach(radio => {
-            // Handles selecting a new category
-            radio.addEventListener('change', function () {
-                updateMarkers();
-                closeFilterMenu();
-            });
+        // Modify radio button event listeners to first fade out, then update markers
+document.querySelectorAll('.category-filter').forEach(radio => {
+    radio.addEventListener('change', function () {
+        fadeOutMarkers(updateMarkers); // Fade out first, then update
+        closeFilterMenu();
+    });
 
             // Handles clicking the already-selected category
             radio.addEventListener('click', function () {
