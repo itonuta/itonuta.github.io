@@ -114,7 +114,7 @@ fetch('places.geojson')
                     const popupContent = `
                         <h3>${name}</h3>
                         <p>${category}</p>
-                        <p>${googleMaps}</p>
+                        <p><a href="${googleMaps}" target="_blank" rel="noopener noreferrer">see on Google Maps</a></p>
                     `;
                     layer.bindPopup(popupContent);
                 }
