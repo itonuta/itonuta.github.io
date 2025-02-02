@@ -103,14 +103,14 @@ function updateMarkers() {
     // Step 1: Fade out existing markers before removing them
     markerLayer.eachLayer(layer => {
         if (layer._icon) {
-            layer._icon.style.transition = "opacity 2s ease-out";
-            layer._icon.style.opacity = "0"; // Fade out
+            layer._icon.style.transition = "opacity 2s ease-out"; // DEBUG: Increased fade-out duration
+            layer._icon.style.opacity = "0"; // Make them gradually disappear
         }
     });
 
     // Step 2: Wait for fade-out to complete before clearing markers
     setTimeout(() => {
-        markerLayer.clearLayers(); // Only remove them after fading out
+        markerLayer.clearLayers(); // Only remove them after full fade-out
 
         L.geoJSON(data, {
             pointToLayer: function (feature, latlng) {
@@ -123,9 +123,9 @@ function updateMarkers() {
                     marker.on('add', function () {
                         if (marker._icon) {
                             marker._icon.style.opacity = "0"; // Start invisible
-                            marker._icon.style.transition = "opacity 2s ease-in";
+                            marker._icon.style.transition = "opacity 0.3s ease-in";
                             setTimeout(() => {
-                                marker._icon.style.opacity = "1"; // Fade in
+                                marker._icon.style.opacity = "1"; // Fade in smoothly
                             }, 50);
                         }
                     });
@@ -149,7 +149,7 @@ function updateMarkers() {
                 layer.bindPopup(popupContent);
             }
         }).addTo(markerLayer);
-    }, 400); // Ensures markers fully fade out before removing them
+    }, 2000); // DEBUG: Increased to 2s for visibility
 }
 
 
