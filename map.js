@@ -100,13 +100,17 @@ fetch('places.geojson')
 function updateMarkers() {
     const selectedCategory = document.querySelector('.category-filter:checked').value;
 
-    // Step 1: Fade out existing markers before removing them
-    markerLayer.eachLayer(layer => {
-        if (layer._icon) {
-            layer._icon.style.transition = "opacity 2s ease-out"; // DEBUG: Increased fade-out duration
+// Step 1: Fade out existing markers before removing them
+markerLayer.eachLayer(layer => {
+    if (layer._icon) {
+        layer._icon.style.opacity = "1"; // Ensure it's fully visible before starting
+        layer._icon.style.transition = "opacity 2s ease-out"; // DEBUG: 2s fade-out
+        setTimeout(() => {
             layer._icon.style.opacity = "0"; // Make them gradually disappear
-        }
-    });
+        }, 10); // Short delay to ensure transition takes effect
+    }
+});
+
 
     // Step 2: Wait for fade-out to complete before clearing markers
     setTimeout(() => {
