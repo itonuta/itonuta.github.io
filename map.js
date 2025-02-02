@@ -100,12 +100,14 @@ fetch('places.geojson')
 function updateMarkers() {
     const selectedCategory = document.querySelector('.category-filter:checked').value;
 
-    // Step 1: Fade out existing markers before removing them (Forced reflow approach)
+   // Step 1: Fade out existing markers before removing them (Using a short timeout)
     markerLayer.eachLayer(layer => {
         if (layer._icon) {
             layer._icon.style.transition = "opacity 2s ease-out"; // Increase fade-out duration
-            void layer._icon.offsetWidth; // Force reflow to apply transition immediately
-            layer._icon.style.opacity = "0"; // Fade out
+            // Use a 0ms timeout to let the browser apply the transition property first
+            setTimeout(() => {
+                layer._icon.style.opacity = "0";
+            }, 0);
         }
     });
 
