@@ -43,10 +43,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const loadingOverlay = document.getElementById("loading-overlay");
 
     // Show the menu and activate the filter button immediately
-    filterMenu.style.display = "block"; // Show the menu
-    filterMenu.classList.add("show"); // Apply fade-in effect
-    filterButton.classList.add("active"); // Set filter button as active
-    
+    filterMenu.style.display = "block"; 
+    filterMenu.classList.add("show");
+    filterButton.classList.add("active");
+
     // Ensure map container is fully loaded before removing the overlay
     setTimeout(() => {
         loadingOverlay.classList.add("hidden"); // Trigger fade-out of the overlay
@@ -73,55 +73,6 @@ function toggleFilterMenu() {
     }
 }
 
-
-
-// Toggle filter menu visibility
-function toggleFilterMenu() {
-    const filterMenu = document.getElementById('filter-menu');
-    const filterButton = document.getElementById('filter-button');
-<<<<<<< HEAD
-    const mapContainer = document.getElementById('map'); // Reference the map container
-=======
-    const mapContainer = document.getElementById('map');
->>>>>>> parent of e256087 (icon fade)
-
-    if (filterMenu.classList.contains('show')) {
-        filterMenu.classList.remove('show'); // Hide the menu
-        setTimeout(() => {
-            filterMenu.style.display = 'none'; 
-        }, 800);
-        filterButton.classList.remove('active');
-<<<<<<< HEAD
-        mapContainer.classList.remove('icons-hidden'); // Remove fade effect from icons
-=======
-        
-        // ✅ Fade markers back in when menu closes
-        setTimeout(() => {
-            mapContainer.classList.remove('icons-hidden'); 
-        }, 300);
->>>>>>> parent of e256087 (icon fade)
-    } else {
-        filterMenu.style.display = 'block';
-        setTimeout(() => {
-            filterMenu.classList.add('show');
-        }, 400);
-        filterButton.classList.add('active');
-<<<<<<< HEAD
-        mapContainer.classList.add('icons-hidden'); // Apply fade effect to icons
-    }
-}
-
-=======
-        
-        // ✅ Fade markers out when menu opens
-        setTimeout(() => {
-            mapContainer.classList.add("icons-hidden");
-        }, 300);
-    }
-}
-
-
->>>>>>> parent of e256087 (icon fade)
 // Function to close the filter menu and reset the filter button
 function closeFilterMenu() {
     const filterMenu = document.getElementById("filter-menu");
@@ -173,20 +124,20 @@ fetch('places.geojson')
         updateMarkers();
 
         // Add event listener to radio buttons
-document.querySelectorAll('.category-filter').forEach(radio => {
-    // Handles selecting a new category
-    radio.addEventListener('change', function () {
-        updateMarkers();
-        closeFilterMenu();
-    });
+        document.querySelectorAll('.category-filter').forEach(radio => {
+            // Handles selecting a new category
+            radio.addEventListener('change', function () {
+                updateMarkers();
+                closeFilterMenu();
+            });
 
-    // Handles clicking the already-selected category
-    radio.addEventListener('click', function () {
-        if (this.checked) { // If the clicked option is already selected
-            closeFilterMenu();
-        }
-    });
-});
+            // Handles clicking the already-selected category
+            radio.addEventListener('click', function () {
+                if (this.checked) { // If the clicked option is already selected
+                    closeFilterMenu();
+                }
+            });
+        });
     })
     .catch(error => console.error('Error loading GeoJSON:', error));
 
