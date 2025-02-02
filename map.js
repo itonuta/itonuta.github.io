@@ -122,7 +122,7 @@ function updateMarkers() {
                     // Step 3: Apply fade-in effect to new markers
                     setTimeout(() => {
                         if (marker._icon) {
-                            marker._icon.style.transition = "opacity 0.3s ease-in";
+                            marker._icon.style.transition = "opacity 2s ease-in";
                             marker._icon.style.opacity = "1";
                         }
                     }, 50); // Small delay to ensure marker is added before animation
