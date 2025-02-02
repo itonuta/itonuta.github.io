@@ -100,44 +100,46 @@ fetch('places.geojson')
 function updateMarkers() {
     const selectedCategory = document.querySelector('.category-filter:checked').value;
 
-   // Step 1: Fade out existing markers before removing them (Using a short timeout)
+    // Step 1: Fade out existing markers before removing them (using a short timeout)
     markerLayer.eachLayer(layer => {
         if (layer._icon) {
-            layer._icon.style.transition = "opacity 2s ease-out"; // Increase fade-out duration
-            // Use a 0ms timeout to let the browser apply the transition property first
+            // Set up the fade-out transition
+            layer._icon.style.transition = "opacity 2s ease-out";
+            // Use a short delay (about one frame, ~16ms) to trigger the change
             setTimeout(() => {
                 layer._icon.style.opacity = "0";
-            }, 0);
+            }, 16);
         }
     });
 
-    // Step 2: Wait for fade-out to complete before clearing markers
+    // Step 2: Wait for fade-out to complete before clearing markers (using 2100ms delay)
     setTimeout(() => {
         markerLayer.clearLayers(); // Remove markers after fade-out
 
         // Step 3: Add new markers with fade-in effect using geoJSON data
         L.geoJSON(data, {
-            pointToLayer: function (feature, latlng) {
+            pointToLayer: function(feature, latlng) {
                 const category = feature.properties.category || 'Default';
                 if (selectedCategory === "everything!" || selectedCategory === category) {
                     const icon = icons[category] || icons.Default;
                     const marker = L.marker(latlng, { icon: icon });
 
                     // Step 4: Fade in new markers when they are added
-                    marker.on('add', function () {
+                    marker.on('add', function() {
                         if (marker._icon) {
-                            marker._icon.style.opacity = "0"; // Start invisible
-                            marker._icon.style.transition = "opacity 0.3s ease-in"; // Fade-in effect
+                            // Start invisible and set up the fade-in transition
+                            marker._icon.style.opacity = "0";
+                            marker._icon.style.transition = "opacity 0.3s ease-in";
                             setTimeout(() => {
                                 marker._icon.style.opacity = "1";
                             }, 50);
                         }
                     });
 
-                    return marker; // ✅ Correct return statement inside `pointToLayer`
+                    return marker;
                 }
             },
-            onEachFeature: function (feature, layer) {
+            onEachFeature: function(feature, layer) {
                 const { name, googleMaps, category } = feature.properties;
                 const popupContent = `
                     <h3>${name}</h3>
@@ -154,10 +156,10 @@ function updateMarkers() {
             }
         }).addTo(markerLayer);
 
-    }, 2000); // ✅ Wait 2s for fade-out before adding new markers
+    }, 2100); // Wait a little over 2s for fade-out to finish
 }
     
-        updateMarkers();
+updateMarkers();
 
         // Add event listener to radio buttons
         document.querySelectorAll('.category-filter').forEach(radio => {
