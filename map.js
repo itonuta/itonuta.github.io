@@ -103,7 +103,7 @@ function updateMarkers() {
     // Step 1: Fade out existing markers before removing them
     markerLayer.eachLayer(layer => {
         if (layer._icon) {
-            layer._icon.style.transition = "opacity 0.3s ease-out";
+            layer._icon.style.transition = "opacity 2s ease-out";
             layer._icon.style.opacity = "0";
         }
     });
@@ -123,7 +123,7 @@ function updateMarkers() {
                     marker.on('add', function () {
                         if (marker._icon) {
                             marker._icon.style.opacity = "0"; // Start invisible
-                            marker._icon.style.transition = "opacity 0.3s ease-in";
+                            marker._icon.style.transition = "opacity 2s ease-in";
                             setTimeout(() => {
                                 marker._icon.style.opacity = "1"; // Fade in
                             }, 50);
