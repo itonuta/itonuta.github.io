@@ -148,7 +148,7 @@ html, body {
 .leaflet-popup-close-button {
     color: #9B00FF !important;
     font-size: 16px !important;
-    color: #9B00FF
+    color: #9B00FF;
     font-weight: bold !important;
 }
 
