@@ -57,32 +57,24 @@ document.addEventListener("DOMContentLoaded", function () {
 function toggleFilterMenu() {
     const filterMenu = document.getElementById('filter-menu');
     const filterButton = document.getElementById('filter-button');
+    const mapContainer = document.getElementById('map'); // Reference the map container
 
     if (filterMenu.classList.contains('show')) {
         filterMenu.classList.remove('show'); // Hide the menu
         setTimeout(() => {
-            filterMenu.style.display = 'none';
+            filterMenu.style.display = 'none'; 
         }, 800);
-        filterButton.classList.remove('active'); // Remove active state -> Icons fade back in
-        setMarkerOpacity(1); // ✅ Fully visible markers
+        filterButton.classList.remove('active');
+        mapContainer.classList.remove('icons-hidden'); // Remove fade effect from icons
     } else {
         filterMenu.style.display = 'block';
         setTimeout(() => {
             filterMenu.classList.add('show');
         }, 400);
-        filterButton.classList.add('active'); // Add active state -> Icons fade out
-        setMarkerOpacity(0.3); // ✅ Fade out markers
+        filterButton.classList.add('active');
+        mapContainer.classList.add('icons-hidden'); // Apply fade effect to icons
     }
 }
-
-// Function to change marker opacity dynamically
-function setMarkerOpacity(opacityValue) {
-    document.querySelectorAll('.leaflet-marker-icon').forEach(icon => {
-        icon.style.transition = 'opacity 0.8s ease-in-out';
-        icon.style.opacity = opacityValue;
-    });
-}
-
 
 // Function to close the filter menu and reset the filter button
 function closeFilterMenu() {
