@@ -40,17 +40,22 @@ const icons = {
 document.addEventListener("DOMContentLoaded", function () {
     const filterMenu = document.getElementById("filter-menu");
     const filterButton = document.getElementById("filter-button");
-    const mapContainer = document.getElementById("map"); // Ensure markers fade out on load
+    const mapContainer = document.getElementById("map");
+    const loadingOverlay = document.getElementById("loading-overlay");
 
     // Show the menu and activate the filter button immediately
     filterMenu.style.display = "block";
     filterMenu.classList.add("show");
     filterButton.classList.add("active");
-    mapContainer.classList.add("icons-hidden"); // ✅ Hide markers immediately since menu starts active
+
+    // ✅ Fade markers out immediately on page load (since menu starts active)
+    setTimeout(() => {
+        mapContainer.classList.add("icons-hidden"); 
+    }, 50); // Slight delay to ensure the class is applied properly
 
     // Ensure map container is fully loaded before removing the overlay
     setTimeout(() => {
-        document.getElementById("loading-overlay").classList.add("hidden");
+        loadingOverlay.classList.add("hidden");
     }, 1000);
 });
 
@@ -65,14 +70,22 @@ function toggleFilterMenu() {
             filterMenu.style.display = 'none';
         }, 800);
         filterButton.classList.remove('active');
-        mapContainer.classList.remove('icons-hidden'); // ✅ Fade markers back in when closing menu
+        
+        // ✅ Fade markers back in when menu closes
+        setTimeout(() => {
+            mapContainer.classList.remove('icons-hidden'); 
+        }, 300);
     } else {
         filterMenu.style.display = 'block';
         setTimeout(() => {
             filterMenu.classList.add('show');
         }, 400);
         filterButton.classList.add('active');
-        mapContainer.classList.add('icons-hidden'); // ✅ Fade markers out when opening menu
+        
+        // ✅ Fade markers out when menu opens
+        setTimeout(() => {
+            mapContainer.classList.add("icons-hidden");
+        }, 300);
     }
 }
 
