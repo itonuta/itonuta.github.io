@@ -115,6 +115,18 @@ html, body {
     box-shadow: 0px 0px 0px rgba(0, 0, 0, 0); /* Soft shadow */
 }
 
+/* Reduce vertical space inside popups */
+.leaflet-popup-content h3 {
+    margin: 4px 0; /* Reduce space above and below the title */
+    font-size: 18px; /* Adjust size if needed */
+}
+
+.leaflet-popup-content p {
+    margin: 2px 0; /* Reduce space above and below paragraphs */
+    font-size: 14px; /* Adjust size if needed */
+    line-height: 1.2; /* Reduce line spacing */
+}
+
 /* Popup Close Button */
 .leaflet-popup-close-button {
     color: #EE82EE !important;
