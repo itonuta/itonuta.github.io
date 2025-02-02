@@ -96,26 +96,11 @@ fetch('places.geojson')
     .then(data => {
         console.log("GeoJSON loaded successfully");
 
-// Function to fade out existing markers before removing them
-function fadeOutMarkers(callback) {
-    markerLayer.eachLayer(layer => {
-        if (layer._icon) {
-            layer._icon.style.transition = "opacity 2s ease-out";
-            layer._icon.style.opacity = "0";
-        }
-    });
-
-    // Wait for fade-out to complete before calling the callback (updateMarkers)
-    setTimeout(() => {
-        if (callback) callback();
-    }, 2000); // Matches the transition duration
-}
-
 // Function to update markers based on selected category
 function updateMarkers() {
     const selectedCategory = document.querySelector('.category-filter:checked').value;
 
-    // Clear markers after fade-out completes
+    // Clear markers before adding new ones
     markerLayer.clearLayers();
 
     L.geoJSON(data, {
@@ -129,7 +114,7 @@ function updateMarkers() {
                 marker.on('add', function () {
                     if (marker._icon) {
                         marker._icon.style.opacity = "0"; // Start invisible
-                        marker._icon.style.transition = "opacity 2s ease-in";
+                        marker._icon.style.transition = "opacity 0.3s ease-in";
                         setTimeout(() => {
                             marker._icon.style.opacity = "1"; // Fade in
                         }, 50);
@@ -158,30 +143,20 @@ function updateMarkers() {
 }
 
 
+
 updateMarkers();
 
-        // Modify radio button event listeners to first fade out, then update markers
+// Modify radio button event listeners to update markers without fade-out
 document.querySelectorAll('.category-filter').forEach(radio => {
     radio.addEventListener('change', function () {
-        fadeOutMarkers(updateMarkers); // Fade out first, then update
+        updateMarkers(); // Directly update markers (no fade-out)
         closeFilterMenu();
     });
 
-            // Handles clicking the already-selected category
-            radio.addEventListener('click', function () {
-                if (this.checked) { // If the clicked option is already selected
-                    closeFilterMenu();
-                }
-            });
-        });
-    })
-    .catch(error => console.error('Error loading GeoJSON:', error));
-
-// Remove the border of the LocateControl button via JavaScript
-document.addEventListener('DOMContentLoaded', () => {
-    const locateControlDiv = document.querySelector('.leaflet-control-locate.leaflet-bar.leaflet-control');
-    if (locateControlDiv) {
-        locateControlDiv.style.border = 'none';
-        locateControlDiv.style.boxShadow = 'none';
-    }
+    // Handles clicking the already-selected category
+    radio.addEventListener('click', function () {
+        if (this.checked) {
+            closeFilterMenu();
+        }
+    });
 });
