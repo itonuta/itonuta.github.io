@@ -97,33 +97,60 @@ fetch('places.geojson')
         console.log("GeoJSON loaded successfully");
 
         // Function to update markers based on selected category
-        function updateMarkers() {
-            markerLayer.clearLayers();
-            const selectedCategory = document.querySelector('.category-filter:checked').value;
+function updateMarkers() {
+    const selectedCategory = document.querySelector('.category-filter:checked').value;
 
-            L.geoJSON(data, {
-                pointToLayer: function (feature, latlng) {
-                    const category = feature.properties.category || 'Default';
-                    if (selectedCategory === "everything!" || selectedCategory === category) {
-                        const icon = icons[category] || icons.Default;
-                        return L.marker(latlng, { icon: icon });
-                    }
-                },
-                onEachFeature: function (feature, layer) {
-                    const { name, googleMaps, category } = feature.properties;
-                    const popupContent = `
-                        <h3>${name}</h3>
-                        <p>${category}</p>
-                        <p>
-            <img src="icons/google-maps.svg" alt="Google Maps Icon" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 5px;">
-            <a href="${googleMaps}" target="_blank" rel="noopener noreferrer"><span style="font-weight: bold;">Google</span> Maps</a>
-        </p>
-
-                    `;
-                    layer.bindPopup(popupContent);
-                }
-            }).addTo(markerLayer);
+    // Step 1: Fade out and shrink existing markers before removing them
+    markerLayer.eachLayer(layer => {
+        if (layer._icon) { 
+            layer._icon.style.transition = "transform 0.3s ease-out, opacity 0.3s ease-out";
+            layer._icon.style.transform = "scale(0)";
+            layer._icon.style.opacity = "0";
         }
+    });
+
+    // Step 2: Wait for fade-out to complete before clearing markers
+    setTimeout(() => {
+        markerLayer.clearLayers();
+
+        L.geoJSON(data, {
+            pointToLayer: function (feature, latlng) {
+                const category = feature.properties.category || 'Default';
+                if (selectedCategory === "everything!" || selectedCategory === category) {
+                    const icon = icons[category] || icons.Default;
+                    const marker = L.marker(latlng, { icon: icon });
+
+                    // Step 3: Wait a bit, then fade in & grow the new markers
+                    setTimeout(() => {
+                        if (marker._icon) {
+                            marker._icon.style.transition = "transform 0.3s ease-out, opacity 0.3s ease-out";
+                            marker._icon.style.transform = "scale(1)";
+                            marker._icon.style.opacity = "1";
+                        }
+                    }, 50); // Small delay to ensure marker is added before animating
+
+                    return marker;
+                }
+            },
+            onEachFeature: function (feature, layer) {
+                const { name, googleMaps, category } = feature.properties;
+                const popupContent = `
+                    <h3>${name}</h3>
+                    <p>${category}</p>
+                    <p>
+                        <img src="icons/google-maps.svg" alt="Google Maps Icon"
+                             style="width: 16px; height: 16px; vertical-align: middle; margin-right: 5px;">
+                        <a href="${googleMaps}" target="_blank" rel="noopener noreferrer">
+                            <span style="font-weight: bold;">Google</span> Maps
+                        </a>
+                    </p>
+                `;
+                layer.bindPopup(popupContent);
+            }
+        }).addTo(markerLayer);
+    }, 300); // Ensure old markers fully disappear before replacing them
+}
+
 
         updateMarkers();
 

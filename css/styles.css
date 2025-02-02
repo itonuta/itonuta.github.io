@@ -164,7 +164,7 @@ html, body {
 /* Google Maps links */
 .leaflet-popup-content a {
     font-family: 'Outfit', sans-serif; /* Apply Outfit font */
-    color: #9B00FF
+    color: #9B00FF;
     text-decoration: none; /* Remove underline */
     font-size: 14px;
     font-weight: 200;
