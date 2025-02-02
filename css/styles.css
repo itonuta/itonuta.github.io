@@ -97,22 +97,6 @@ html, body {
     height: 100%;
 }
 
-/* Default marker icons (fully visible) */
-.leaflet-marker-icon {
-    transition: opacity 0.8s ease-in-out; /* Smooth fade effect */
-    opacity: 1;
-}
-
-<<<<<<< HEAD
-/* When the filter button is active, fade out the markers */
-#filter-button.active ~ #map .leaflet-marker-icon {
-=======
-/* When the filter button is active, fade out all markers */
-.icons-hidden .leaflet-pane img.leaflet-marker-icon {
->>>>>>> parent of e256087 (icon fade)
-    opacity: 0; /* Adjust opacity as needed */
-}
-
 /* Logo Container */
 #logo-container {
     position: absolute; /* Keeps the logo fixed in place */
