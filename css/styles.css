@@ -112,6 +112,10 @@ html, body {
     height: 100%;
 }
 
+.leaflet-marker-icon {
+  transition: opacity 2s ease-out !important;
+}
+
 /* General Popup Styling */
 .leaflet-popup-content {
     font-family: 'Lineal', sans-serif; /* Apply custom font */
