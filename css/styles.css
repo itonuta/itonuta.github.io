@@ -54,6 +54,22 @@ html, body {
     font-style: normal;
 }
 
+/* Outfit Extralight */
+@font-face {
+    font-family: 'Outfit';
+    src: url('../fonts/Outfit-ExtraLight.woff2') format('woff2');
+    font-weight: 200;
+    font-style: normal;
+}
+
+/* Outfit Medium */
+@font-face {
+    font-family: 'Outfit';
+    src: url('../fonts/Outfit-Medium.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+}
+
 /* General styles */
 html, body {
     margin: 0;
@@ -144,8 +160,9 @@ html, body {
     box-shadow: 0 0px 0px rgba(0, 0, 0, 0);
 }
 
-/* Popup Links (e.g., Google Maps links) */
+/* Google Maps links */
 .leaflet-popup-content a {
+    font-family: 'Outfit', sans-serif; /* Apply Outfit font */
     color: #EE82EE; /* Pink links */
     text-decoration: none; /* Remove underline */
     font-size: 12px;
