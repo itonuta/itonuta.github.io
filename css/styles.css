@@ -146,8 +146,8 @@ html, body {
 /* Popup Close Button */
 .leaflet-popup-close-button {
     color: #9B00FF !important;
-    font-size: 22px; /* Bigger button */
-    font-weight: bold;
+    font-size: 16px !important;
+    font-weight: bold !important;
 }
 
 /* Popup Tip (Arrow) */
