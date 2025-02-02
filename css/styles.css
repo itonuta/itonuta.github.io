@@ -235,6 +235,7 @@ html, body {
     width: 180px; /* Increase width to fit text */
     white-space: nowrap; /* Prevent text from wrapping */
     text-align: center; /* Ensure text stays centered */
+    margin-top: 15px;
 }
 
 /* Button hover effect */
