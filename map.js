@@ -40,20 +40,6 @@ const icons = {
 document.addEventListener("DOMContentLoaded", function () {
     const filterMenu = document.getElementById("filter-menu");
     const filterButton = document.getElementById("filter-button");
-<<<<<<< HEAD
-    const loadingOverlay = document.getElementById("loading-overlay");
-
-    // Show the menu and activate the filter button immediately
-    filterMenu.style.display = "block"; // Show the menu
-    filterMenu.classList.add("show"); // Apply fade-in effect
-    filterButton.classList.add("active"); // Set filter button as active
-    
-    // Ensure map container is fully loaded before removing the overlay
-    setTimeout(() => {
-        loadingOverlay.classList.add("hidden"); // Trigger fade-out of the overlay
-    }, 1000); // Matches CSS transition duration
-=======
-    const mapContainer = document.getElementById("map");
     const loadingOverlay = document.getElementById("loading-overlay");
 
     // Show the menu and activate the filter button immediately
@@ -61,17 +47,31 @@ document.addEventListener("DOMContentLoaded", function () {
     filterMenu.classList.add("show");
     filterButton.classList.add("active");
 
-    // ✅ Fade markers out immediately on page load (since menu starts active)
-    setTimeout(() => {
-        mapContainer.classList.add("icons-hidden"); 
-    }, 50); // Slight delay to ensure the class is applied properly
-
     // Ensure map container is fully loaded before removing the overlay
     setTimeout(() => {
-        loadingOverlay.classList.add("hidden");
-    }, 1000);
->>>>>>> parent of e256087 (icon fade)
+        loadingOverlay.classList.add("hidden"); // Trigger fade-out of the overlay
+    }, 1000); // Matches CSS transition duration
 });
+
+function toggleFilterMenu() {
+    const filterMenu = document.getElementById('filter-menu');
+    const filterButton = document.getElementById('filter-button');
+
+    if (filterMenu.classList.contains('show')) {
+        filterMenu.classList.remove('show'); // Hide the menu
+        setTimeout(() => {
+            filterMenu.style.display = 'none';
+        }, 800);
+        filterButton.classList.remove('active'); // Remove active state
+    } else {
+        filterMenu.style.display = 'block';
+        setTimeout(() => {
+            filterMenu.classList.add('show');
+        }, 400);
+        filterButton.classList.add('active'); // Add active state
+    }
+}
+
 
 // Toggle filter menu visibility
 function toggleFilterMenu() {
