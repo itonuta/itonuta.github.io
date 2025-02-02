@@ -99,6 +99,7 @@ html, body {
 /* General Popup Styling */
 .leaflet-popup-content {
     font-family: 'Lineal', sans-serif; /* Apply custom font */
+    text-transform: lowercase;
     font-size: 16px; /* Adjust text size */
     color: #EE82EE;
     text-align: center; /* Center text */
@@ -118,6 +119,12 @@ html, body {
 .leaflet-popup-close-button {
     color: #EE82EE !important;
     font-size: 22px; /* Bigger button */
+}
+
+/* Remove the default popup arrow ("tip") */
+.leaflet-popup-tip-container {
+    background-color: #3A045B !important; /* Dark purple background */
+    border: 1.5px solid #EE82EE;
 }
 
 /* Popup Links (e.g., Google Maps links) */
