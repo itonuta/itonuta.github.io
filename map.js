@@ -140,7 +140,7 @@ function updateMarkers() {
         }).addTo(markerLayer);
     }, 2000); // Wait 2 seconds for fade-out to finish
 }
-
+});
 
                     return marker;
                 }
