@@ -121,10 +121,10 @@ html, body {
     font-size: 22px; /* Bigger button */
 }
 
-/* Remove the default popup arrow ("tip") */
-.leaflet-popup-tip-container {
-    background-color: #3A045B !important; /* Dark purple background */
-    border: 1.5px solid #EE82EE;
+/* Popup Tip (Arrow) */
+.leaflet-popup-tip {
+    background-color: #3A045B !important; /* Dark purple tip */
+    border: 1.5px solid #EE82EE !important; /* Pink border to match popup */
 }
 
 /* Popup Links (e.g., Google Maps links) */
