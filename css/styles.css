@@ -111,7 +111,7 @@ html, body {
     color: #EE82EE !important; /* Text color */
     border: 1.5px solid #EE82EE;
     border-radius: 10px; /* Rounded corners */
-    padding: 5px; /* Inner spacing */
+    padding: 0px; /* Inner spacing */
     box-shadow: 0px 0px 0px rgba(0, 0, 0, 0); /* Soft shadow */
 }
 
