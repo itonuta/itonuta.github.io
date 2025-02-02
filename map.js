@@ -96,26 +96,26 @@ fetch('places.geojson')
     .then(data => {
         console.log("GeoJSON loaded successfully");
 
-        // Function to update markers based on selected category
+// Function to update markers based on selected category
 function updateMarkers() {
     const selectedCategory = document.querySelector('.category-filter:checked').value;
 
-// Step 1: Fade out existing markers before removing them
-markerLayer.eachLayer(layer => {
-    if (layer._icon) {
-        layer._icon.style.opacity = "1"; // Ensure it's fully visible before starting
-        layer._icon.style.transition = "opacity 2s ease-out"; // DEBUG: 2s fade-out
-        setTimeout(() => {
-            layer._icon.style.opacity = "0"; // Make them gradually disappear
-        }, 10); // Short delay to ensure transition takes effect
-    }
-});
-
+    // Step 1: Fade out existing markers before removing them (Forced reflow approach)
+    markerLayer.eachLayer(layer => {
+        if (layer._icon) {
+            layer._icon.style.transition = "opacity 2s ease-out"; // Increase fade-out duration
+            // Force a reflow so that the new transition is applied immediately:
+            void layer._icon.offsetWidth;
+            // Now set opacity to 0 to trigger the fade-out animation.
+            layer._icon.style.opacity = "0";
+        }
+    });
 
     // Step 2: Wait for fade-out to complete before clearing markers
     setTimeout(() => {
-        markerLayer.clearLayers(); // Only remove them after full fade-out
+        markerLayer.clearLayers(); // Remove markers after fade-out
 
+        // Step 3: Add new markers with fade-in effect using geoJSON data
         L.geoJSON(data, {
             pointToLayer: function (feature, latlng) {
                 const category = feature.properties.category || 'Default';
@@ -123,16 +123,24 @@ markerLayer.eachLayer(layer => {
                     const icon = icons[category] || icons.Default;
                     const marker = L.marker(latlng, { icon: icon });
 
-                    // Step 3: Fade-in effect for new markers
+                    // Fade in new markers when they are added
                     marker.on('add', function () {
                         if (marker._icon) {
-                            marker._icon.style.opacity = "0"; // Start invisible
+                            // Start the icon at 0 opacity and set up the fade-in transition.
+                            marker._icon.style.opacity = "0";
                             marker._icon.style.transition = "opacity 0.3s ease-in";
                             setTimeout(() => {
-                                marker._icon.style.opacity = "1"; // Fade in smoothly
+                                marker._icon.style.opacity = "1";
                             }, 50);
                         }
                     });
+                    return marker;
+                }
+            }
+        }).addTo(markerLayer);
+    }, 2000); // Wait 2 seconds for fade-out to finish
+}
+
 
                     return marker;
                 }
