@@ -100,11 +100,10 @@ fetch('places.geojson')
 function updateMarkers() {
     const selectedCategory = document.querySelector('.category-filter:checked').value;
 
-    // Step 1: Fade out and shrink existing markers before removing them
+    // Step 1: Fade out existing markers before removing them
     markerLayer.eachLayer(layer => {
         if (layer._icon) { 
-            layer._icon.style.transition = "transform 0.3s ease-out, opacity 0.3s ease-out";
-            layer._icon.style.transform = "scale(0)";
+            layer._icon.style.transition = "opacity 0.3s ease-out";
             layer._icon.style.opacity = "0";
         }
     });
@@ -120,14 +119,13 @@ function updateMarkers() {
                     const icon = icons[category] || icons.Default;
                     const marker = L.marker(latlng, { icon: icon });
 
-                    // Step 3: Wait a bit, then fade in & grow the new markers
+                    // Step 3: Apply fade-in effect to new markers
                     setTimeout(() => {
                         if (marker._icon) {
-                            marker._icon.style.transition = "transform 0.3s ease-out, opacity 0.3s ease-out";
-                            marker._icon.style.transform = "scale(1)";
+                            marker._icon.style.transition = "opacity 0.3s ease-in";
                             marker._icon.style.opacity = "1";
                         }
-                    }, 50); // Small delay to ensure marker is added before animating
+                    }, 50); // Small delay to ensure marker is added before animation
 
                     return marker;
                 }
