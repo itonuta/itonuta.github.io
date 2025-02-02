@@ -140,7 +140,7 @@ function updateMarkers() {
                     <p>${category}</p>
                     <p>
                         <img src="icons/google-maps.svg" alt="Google Maps Icon"
-                             style="width: 16px; height: 16px; vertical-align: middle; margin-right: 5px;">
+                             style="width: 16px; height: 16px; vertical-align: middle; margin-right: 2px;">
                         <a href="${googleMaps}" target="_blank" rel="noopener noreferrer">
                             <span style="font-weight: bold;">Google</span> Maps
                         </a>
