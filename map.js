@@ -157,6 +157,8 @@ document.querySelectorAll('.category-filter').forEach(radio => {
     radio.addEventListener('click', function () {
         if (this.checked) {
             closeFilterMenu();
-        } // ✅ Properly closes the `if` statement
-    }); // ✅ Properly closes the `radio.addEventListener`
-}); // ✅ Properly closes the `.forEach()`
+        }
+    });
+}); // ✅ Properly closes `.forEach()`
+
+}); // ✅ Closes `.then(data => {` for fetching GeoJSON data
