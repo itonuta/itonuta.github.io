@@ -112,9 +112,9 @@ html, body {
     height: 100%;
 }
 
-.leaflet-marker-icon {
-  transition: opacity 2s ease-out !important;
-}
+/*.leaflet-marker-icon {
+  transition: opacity 0.3s ease-out !important;
+}/*
 
 /* General Popup Styling */
 .leaflet-popup-content {
