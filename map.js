@@ -159,4 +159,3 @@ document.querySelectorAll('.category-filter').forEach(radio => {
             closeFilterMenu();
         }
     });
-});
