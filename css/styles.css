@@ -86,7 +86,6 @@ html, body {
     visibility: hidden; /* Fully remove it from interaction */
 }
 
-
 /* Map container */
 .main {
     flex: 1;

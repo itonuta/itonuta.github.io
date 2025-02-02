@@ -43,16 +43,17 @@ document.addEventListener("DOMContentLoaded", function () {
     const loadingOverlay = document.getElementById("loading-overlay");
 
     // Show the menu and activate the filter button immediately
-    filterMenu.style.display = "block";
-    filterMenu.classList.add("show");
-    filterButton.classList.add("active");
-
-    // ✅ Ensure the loading overlay is fully removed after fade-out
+    filterMenu.style.display = "block"; // Show the menu
+    filterMenu.classList.add("show"); // Apply fade-in effect
+    filterButton.classList.add("active"); // Set filter button as active
+    
+    // Ensure map container is fully loaded before removing the overlay
     setTimeout(() => {
-        loadingOverlay.classList.add("hidden"); // ✅ This will now work again!
+        loadingOverlay.classList.add("hidden"); // Trigger fade-out of the overlay
     }, 1000); // Matches CSS transition duration
 });
 
+// Toggle filter menu visibility
 function toggleFilterMenu() {
     const filterMenu = document.getElementById('filter-menu');
     const filterButton = document.getElementById('filter-button');
