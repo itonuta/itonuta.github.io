@@ -301,7 +301,7 @@ html, body {
 }
 
 /* Responsive adjustments for small screens */
-@media (max-width: 400px) {
+@media (max-width: 500px) {
 
     /* Reduce font size of the menu title */
     .menu-title {
