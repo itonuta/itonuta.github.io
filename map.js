@@ -32,7 +32,7 @@ const icons = {
     Club: L.icon({ iconUrl: 'icons/club.svg', iconSize: [25, 25] }),
     Cafe: L.icon({ iconUrl: 'icons/cafe.svg', iconSize: [25, 25] }),
     Other: L.icon({ iconUrl: 'icons/other.svg', iconSize: [25, 25] }),
-    "Museum or gallery": L.icon({ iconUrl: 'icons/art.svg', iconSize: [25, 25] }),
+    Culture: L.icon({ iconUrl: 'icons/art.svg', iconSize: [25, 25] }),
     Default: L.icon({ iconUrl: 'icons/other.svg', iconSize: [25, 25] })
 };
 
