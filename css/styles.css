@@ -96,6 +96,46 @@ html, body {
     height: 100%;
 }
 
+/* General Popup Styling */
+.leaflet-popup-content {
+    font-family: 'Lineal', sans-serif; /* Apply custom font */
+    font-size: 16px; /* Adjust text size */
+    color: #00FF82; /* Green text */
+    text-align: center; /* Center text */
+}
+
+/* Popup Container */
+.leaflet-popup-content-wrapper {
+    background-color: #4A1B64 !important; /* Dark purple background */
+    color: #00FF82 !important; /* Text color */
+    border-radius: 10px; /* Rounded corners */
+    padding: 10px; /* Inner spacing */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Soft shadow */
+}
+
+/* Popup Close Button */
+.leaflet-popup-close-button {
+    color: #00FF82 !important; /* Green close button */
+    font-size: 18px; /* Bigger button */
+}
+
+/* Remove the default popup arrow ("tip") */
+.leaflet-popup-tip-container {
+    display: none;
+}
+
+/* Popup Links (e.g., Google Maps links) */
+.leaflet-popup-content a {
+    color: #EE82EE; /* Pink links */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold;
+}
+
+.leaflet-popup-content a:hover {
+    color: #9B00FF; /* Dark purple hover effect */
+    text-decoration: underline;
+}
+
 /* Logo Container */
 #logo-container {
     position: absolute; /* Keeps the logo fixed in place */
