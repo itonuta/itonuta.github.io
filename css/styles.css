@@ -107,12 +107,13 @@ html, body {
 
 /* Popup Container */
 .leaflet-popup-content-wrapper {
-    background-color: #3A045B !important; /* Dark purple background */
-    color: #EE82EE !important; /* Text color */
-    border: 1.5px solid #EE82EE;
-    border-radius: 10px; /* Rounded corners */
-    padding: 0px; /* Inner spacing */
-    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0); /* Soft shadow */
+    background-color: #3A045B !important;
+    color: #EE82EE !important;
+    outline: 1.5px solid #EE82EE;
+    outline-offset: -1px;
+    border-radius: 10px;
+    padding: 1px;
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
 }
 
 /* Reduce vertical space inside popups */
@@ -137,6 +138,7 @@ html, body {
 .leaflet-popup-tip {
     background-color: #3A045B !important; /* Dark purple tip */
     border: 1.5px solid #EE82EE !important; /* Pink border to match popup */
+    padding: 0px !important;
 }
 
 /* Popup Links (e.g., Google Maps links) */
