@@ -13,7 +13,7 @@
       "properties": {
         "name": "Alpha Nova Kulturwerkstatt & Galerie Futura",
         "googleMaps": "https://www.google.com/maps/search/?api=1&query=Alpha+Nova+Kulturwerkstatt+&+Galerie+Futura+Am+Flutgraben+3",
-        "category": "Museum or gallery"
+        "category": "Culture"
       }
     },
     {
@@ -28,7 +28,7 @@
       "properties": {
         "name": "Haus der Wannsee-Konferenz",
         "googleMaps": "https://www.google.com/maps/search/?api=1&query=Haus+der+Wannsee-Konferenz+Am+Großen+Wannsee+56",
-        "category": "Museum or gallery"
+        "category": "Culture"
       }
     },
     {
@@ -43,7 +43,7 @@
       "properties": {
         "name": "Galerie Weißer Elefant",
         "googleMaps": "https://www.google.com/maps/search/?api=1&query=Galerie+Weißer+Elefant+Auguststraße+21",
-        "category": "Museum or gallery"
+        "category": "Culture"
       }
     },
     {
@@ -58,7 +58,7 @@
       "properties": {
         "name": "Studio Baustelle",
         "googleMaps": "https://www.google.com/maps/search/?api=1&query=Studio+Baustelle+Berthelsdorfer+Straße+11",
-        "category": "Museum or gallery"
+        "category": "Culture"
       }
     },
     {
@@ -73,7 +73,7 @@
       "properties": {
         "name": "Haus der Kulturen der Welt",
         "googleMaps": "https://www.google.com/maps/search/?api=1&query=Haus+der+Kulturen+der+Welt+John-Foster-Dulles-Allee+10",
-        "category": "Museum or gallery"
+        "category": "Culture"
       }
     },
     {
@@ -88,7 +88,7 @@
       "properties": {
         "name": "Ausland",
         "googleMaps": "https://www.google.com/maps/search/?api=1&query=Ausland+Lychener+Straße+60",
-        "category": "Museum or gallery"
+        "category": "Culture"
       }
     },
     {
@@ -103,7 +103,7 @@
       "properties": {
         "name": "Kunstquartier Bethanien",
         "googleMaps": "https://www.google.com/maps/search/?api=1&query=Kunstquartier+Bethanien+Mariannenplatz+2",
-        "category": "Museum or gallery"
+        "category": "Culture"
       }
     },
     {
@@ -118,7 +118,7 @@
       "properties": {
         "name": "Galerie Wedding",
         "googleMaps": "https://www.google.com/maps/search/?api=1&query=Galerie+Wedding+Müllerstraße+146",
-        "category": "Museum or gallery"
+        "category": "Culture"
       }
     },
     {
@@ -133,7 +133,7 @@
       "properties": {
         "name": "Topography of Terror",
         "googleMaps": "https://www.google.com/maps/search/?api=1&query=Topography+of+Terror+Niederkirchnerstraße+8",
-        "category": "Museum or gallery"
+        "category": "Culture"
       }
     },
     {
@@ -148,7 +148,7 @@
       "properties": {
         "name": "Ufafabrik",
         "googleMaps": "https://www.google.com/maps/search/?api=1&query=Ufafabrik+Viktoriastraße+10",
-        "category": "Museum or gallery"
+        "category": "Culture"
       }
     },
     {
@@ -163,7 +163,7 @@
       "properties": {
         "name": "David Hasselhoff Museum",
         "googleMaps": "https://www.google.com/maps/search/?api=1&query=David+Hasselhoff+Museum+Weinbergsweg+1A",
-        "category": "Museum or gallery"
+        "category": "Culture"
       }
     },
     {
@@ -178,7 +178,7 @@
       "properties": {
         "name": "ChertLüdde",
         "googleMaps": "https://www.google.com/maps/search/?api=1&query=ChertLüdde+Berlin",
-        "category": "Museum or gallery"
+        "category": "Culture"
       }
     },
     {
@@ -193,7 +193,7 @@
       "properties": {
         "name": "Museum of Unheard (of) Things",
         "googleMaps": "https://www.google.com/maps/search/?api=1&query=Museum+of+Unheard+(of)+Things+Berlin",
-        "category": "Museum or gallery"
+        "category": "Culture"
       }
     },
     {
@@ -208,7 +208,7 @@
       "properties": {
         "name": "Galerie Friedmann-Hahn",
         "googleMaps": "https://www.google.com/maps/search/?api=1&query=Galerie+Friedmann-Hahn+Berlin",
-        "category": "Museum or gallery"
+        "category": "Culture"
       }
     },
     {
@@ -223,7 +223,7 @@
       "properties": {
         "name": "Radialsystem",
         "googleMaps": "https://www.google.com/maps/search/?api=1&query=Radialsystem+Berlin",
-        "category": "Museum or gallery"
+        "category": "Culture"
       }
     },
     {
@@ -238,7 +238,7 @@
       "properties": {
         "name": "Bröhan Museum",
         "googleMaps": "https://www.google.com/maps/search/?api=1&query=Bröhan+Museum+Berlin",
-        "category": "Museum or gallery"
+        "category": "Culture"
       }
     },
     {
@@ -253,7 +253,7 @@
       "properties": {
         "name": "SPOILER",
         "googleMaps": "https://www.google.com/maps/search/?api=1&query=SPOILER+Berlin",
-        "category": "Museum or gallery"
+        "category": "Culture"
       }
     },
     {
@@ -268,7 +268,7 @@
       "properties": {
         "name": "Spore Initiative",
         "googleMaps": "",
-        "category": "Museum or gallery"
+        "category": "Culture"
       }
     },
     {
@@ -3601,7 +3601,7 @@
       "properties": {
         "name": "Alpha Nova Kulturwerkstatt & Galerie Futura",
         "googleMaps": "https://www.google.com/maps/search/?api=1&query=Alpha+Nova+Kulturwerkstatt+&+Galerie+Futura+Am+Flutgraben+3",
-        "category": "Museum or gallery"
+        "category": "Culture"
       }
     },
     {
@@ -3616,7 +3616,7 @@
       "properties": {
         "name": "Haus der Wannsee-Konferenz",
         "googleMaps": "https://www.google.com/maps/search/?api=1&query=Haus+der+Wannsee-Konferenz+Am+Großen+Wannsee+56",
-        "category": "Museum or gallery"
+        "category": "Culture"
       }
     },
     {
@@ -3631,7 +3631,7 @@
       "properties": {
         "name": "Galerie Weißer Elefant",
         "googleMaps": "https://www.google.com/maps/search/?api=1&query=Galerie+Weißer+Elefant+Auguststraße+21",
-        "category": "Museum or gallery"
+        "category": "Culture"
       }
     },
     {
@@ -3646,7 +3646,7 @@
       "properties": {
         "name": "Studio Baustelle",
         "googleMaps": "https://www.google.com/maps/search/?api=1&query=Studio+Baustelle+Berthelsdorfer+Straße+11",
-        "category": "Museum or gallery"
+        "category": "Culture"
       }
     },
     {
@@ -3661,7 +3661,7 @@
       "properties": {
         "name": "Haus der Kulturen der Welt",
         "googleMaps": "https://www.google.com/maps/search/?api=1&query=Haus+der+Kulturen+der+Welt+John-Foster-Dulles-Allee+10",
-        "category": "Museum or gallery"
+        "category": "Culture"
       }
     },
     {
@@ -3676,7 +3676,7 @@
       "properties": {
         "name": "Ausland",
         "googleMaps": "https://www.google.com/maps/search/?api=1&query=Ausland+Lychener+Straße+60",
-        "category": "Museum or gallery"
+        "category": "Culture"
       }
     },
     {
@@ -3691,7 +3691,7 @@
       "properties": {
         "name": "Kunstquartier Bethanien",
         "googleMaps": "https://www.google.com/maps/search/?api=1&query=Kunstquartier+Bethanien+Mariannenplatz+2",
-        "category": "Museum or gallery"
+        "category": "Culture"
       }
     },
     {
@@ -3706,7 +3706,7 @@
       "properties": {
         "name": "Galerie Wedding",
         "googleMaps": "https://www.google.com/maps/search/?api=1&query=Galerie+Wedding+Müllerstraße+146",
-        "category": "Museum or gallery"
+        "category": "Culture"
       }
     },
     {
@@ -3721,7 +3721,7 @@
       "properties": {
         "name": "Topography of Terror",
         "googleMaps": "https://www.google.com/maps/search/?api=1&query=Topography+of+Terror+Niederkirchnerstraße+8",
-        "category": "Museum or gallery"
+        "category": "Culture"
       }
     },
     {
@@ -3736,7 +3736,7 @@
       "properties": {
         "name": "Ufafabrik",
         "googleMaps": "https://www.google.com/maps/search/?api=1&query=Ufafabrik+Viktoriastraße+10",
-        "category": "Museum or gallery"
+        "category": "Culture"
       }
     },
     {
@@ -3751,7 +3751,7 @@
       "properties": {
         "name": "David Hasselhoff Museum",
         "googleMaps": "https://www.google.com/maps/search/?api=1&query=David+Hasselhoff+Museum+Weinbergsweg+1A",
-        "category": "Museum or gallery"
+        "category": "Culture"
       }
     },
     {
@@ -3766,7 +3766,7 @@
       "properties": {
         "name": "ChertLüdde",
         "googleMaps": "https://www.google.com/maps/search/?api=1&query=ChertLüdde+Berlin",
-        "category": "Museum or gallery"
+        "category": "Culture"
       }
     },
     {
@@ -3781,7 +3781,7 @@
       "properties": {
         "name": "Museum of Unheard (of) Things",
         "googleMaps": "https://www.google.com/maps/search/?api=1&query=Museum+of+Unheard+(of)+Things+Berlin",
-        "category": "Museum or gallery"
+        "category": "Culture"
       }
     },
     {
@@ -3796,7 +3796,7 @@
       "properties": {
         "name": "Galerie Friedmann-Hahn",
         "googleMaps": "https://www.google.com/maps/search/?api=1&query=Galerie+Friedmann-Hahn+Berlin",
-        "category": "Museum or gallery"
+        "category": "Culture"
       }
     },
     {
@@ -3811,7 +3811,7 @@
       "properties": {
         "name": "Radialsystem",
         "googleMaps": "https://www.google.com/maps/search/?api=1&query=Radialsystem+Berlin",
-        "category": "Museum or gallery"
+        "category": "Culture"
       }
     },
     {
@@ -3826,7 +3826,7 @@
       "properties": {
         "name": "Bröhan Museum",
         "googleMaps": "https://www.google.com/maps/search/?api=1&query=Bröhan+Museum+Berlin",
-        "category": "Museum or gallery"
+        "category": "Culture"
       }
     },
     {
@@ -3841,7 +3841,7 @@
       "properties": {
         "name": "SPOILER",
         "googleMaps": "https://www.google.com/maps/search/?api=1&query=SPOILER+Berlin",
-        "category": "Museum or gallery"
+        "category": "Culture"
       }
     },
     {
@@ -3856,7 +3856,7 @@
       "properties": {
         "name": "Spore Initiative",
         "googleMaps": "",
-        "category": "Museum or gallery"
+        "category": "Culture"
       }
     },
     {
