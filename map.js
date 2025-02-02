@@ -113,7 +113,7 @@ fetch('places.geojson')
                     const { name, googleMaps, category } = feature.properties;
                     const popupContent = `
                         <h3>${name}</h3>
-                        <p>Category: ${category}</p>
+                        <p>{category}</p>
                         <p>${googleMaps}</p>
                     `;
                     layer.bindPopup(popupContent);
