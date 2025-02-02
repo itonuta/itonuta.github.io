@@ -106,7 +106,7 @@ html, body {
 
 /* When the filter button is active, fade out only the SVG icons */
 #filter-button.active ~ #map .leaflet-marker-icon {
-    opacity: 0.8; /* Adjust opacity as needed */
+    opacity: 0.2; /* Adjust opacity as needed */
 }
 
 /* Logo Container */
