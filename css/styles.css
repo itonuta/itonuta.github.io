@@ -118,18 +118,18 @@ html, body {
 /* Reduce vertical space inside popups */
 .leaflet-popup-content h3 {
     margin: 2px 0; /* Reduce space above and below the title */
-    font-size: 18px; /* Adjust size if needed */
+    font-size: 18px !important; /* Adjust size if needed */
 }
 
 .leaflet-popup-content p {
     margin: 2px 0; /* Reduce space above and below paragraphs */
-    font-size: 14px; /* Adjust size if needed */
+    font-size: 18px; /* Adjust size if needed */
     line-height: 1.4; /* Reduce line spacing */
 }
 
 /* Popup Close Button */
 .leaflet-popup-close-button {
-    color: #EE82EE !important;
+    color: #9B00FF !important;
     font-size: 22px; /* Bigger button */
 }
 
@@ -147,11 +147,12 @@ html, body {
 .leaflet-popup-content a {
     color: #EE82EE; /* Pink links */
     text-decoration: none; /* Remove underline */
-    font-weight: bold;
+    font-size: 12px;
+    font-weight: 200;
 }
 
 .leaflet-popup-content a:hover {
-    color: #9B00FF; /* Dark purple hover effect */
+    color: #00FF82; /* Green hover effect */
     text-decoration: none;
 }
 
