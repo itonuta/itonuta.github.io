@@ -141,6 +141,7 @@ html, body {
     margin: 2px 0; /* Reduce space above and below paragraphs */
     font-size: 18px; /* Adjust size if needed */
     line-height: 1.4; /* Reduce line spacing */
+    color: #9B00FF !important;
 }
 
 /* Popup Close Button */
