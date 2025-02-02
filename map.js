@@ -100,7 +100,7 @@ fetch('places.geojson')
 function fadeOutMarkers(callback) {
     markerLayer.eachLayer(layer => {
         if (layer._icon) {
-            layer._icon.style.transition = "opacity 0.3s ease-out";
+            layer._icon.style.transition = "opacity 2s ease-out";
             layer._icon.style.opacity = "0";
         }
     });
@@ -108,7 +108,7 @@ function fadeOutMarkers(callback) {
     // Wait for fade-out to complete before calling the callback (updateMarkers)
     setTimeout(() => {
         if (callback) callback();
-    }, 300); // Matches the transition duration
+    }, 2000); // Matches the transition duration
 }
 
 // Function to update markers based on selected category
@@ -129,7 +129,7 @@ function updateMarkers() {
                 marker.on('add', function () {
                     if (marker._icon) {
                         marker._icon.style.opacity = "0"; // Start invisible
-                        marker._icon.style.transition = "opacity 0.3s ease-in";
+                        marker._icon.style.transition = "opacity 2s ease-in";
                         setTimeout(() => {
                             marker._icon.style.opacity = "1"; // Fade in
                         }, 50);
