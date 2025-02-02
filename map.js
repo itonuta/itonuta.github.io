@@ -40,20 +40,20 @@ const icons = {
 document.addEventListener("DOMContentLoaded", function () {
     const filterMenu = document.getElementById("filter-menu");
     const filterButton = document.getElementById("filter-button");
-    const mapContainer = document.getElementById("map"); // Ensure markers fade out on load
+    const loadingOverlay = document.getElementById("loading-overlay");
 
     // Show the menu and activate the filter button immediately
-    filterMenu.style.display = "block";
-    filterMenu.classList.add("show");
-    filterButton.classList.add("active");
-    mapContainer.classList.add("icons-hidden"); // ✅ Hide markers immediately since menu starts active
-
+    filterMenu.style.display = "block"; // Show the menu
+    filterMenu.classList.add("show"); // Apply fade-in effect
+    filterButton.classList.add("active"); // Set filter button as active
+    
     // Ensure map container is fully loaded before removing the overlay
     setTimeout(() => {
-        document.getElementById("loading-overlay").classList.add("hidden");
-    }, 1000);
+        loadingOverlay.classList.add("hidden"); // Trigger fade-out of the overlay
+    }, 1000); // Matches CSS transition duration
 });
 
+// Toggle filter menu visibility
 function toggleFilterMenu() {
     const filterMenu = document.getElementById('filter-menu');
     const filterButton = document.getElementById('filter-button');
@@ -65,17 +65,16 @@ function toggleFilterMenu() {
             filterMenu.style.display = 'none';
         }, 800);
         filterButton.classList.remove('active');
-        mapContainer.classList.remove('icons-hidden'); // ✅ Fade markers back in when closing menu
+        mapContainer.classList.remove('icons-hidden'); // Remove fade effect from markers
     } else {
         filterMenu.style.display = 'block';
         setTimeout(() => {
             filterMenu.classList.add('show');
         }, 400);
         filterButton.classList.add('active');
-        mapContainer.classList.add('icons-hidden'); // ✅ Fade markers out when opening menu
+        mapContainer.classList.add('icons-hidden'); // Apply fade effect to markers
     }
 }
-
 
 // Function to close the filter menu and reset the filter button
 function closeFilterMenu() {
