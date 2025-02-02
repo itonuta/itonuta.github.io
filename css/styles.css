@@ -103,8 +103,13 @@ html, body {
     opacity: 1;
 }
 
+<<<<<<< HEAD
 /* When the filter button is active, fade out the markers */
 #filter-button.active ~ #map .leaflet-marker-icon {
+=======
+/* When the filter button is active, fade out all markers */
+.icons-hidden .leaflet-pane img.leaflet-marker-icon {
+>>>>>>> parent of e256087 (icon fade)
     opacity: 0; /* Adjust opacity as needed */
 }
 

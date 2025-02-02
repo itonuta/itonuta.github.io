@@ -40,6 +40,7 @@ const icons = {
 document.addEventListener("DOMContentLoaded", function () {
     const filterMenu = document.getElementById("filter-menu");
     const filterButton = document.getElementById("filter-button");
+<<<<<<< HEAD
     const loadingOverlay = document.getElementById("loading-overlay");
 
     // Show the menu and activate the filter button immediately
@@ -51,13 +52,36 @@ document.addEventListener("DOMContentLoaded", function () {
     setTimeout(() => {
         loadingOverlay.classList.add("hidden"); // Trigger fade-out of the overlay
     }, 1000); // Matches CSS transition duration
+=======
+    const mapContainer = document.getElementById("map");
+    const loadingOverlay = document.getElementById("loading-overlay");
+
+    // Show the menu and activate the filter button immediately
+    filterMenu.style.display = "block";
+    filterMenu.classList.add("show");
+    filterButton.classList.add("active");
+
+    // ✅ Fade markers out immediately on page load (since menu starts active)
+    setTimeout(() => {
+        mapContainer.classList.add("icons-hidden"); 
+    }, 50); // Slight delay to ensure the class is applied properly
+
+    // Ensure map container is fully loaded before removing the overlay
+    setTimeout(() => {
+        loadingOverlay.classList.add("hidden");
+    }, 1000);
+>>>>>>> parent of e256087 (icon fade)
 });
 
 // Toggle filter menu visibility
 function toggleFilterMenu() {
     const filterMenu = document.getElementById('filter-menu');
     const filterButton = document.getElementById('filter-button');
+<<<<<<< HEAD
     const mapContainer = document.getElementById('map'); // Reference the map container
+=======
+    const mapContainer = document.getElementById('map');
+>>>>>>> parent of e256087 (icon fade)
 
     if (filterMenu.classList.contains('show')) {
         filterMenu.classList.remove('show'); // Hide the menu
@@ -65,17 +89,37 @@ function toggleFilterMenu() {
             filterMenu.style.display = 'none'; 
         }, 800);
         filterButton.classList.remove('active');
+<<<<<<< HEAD
         mapContainer.classList.remove('icons-hidden'); // Remove fade effect from icons
+=======
+        
+        // ✅ Fade markers back in when menu closes
+        setTimeout(() => {
+            mapContainer.classList.remove('icons-hidden'); 
+        }, 300);
+>>>>>>> parent of e256087 (icon fade)
     } else {
         filterMenu.style.display = 'block';
         setTimeout(() => {
             filterMenu.classList.add('show');
         }, 400);
         filterButton.classList.add('active');
+<<<<<<< HEAD
         mapContainer.classList.add('icons-hidden'); // Apply fade effect to icons
     }
 }
 
+=======
+        
+        // ✅ Fade markers out when menu opens
+        setTimeout(() => {
+            mapContainer.classList.add("icons-hidden");
+        }, 300);
+    }
+}
+
+
+>>>>>>> parent of e256087 (icon fade)
 // Function to close the filter menu and reset the filter button
 function closeFilterMenu() {
     const filterMenu = document.getElementById("filter-menu");
