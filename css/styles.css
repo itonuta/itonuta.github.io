@@ -300,4 +300,31 @@ html, body {
     text-decoration: none; /* Remove underline from links */
 }
 
+/* Responsive adjustments for small screens */
+@media (max-width: 400px) {
+    /* Reduce filter menu size */
+    #filter-menu {
+        width: 85%; /* Reduce width to fit better */
+        max-width: 320px; /* Prevent it from being too wide */
+    }
+
+    /* Reduce font size of the menu title */
+    .menu-title {
+        font-size: 18px; /* Smaller title */
+    }
+
+    /* Adjust label (category) sizes */
+    #filter-menu label {
+        font-size: 18px; /* Smaller text */
+        padding: 6px 10px; /* Slightly reduced padding */
+    }
+
+    /* Adjust menu buttons */
+    .menu-buttons button {
+        font-size: 16px; /* Smaller text */
+        padding: 8px 15px; /* Reduce padding */
+        width: 150px; /* Slightly narrower buttons */
+    }
+}
+
 }
