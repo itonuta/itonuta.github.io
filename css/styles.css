@@ -149,6 +149,7 @@ html, body {
     text-decoration: none; /* Remove underline */
     font-size: 12px;
     font-weight: 200;
+    text-transform: none !important;
 }
 
 .leaflet-popup-content a:hover {

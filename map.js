@@ -116,7 +116,7 @@ fetch('places.geojson')
                         <p>${category}</p>
                         <p>
             <img src="icons/google-maps.svg" alt="Google Maps Icon" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 5px;">
-            <a href="${googleMaps}" target="_blank" rel="noopener noreferrer">see on Google Maps</a>
+            <a href="${googleMaps}" target="_blank" rel="noopener noreferrer">Google Maps</a>
         </p>
 
                     `;
