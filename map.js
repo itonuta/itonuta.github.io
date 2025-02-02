@@ -157,5 +157,6 @@ document.querySelectorAll('.category-filter').forEach(radio => {
     radio.addEventListener('click', function () {
         if (this.checked) {
             closeFilterMenu();
-            });
-}); // ✅ Correctly closes the `.forEach()` function and `.then()` scope
+        } // ✅ Properly closes the `if` statement
+    }); // ✅ Properly closes the `radio.addEventListener`
+}); // ✅ Properly closes the `.forEach()`
