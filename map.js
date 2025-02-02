@@ -100,21 +100,19 @@ fetch('places.geojson')
 function updateMarkers() {
     const selectedCategory = document.querySelector('.category-filter:checked').value;
 
-    // Step 1: Fade out existing markers before removing them (using a short timeout)
+    // Step 1: Fade out existing markers before removing them using requestAnimationFrame
     markerLayer.eachLayer(layer => {
         if (layer._icon) {
-            // Set up the fade-out transition
             layer._icon.style.transition = "opacity 2s ease-out";
-            // Use a short delay (about one frame, ~16ms) to trigger the change
-            setTimeout(() => {
+            requestAnimationFrame(() => {
                 layer._icon.style.opacity = "0";
-            }, 16);
+            });
         }
     });
 
-    // Step 2: Wait for fade-out to complete before clearing markers (using 2100ms delay)
+    // Step 2: Wait for fade-out to complete before clearing markers
     setTimeout(() => {
-        markerLayer.clearLayers(); // Remove markers after fade-out
+        markerLayer.clearLayers();
 
         // Step 3: Add new markers with fade-in effect using geoJSON data
         L.geoJSON(data, {
@@ -127,7 +125,6 @@ function updateMarkers() {
                     // Step 4: Fade in new markers when they are added
                     marker.on('add', function() {
                         if (marker._icon) {
-                            // Start invisible and set up the fade-in transition
                             marker._icon.style.opacity = "0";
                             marker._icon.style.transition = "opacity 0.3s ease-in";
                             setTimeout(() => {
@@ -135,7 +132,6 @@ function updateMarkers() {
                             }, 50);
                         }
                     });
-
                     return marker;
                 }
             },
