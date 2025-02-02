@@ -104,10 +104,8 @@ function updateMarkers() {
     markerLayer.eachLayer(layer => {
         if (layer._icon) {
             layer._icon.style.transition = "opacity 2s ease-out"; // Increase fade-out duration
-            // Force a reflow so that the new transition is applied immediately:
-            void layer._icon.offsetWidth;
-            // Now set opacity to 0 to trigger the fade-out animation.
-            layer._icon.style.opacity = "0";
+            void layer._icon.offsetWidth; // Force reflow to apply transition immediately
+            layer._icon.style.opacity = "0"; // Fade out
         }
     });
 
@@ -123,25 +121,18 @@ function updateMarkers() {
                     const icon = icons[category] || icons.Default;
                     const marker = L.marker(latlng, { icon: icon });
 
-                    // Fade in new markers when they are added
+                    // Step 4: Fade in new markers when they are added
                     marker.on('add', function () {
                         if (marker._icon) {
-                            // Start the icon at 0 opacity and set up the fade-in transition.
-                            marker._icon.style.opacity = "0";
-                            marker._icon.style.transition = "opacity 0.3s ease-in";
+                            marker._icon.style.opacity = "0"; // Start invisible
+                            marker._icon.style.transition = "opacity 0.3s ease-in"; // Fade-in effect
                             setTimeout(() => {
                                 marker._icon.style.opacity = "1";
                             }, 50);
                         }
                     });
-                    return marker;
-                }
-            }
-        }).addTo(markerLayer);
-    }, 2000); // Wait 2 seconds for fade-out to finish
-}
-                    return marker;
-    });
+
+                    return marker; // ✅ Correct return statement inside `pointToLayer`
                 }
             },
             onEachFeature: function (feature, layer) {
@@ -160,11 +151,10 @@ function updateMarkers() {
                 layer.bindPopup(popupContent);
             }
         }).addTo(markerLayer);
-    }, 2000); // DEBUG: Increased to 2s for visibility
+
+    }, 2000); // ✅ Wait 2s for fade-out before adding new markers
 }
-
-
-
+    
         updateMarkers();
 
         // Add event listener to radio buttons
