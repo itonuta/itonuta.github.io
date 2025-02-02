@@ -127,19 +127,20 @@ fetch('places.geojson')
         updateMarkers();
 
         // Add event listener to radio buttons
-        document.querySelectorAll('.category-filter').forEach(radio => {
-            radio.addEventListener('change', function () {
-                updateMarkers();
-                closeFilterMenu();
-            });
+document.querySelectorAll('.category-filter').forEach(radio => {
+    // Handles selecting a new category
+    radio.addEventListener('change', function () {
+        updateMarkers();
+        closeFilterMenu();
+    });
 
-            // Special case: Detect clicks on "everything!" even if it's already selected
-            radio.addEventListener('click', function () {
-                if (this.value === "everything!") {
-                    closeFilterMenu();
-                }
-            });
-        });
+    // Handles clicking the already-selected category
+    radio.addEventListener('click', function () {
+        if (this.checked) { // If the clicked option is already selected
+            closeFilterMenu();
+        }
+    });
+});
     })
     .catch(error => console.error('Error loading GeoJSON:', error));
 
