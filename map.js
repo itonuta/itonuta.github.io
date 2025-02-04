@@ -129,7 +129,7 @@ function updateMarkers() {
 
             // Format description text with correct HTML structure
             const descriptionText = description 
-                ? `<p><span style="font-size: 13px; italic;font-style: italic; font-weight: 200; color: #00FF82;">“${description}”</span></p>` 
+                ? `<p><span style="font-size: 13px; italic;font-style: italic; font-weight: 200; color: #00FF82; display: inline-block; max-width: 250px; word-wrap: break-word; overflow-wrap: break-word;">“${description}”</span></p>` 
                 : '';
 
             const popupContent = `
