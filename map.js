@@ -128,7 +128,8 @@ function updateMarkers() {
             const { name, googleMaps, category, description } = feature.properties;
             
             // Check if description exists and is not empty
-            const descriptionText = description ? `<p>“${description}”</p>` : '';
+           const descriptionText = `<p>“This is a test description.”</p>`;
+
 
             // Create the popup content
             const popupContent = `
