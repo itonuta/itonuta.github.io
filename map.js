@@ -148,8 +148,6 @@ function updateMarkers() {
     }).addTo(markerLayer);
 }
 
-}
-
 
 
 updateMarkers();
