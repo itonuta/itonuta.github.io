@@ -125,26 +125,34 @@ function updateMarkers() {
             }
         },
         onEachFeature: function (feature, layer) {
-            const { name, googleMaps, category, description } = feature.properties;
-            
-            // Check if description exists and is not empty
-           const descriptionText = `<p>“This is a test description.”</p>`;
+    console.log(feature.properties); // 🔍 Debugging: Check if description exists
 
+    const { name, googleMaps, category, description } = feature.properties;
+    
+    // Debugging: See if the description exists
+    if (!description) {
+        console.log(`No description found for ${name}`);
+    } else {
+        console.log(`Description found: ${description}`);
+    }
 
-            // Create the popup content
-            const popupContent = `
-                <h3>${name}</h3>
-                ${descriptionText} <!-- Only shown if description exists -->
-                <p>${category}</p>
-                <p>
-                    <img src="icons/google-maps.svg" alt="Google Maps Icon"
-                         style="width: 16px; height: 16px; vertical-align: middle; margin-right: 5px;">
-                    <a href="${googleMaps}" target="_blank" rel="noopener noreferrer">
-                        <span style="font-weight: bold;">Google</span> Maps
-                    </a>
-                </p>
-            `;
-            layer.bindPopup(popupContent);
+    const descriptionText = description ? `<p>“${description}”</p>` : '';
+
+    const popupContent = `
+        <h3>${name}</h3>
+        ${descriptionText}
+        <p>${category}</p>
+        <p>
+            <img src="icons/google-maps.svg" alt="Google Maps Icon"
+                 style="width: 16px; height: 16px; vertical-align: middle; margin-right: 5px;">
+            <a href="${googleMaps}" target="_blank" rel="noopener noreferrer">
+                <span style="font-weight: bold;">Google</span> Maps
+            </a>
+        </p>
+    `;
+    layer.bindPopup(popupContent);
+}
+
         }
     }).addTo(markerLayer);
 }
