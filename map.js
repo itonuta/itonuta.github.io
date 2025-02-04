@@ -125,37 +125,28 @@ function updateMarkers() {
             }
         },
         onEachFeature: function (feature, layer) {
-    console.log(feature.properties); // 🔍 Debugging: Check if description exists
+            const { name, googleMaps, category, description } = feature.properties;
 
-    const { name, googleMaps, category, description } = feature.properties;
-    
-    // Debugging: See if the description exists
-    if (!description) {
-        console.log(`No description found for ${name}`);
-    } else {
-        console.log(`Description found: ${description}`);
-    }
+            // Format description text with correct HTML structure
+            const descriptionText = description 
+                ? `<p><span style="font-size: 13px; italic;font-style: italic; font-weight: 200; color: #00FF82;">“${description}”</span></p>` 
+                : '';
 
-    const descriptionText = description ? `<p>“${description}”</p>` : '';
+            const popupContent = `
+                <h3>${name}</h3>
+                <p>${category}</p>
+                ${descriptionText}
+                <p>
+                    <img src="icons/google-maps.svg" alt="Google Maps Icon"
+                         style="width: 16px; height: 16px; vertical-align: middle; margin-right: 5px;">
+                    <a href="${googleMaps}" target="_blank" rel="noopener noreferrer">
+                        <span style="font-weight: bold;">Google</span> Maps
+                    </a>
+                </p>
+            `;
 
-    const popupContent = `
-    <h3>${name}</h3>
-    <p>${category}</p>
-    <p>
-        <span style="font-style: italic; font-weight: 200; color: #00FF82;">
-            ${descriptionText}
-        </span>
-    </p>
-    <p>
-        <img src="icons/google-maps.svg" alt="Google Maps Icon"
-             style="width: 16px; height: 16px; vertical-align: middle; margin-right: 5px;">
-        <a href="${googleMaps}" target="_blank" rel="noopener noreferrer">
-            <span style="font-weight: bold;">Google</span> Maps
-        </a>
-    </p>
-    `;
-    layer.bindPopup(popupContent);
-}
+            layer.bindPopup(popupContent);
+        }
     }).addTo(markerLayer);
 }
 
