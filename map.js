@@ -141,14 +141,14 @@ function updateMarkers() {
     const popupContent = `
         <h3>${name}</h3>
         <p>${category}</p>
+        <p><span style="font-style: italic; font-weight: 200; color: #00FF82;">
+            ${descriptionText}</p>
         <p>
             <img src="icons/google-maps.svg" alt="Google Maps Icon"
                  style="width: 16px; height: 16px; vertical-align: middle; margin-right: 5px;">
             <a href="${googleMaps}" target="_blank" rel="noopener noreferrer">
                 <span style="font-weight: bold;">Google</span> Maps
             </a>
-        <span style="font-style: italic; font-weight: 200; color: #00FF82;">
-            ${descriptionText}
         </p>
     `;
     layer.bindPopup(popupContent);
