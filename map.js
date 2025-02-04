@@ -152,8 +152,6 @@ function updateMarkers() {
     `;
     layer.bindPopup(popupContent);
 }
-
-        }
     }).addTo(markerLayer);
 }
 
