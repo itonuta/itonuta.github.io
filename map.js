@@ -125,9 +125,15 @@ function updateMarkers() {
             }
         },
         onEachFeature: function (feature, layer) {
-            const { name, googleMaps, category } = feature.properties;
+            const { name, googleMaps, category, description } = feature.properties;
+            
+            // Check if description exists and is not empty
+            const descriptionText = description ? `<p>“${description}”</p>` : '';
+
+            // Create the popup content
             const popupContent = `
                 <h3>${name}</h3>
+                ${descriptionText} <!-- Only shown if description exists -->
                 <p>${category}</p>
                 <p>
                     <img src="icons/google-maps.svg" alt="Google Maps Icon"
@@ -140,6 +146,8 @@ function updateMarkers() {
             layer.bindPopup(popupContent);
         }
     }).addTo(markerLayer);
+}
+
 }
 
 
