@@ -1,4 +1,7 @@
-/* General styles */
+/* =========================================================
+   Global layout
+   ========================================================= */
+
 html, body {
     margin: 0;
     padding: 0;
@@ -6,28 +9,30 @@ html, body {
     width: 100%;
     display: flex;
     flex-direction: column;
-    background-color: #9B00FF; /* Background color */
+    background-color: #9B00FF;
+    font-family: 'Lineal', sans-serif;
 }
 
-/* Lineal Regular */
+/* =========================================================
+   Lineal font faces
+   ========================================================= */
+
 @font-face {
     font-family: 'Lineal';
     src: url('../fonts/Lineal-Regular.woff2') format('woff2'),
          url('../fonts/Lineal-Regular.woff') format('woff');
-    font-weight: normal;
+    font-weight: 400;
     font-style: normal;
 }
 
-/* Lineal Bold */
 @font-face {
     font-family: 'Lineal';
     src: url('../fonts/Lineal-Bold.woff2') format('woff2'),
          url('../fonts/Lineal-Bold.woff') format('woff');
-    font-weight: bold;
+    font-weight: 700;
     font-style: normal;
 }
 
-/* Lineal Light */
 @font-face {
     font-family: 'Lineal';
     src: url('../fonts/Lineal-Light.woff2') format('woff2'),
@@ -36,7 +41,6 @@ html, body {
     font-style: normal;
 }
 
-/* Lineal Medium */
 @font-face {
     font-family: 'Lineal';
     src: url('../fonts/Lineal-Medium.woff2') format('woff2'),
@@ -45,7 +49,6 @@ html, body {
     font-style: normal;
 }
 
-/* Lineal Black */
 @font-face {
     font-family: 'Lineal';
     src: url('../fonts/Lineal-Black.woff2') format('woff2'),
@@ -54,55 +57,89 @@ html, body {
     font-style: normal;
 }
 
-/* Outfit Extralight */
+/* =========================================================
+   Google Sans font faces (replacement for Outfit)
+   ========================================================= */
+
 @font-face {
-    font-family: 'Outfit';
-    src: url('../fonts/Outfit-ExtraLight.woff2') format('woff2');
-    font-weight: 200;
+    font-family: 'Google Sans';
+    src: url('../fonts/GoogleSans-Regular.woff2') format('woff2');
+    font-weight: 400;
     font-style: normal;
 }
 
-/* Outfit Medium */
 @font-face {
-    font-family: 'Outfit';
-    src: url('../fonts/Outfit-Medium.woff2') format('woff2');
-    font-weight: bold;
+    font-family: 'Google Sans';
+    src: url('../fonts/GoogleSans-Italic.woff2') format('woff2');
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Google Sans';
+    src: url('../fonts/GoogleSans-Medium.woff2') format('woff2');
+    font-weight: 500;
     font-style: normal;
 }
 
-/* General styles */
-html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    background-color: #9B00FF; /* Background color */
-    font-family: 'Lineal', sans-serif; /* Use Lineal */
+@font-face {
+    font-family: 'Google Sans';
+    src: url('../fonts/GoogleSans-MediumItalic.woff2') format('woff2');
+    font-weight: 500;
+    font-style: italic;
 }
 
-/* Full-Screen Loading Overlay */
+@font-face {
+    font-family: 'Google Sans';
+    src: url('../fonts/GoogleSans-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Google Sans';
+    src: url('../fonts/GoogleSans-SemiBoldItalic.woff2') format('woff2');
+    font-weight: 600;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Google Sans';
+    src: url('../fonts/GoogleSans-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Google Sans';
+    src: url('../fonts/GoogleSans-BoldItalic.woff2') format('woff2');
+    font-weight: 700;
+    font-style: italic;
+}
+
+/* =========================================================
+   Loading overlay
+   ========================================================= */
+
 #loading-overlay {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw; /* Full width */
-    height: 100vh; /* Full height */
-    background-color: #9B00FF; /* Pink background */
-    z-index: 9999; /* Ensure it stays on top */
+    inset: 0;
+    background-color: #9B00FF;
+    z-index: 9999;
     opacity: 1;
-    transition: opacity 1s ease-out, visibility 0s linear 1s; /* Smooth fade & delay visibility change */
-    pointer-events: none; /* Prevent blocking user interaction */
+    transition: opacity 1s ease-out, visibility 0s linear 1s;
+    pointer-events: none;
 }
 
-/* When the overlay is hidden */
 #loading-overlay.hidden {
     opacity: 0;
-    visibility: hidden; /* Fully remove it from interaction */
+    visibility: hidden;
 }
 
-/* Map container */
+/* =========================================================
+   Map
+   ========================================================= */
+
 .main {
     flex: 1;
 }
@@ -112,274 +149,235 @@ html, body {
     height: 100%;
 }
 
+/* =========================================================
+   Leaflet popups
+   ========================================================= */
 
-/* General Popup Styling */
 .leaflet-popup-content {
-    font-family: 'Lineal', sans-serif; /* Apply custom font */
+    font-family: 'Lineal', sans-serif;
     text-transform: lowercase;
-    font-size: 16px; /* Adjust text size */
+    font-size: 16px;
     color: #EE82EE;
-    text-align: center; /* Center text */
+    text-align: center;
 }
 
-/* Popup Container */
 .leaflet-popup-content-wrapper {
     background-color: #3A045B !important;
-    color: #9B00FF !important;
     outline: 3px solid #9B00FF;
     outline-offset: -1px;
     padding: 1px;
-    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+    box-shadow: none;
 }
 
-/* Reduce vertical space inside popups */
-.leaflet-popup-content h3 {
-    margin: 2px 0; /* Reduce space above and below the title */
-    font-size: 18px !important; /* Adjust size if needed */
+.leaflet-popup-content h3,
+.leaflet-popup-content p {
+    margin: 2px 0;
+    font-size: 18px;
+    line-height: 1.4;
 }
 
 .leaflet-popup-content p {
-    margin: 2px 0; /* Reduce space above and below paragraphs */
-    font-size: 18px; /* Adjust size if needed */
-    line-height: 1.4; /* Reduce line spacing */
     color: #9B00FF !important;
 }
 
-/* Popup Close Button */
 .leaflet-popup-close-button {
     color: #9B00FF !important;
     font-size: 16px !important;
-    color: #9B00FF;
-    font-weight: bold !important;
+    font-weight: 700 !important;
 }
 
-/* Popup Tip (Arrow) */
 .leaflet-popup-tip {
     background-color: #3A045B !important;
     outline: 3px solid #9B00FF !important;
+    box-shadow: none;
 }
 
-.leaflet-popup-content-wrapper, .leaflet-popup-tip {
-    box-shadow: 0 0px 0px rgba(0, 0, 0, 0);
-}
+/* =========================================================
+   Popup links (Google Sans instead of Outfit)
+   ========================================================= */
 
-/* Google Maps links */
 .leaflet-popup-content a {
-    font-family: 'Outfit', sans-serif; /* Apply Outfit font */
-    color: #9B00FF;
-    text-decoration: none; /* Remove underline */
+    font-family: 'Google Sans', sans-serif;
+    font-weight: 400;
     font-size: 14px;
-    font-weight: 200;
+    color: #9B00FF;
+    text-decoration: none;
     text-transform: none !important;
 }
 
 .leaflet-popup-content a:hover {
-    color: #00FF82; /* Green hover effect */
-    text-decoration: none;
+    color: #00FF82;
 }
 
-/* Logo Container */
+/* =========================================================
+   Logo
+   ========================================================= */
+
 #logo-container {
-    position: absolute; /* Keeps the logo fixed in place */
-    top: 10px; /* Distance from the top of the page */
-    left: 50%; /* Center horizontally */
-    transform: translateX(-50%); /* Adjust for perfect horizontal centering */
-    z-index: 1001; /* Ensure it stays above the map and other elements */
-    text-align: center; /* Align contents to the center */
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1001;
+    text-align: center;
 }
 
-/* Logo Image */
 #logo-container img {
-    width: 250px; /* Adjust the size of the logo */
-    height: auto; /* Maintain aspect ratio */
-    max-width: 100%; /* Responsive scaling for smaller screens */
-    pointer-events: none; /* Prevent the logo from interfering with map interactions */
+    width: 250px;
+    height: auto;
+    max-width: 100%;
+    pointer-events: none;
 }
 
-/* Floating Filter Button */
+/* =========================================================
+   Filter button
+   ========================================================= */
+
 #filter-button {
     position: absolute;
     bottom: 20px;
     right: 20px;
     width: 70px;
     height: 70px;
-    background-color: #00FF82; /* Default Green */
-    color: white;
+    background-color: #00FF82;
     border: none;
-    outline: 0 solid #00FF82; /* Start with no visible outline */
-    outline-offset: -3px;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 24px;
-    font-weight: bold;
     cursor: pointer;
-    z-index: 1000; /* Ensure it stays above the map */
-    filter: opacity(1); /* Fully opaque initially */
-    transition: 
-        background-color 0.8s ease-in-out, /* Background color fades */
-        outline-color 0.8s ease-in-out, /* Outline color fades */
-        outline-width 1s ease-in-out, /* Outline growth animation */
-        transform 0.2s ease-in-out, /* Hover effect */
-        filter 0.8s ease-in-out; !important; /* Smooth transparency animation */
+    z-index: 1000;
+    transition: background-color 0.8s, outline 1s, transform 0.2s, filter 0.8s;
 }
 
-/* SVG Icon inside the Button */
 #filter-button img {
-    width: 50%; /* Adjust icon size (relative to the button) */
+    width: 50%;
     height: 50%;
-    margin-top: 5px; /* Move the icon lower */
+    margin-top: 5px;
 }
 
-/* Hover Effect */
 #filter-button:hover {
-    transform: scale(1.3); /* Slight zoom effect on hover */
+    transform: scale(1.3);
 }
 
-/* Active state for the filter button (when the menu is open) */
 #filter-button.active {
-    background-color: #9B00FF; /* Purple */
-    outline: 1800px solid #9B00FF; /* Large purple border */
-    filter: opacity(0.85); /* 15% transparent */
+    background-color: #9B00FF;
+    outline: 1800px solid #9B00FF;
+    filter: opacity(0.85);
 }
 
-/* Hidden Dropdown Menu */
+/* =========================================================
+   Filter menu
+   ========================================================= */
+
 #filter-menu {
-    position: fixed; /* Position relative to the entire screen */
-    top: 50%; /* Center vertically */
-    left: 50%; /* Center horizontally */
-    transform: translate(-50%, -50%); /* Adjust position to align center */
-    display: none; /* Initially hidden */
-    z-index: 1001; /* Ensure it's above the map */
-    opacity: 0; /* Start as fully transparent */
-    transition: opacity 0.8s ease; /* Smooth fade-in effect */
-    text-align: center; /* Ensure text is centered */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    z-index: 1001;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+    text-align: center;
 }
 
-/* When menu is active */
 #filter-menu.show {
-    display: block; /* Make the menu visible */
-    opacity: 1; /* Fully visible */
+    display: block;
+    opacity: 1;
 }
 
-/* Menu title styling */
 .menu-title {
-    font-size: 22px; /* Slightly larger */
-    color: #00FF82; /* Green */
+    font-size: 22px;
+    color: #00FF82;
     font-weight: 400;
     margin-bottom: 15px;
-    white-space: nowrap; /* Prevent text from breaking onto a new line */
+    white-space: nowrap;
 }
 
-/* Hide the radio buttons but keep them functional */
 .category-filter {
     position: absolute;
     opacity: 0;
     pointer-events: none;
 }
 
-/* Style labels to behave like buttons */
 #filter-menu label {
     display: block;
-    font-size: 20px; /* Keep your original size */
+    font-size: 20px;
     font-weight: 300;
-    color: #00FF82; /* Keep your original green text */
+    color: #00FF82;
     margin-bottom: 8px;
     cursor: pointer;
-    transition: color 0.2s ease-in-out; /* Smooth transition */
+    transition: color 0.2s ease-in-out;
 }
 
-/* Change font color on hover */
 #filter-menu label:hover {
-    color: #EE82EE; /* Color the label when hovered */
+    color: #EE82EE;
 }
-/* Menu buttons */
+
+/* =========================================================
+   Menu buttons
+   ========================================================= */
+
 .menu-buttons {
     margin-top: 15px;
     display: flex;
-    flex-direction: column; /* Stack buttons vertically */
-    align-items: center; /* Center buttons horizontally */
+    flex-direction: column;
+    align-items: center;
     gap: 10px;
 }
 
-/* Styling for both buttons */
 .menu-buttons button {
     background: transparent;
-    border: 1.5px solid #00FF82; /* Green border */
-    color: #00FF82; /* Green text */
-    padding: 10px 20px !important; /* Increased padding for better fit */
-    font-size: 18px !important;
-    font-family: 'Lineal', sans-serif !important; /* Apply Lineal font */
+    border: 1.5px solid #00FF82;
+    color: #00FF82;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-family: 'Lineal', sans-serif;
     border-radius: 8px;
     cursor: pointer;
     transition: all 0.3s ease;
-    width: 180px; /* Increase width to fit text */
-    white-space: nowrap; /* Prevent text from wrapping */
-    text-align: center; /* Ensure text stays centered */
+    width: 180px;
+    white-space: nowrap;
     margin-top: 15px;
 }
 
-/* Button hover effect */
 .menu-buttons button:hover {
-    background: #EE82EE; /* Pink background */
-    border: 1.5px solid #EE82EE; /* Pink border */
-    color: #9B00FF; /* Dark purple text */
+    background: #EE82EE;
+    border-color: #EE82EE;
+    color: #9B00FF;
 }
 
-/* Style the LocateControl button */
+/* =========================================================
+   Leaflet controls & attribution
+   ========================================================= */
+
 .leaflet-control-locate a {
-    background-color: #00FF82 !important; /* Green background */
-    color: black !important; /* Icon color */
-    width: 50px !important; /* Circular size */
-    height: 50px !important; /* Circular size */
-    display: flex !important; /* Center the content */
+    background-color: #00FF82 !important;
+    color: black !important;
+    width: 50px !important;
+    height: 50px !important;
+    display: flex !important;
     justify-content: center !important;
     align-items: center !important;
-    border-radius: 50% !important; /* Make it circular */
-    transition: transform 0.2s ease; /* Add hover effect */
-    padding: 0 !important; /* Remove any internal padding */
-    line-height: 1 !important; /* Ensure no extra height */
-    overflow: hidden !important; /* Ensure child elements fit inside */
-    border: none !important; /* Remove border */
-    box-shadow: none !important; /* Remove shadow */
-}
-
-/* Ensure the border is removed with higher specificity */
-.leaflet-touch .leaflet-bar.leaflet-control-locate a {
-    border: none !important; /* Remove the border */
-    background-clip: padding-box !important; /* Retain proper background clipping */
-}
-
-/* Ensure focus/active states don’t add outlines */
-.leaflet-control-locate a:focus,
-.leaflet-control-locate a:active {
-    outline: none !important;
+    border-radius: 50% !important;
     border: none !important;
     box-shadow: none !important;
 }
 
-/* Style the attribution control */
 .leaflet-control-attribution {
     background-color: #4A1B64 !important;
-    color: #9A00FF; /* Text color */
-    border: none !important; /* Remove border */
-    font-size: 10px; /* Adjust font size */
-    box-shadow: none !important; /* Ensure no shadow */
+    color: #9A00FF;
+    font-size: 10px;
+    border: none !important;
+    box-shadow: none !important;
 }
 
-/* Ensure internal elements also have transparent background */
-.leaflet-control-attribution span,
-.leaflet-control-attribution div,
 .leaflet-control-attribution a {
-    background-color: #4A1B64 !important;
-    color: #9A00FF; /* Link color */
-    text-decoration: none; /* Remove underline from links */
+    color: #9A00FF;
+    text-decoration: none;
 }
 
 .leaflet-control-attribution a:hover {
-    color: #00FF82; /* Green on hover */
-    text-decoration: none; /* Remove underline from links */
-}
-
+    color: #00FF82;
 }
