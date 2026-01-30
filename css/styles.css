@@ -54,20 +54,70 @@ html, body {
     font-style: normal;
 }
 
-/* Outfit Extralight */
+/* Google Sans (replaces Outfit) */
+
+/* Map the old Outfit 200 usage to GoogleSans-Regular file to avoid changing your CSS weights */
 @font-face {
-    font-family: 'Outfit';
-    src: url('../fonts/Outfit-ExtraLight.woff2') format('woff2');
+    font-family: 'Google Sans';
+    src: url('../fonts/GoogleSans-Regular.woff2') format('woff2');
     font-weight: 200;
     font-style: normal;
 }
 
-/* Outfit Medium */
 @font-face {
-    font-family: 'Outfit';
-    src: url('../fonts/Outfit-Medium.woff2') format('woff2');
-    font-weight: bold;
+    font-family: 'Google Sans';
+    src: url('../fonts/GoogleSans-Regular.woff2') format('woff2');
+    font-weight: 400;
     font-style: normal;
+}
+
+@font-face {
+    font-family: 'Google Sans';
+    src: url('../fonts/GoogleSans-Italic.woff2') format('woff2');
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Google Sans';
+    src: url('../fonts/GoogleSans-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Google Sans';
+    src: url('../fonts/GoogleSans-MediumItalic.woff2') format('woff2');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Google Sans';
+    src: url('../fonts/GoogleSans-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Google Sans';
+    src: url('../fonts/GoogleSans-SemiBoldItalic.woff2') format('woff2');
+    font-weight: 600;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Google Sans';
+    src: url('../fonts/GoogleSans-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Google Sans';
+    src: url('../fonts/GoogleSans-BoldItalic.woff2') format('woff2');
+    font-weight: 700;
+    font-style: italic;
 }
 
 /* General styles */
@@ -165,7 +215,7 @@ html, body {
 
 /* Google Maps links */
 .leaflet-popup-content a {
-    font-family: 'Outfit', sans-serif; /* Apply Outfit font */
+    font-family: 'Google Sans', sans-serif; /* Apply Google Sans font */
     color: #9B00FF;
     text-decoration: none; /* Remove underline */
     font-size: 14px;
@@ -380,6 +430,4 @@ html, body {
 .leaflet-control-attribution a:hover {
     color: #00FF82; /* Green on hover */
     text-decoration: none; /* Remove underline from links */
-}
-
 }
